@@ -1,0 +1,1660 @@
+{
+  "sections": [
+    {
+      "id": "s1",
+      "title": "1 Les bases et la digestion",
+      "questions": [
+        {
+          "id": "s1-q1",
+          "type": "mc",
+          "prompt": "Quel intestin absorbe surtout les nutriments ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le microbiote intestinal participe à la défense contre les agents pathogènes et à la régulation de l’inflammation."
+            },
+            {
+              "id": "b",
+              "text": "L’intestin grêle. Le gros intestin absorbe notamment l’eau."
+            },
+            {
+              "id": "c",
+              "text": "Chien et chat ont un seul estomac et un tube digestif relativement court."
+            },
+            {
+              "id": "d",
+              "text": "Ils ne digèrent pas eux-mêmes la cellulose."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Réponse à cacher : L’intestin grêle. Le gros intestin absorbe notamment l’eau."
+        },
+        {
+          "id": "s1-q2",
+          "type": "mc",
+          "prompt": "Quelle formulation le texte écrit pour un nutriment ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un aliment est une substance ingérée, digérée, absorbée et utilisée par l’organisme."
+            },
+            {
+              "id": "b",
+              "text": "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau."
+            },
+            {
+              "id": "c",
+              "text": "Un nutriment est « une substance organique ou minérale, assimilable par l’organisme »."
+            },
+            {
+              "id": "d",
+              "text": "Un aliment contient de l’eau et de la matière sèche."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Un nutriment est « une substance organique ou minérale, assimilable par l’organisme »."
+        },
+        {
+          "id": "s1-q3",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases le texte écrit au sujet du chien ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Carnivore strict. À l’origine : prédateur de petites proies, avec un taux d’échec élevé."
+            },
+            {
+              "id": "b",
+              "text": "Nombreuses petites prises alimentaires le jour et la nuit."
+            },
+            {
+              "id": "c",
+              "text": "Le support évoque une ration ad libidum."
+            },
+            {
+              "id": "d",
+              "text": "Carnivore opportuniste. À l’origine : charognard et chasseur de grandes proies en groupe."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Carnivore opportuniste. À l’origine : charognard et chasseur de grandes proies en groupe."
+        },
+        {
+          "id": "s1-q4",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases le texte écrit au sujet du chat ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Carnivore strict. À l’origine : prédateur de petites proies, avec un taux d’échec élevé."
+            },
+            {
+              "id": "b",
+              "text": "Repas parfois importants ; comportement plutôt glouton."
+            },
+            {
+              "id": "c",
+              "text": "Son alimentation doit répondre aux besoins de son espèce."
+            },
+            {
+              "id": "d",
+              "text": "Carnivore opportuniste. À l’origine : charognard et chasseur de grandes proies en groupe."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Carnivore strict. À l’origine : prédateur de petites proies, avec un taux d’échec élevé."
+        },
+        {
+          "id": "s1-q5",
+          "type": "mc",
+          "prompt": "Quelles trois étapes le texte numérote ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau."
+            },
+            {
+              "id": "b",
+              "text": "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets."
+            },
+            {
+              "id": "c",
+              "text": "Glucides : énergie. Lipides : réserve, membranes, vitamines ADEK."
+            },
+            {
+              "id": "d",
+              "text": "Fer et cuivre → anémie."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets."
+        },
+        {
+          "id": "s1-q6",
+          "type": "mc",
+          "prompt": "Quelle liste de familles le texte écrit ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Deux familles : acides gras saturés et acides gras insaturés."
+            },
+            {
+              "id": "b",
+              "text": "Sources à retenir : fruits, légumes, herbe et fourrages."
+            },
+            {
+              "id": "c",
+              "text": "Sept familles à retrouver"
+            },
+            {
+              "id": "d",
+              "text": "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau."
+        },
+        {
+          "id": "s1-q7",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "L’ASV conseille une alimentation adaptée, avec le vétérinaire pour les situations spécifiques.",
+          "correct": true,
+          "source": "L’ASV conseille une alimentation adaptée, avec le vétérinaire pour les situations spécifiques."
+        },
+        {
+          "id": "s1-q8",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Un déséquilibre peut provoquer des troubles digestifs.",
+          "correct": true,
+          "source": "Le microbiote intestinal participe à la défense contre les agents pathogènes et à la régulation de l’inflammation. Un déséquilibre peut provoquer des troubles digestifs."
+        },
+        {
+          "id": "s1-q9",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Les glucides = le carburant.",
+          "correct": false,
+          "source": "Les glucides = le carburant.",
+          "sourceSectionTitle": "2 Glucides et lipides"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "2 Glucides et lipides",
+      "questions": [
+        {
+          "id": "s2-q1",
+          "type": "mc",
+          "prompt": "Quelles vitamines sont absorbées avec les graisses ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines."
+            },
+            {
+              "id": "b",
+              "text": "La vitamine C, ou acide ascorbique, participe à l’action antioxydante, à la formation du collagène, aux défenses et à la cicatrisation."
+            },
+            {
+              "id": "c",
+              "text": "A, D, E et K : les vitamines liposolubles."
+            },
+            {
+              "id": "d",
+              "text": "La B12 est absorbée dans l’iléon et participe à la croissance cellulaire."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Réponse à cacher : A, D, E et K : les vitamines liposolubles."
+        },
+        {
+          "id": "s2-q2",
+          "type": "mc",
+          "prompt": "Quelle image le texte retient pour les glucides ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les glucides = le carburant."
+            },
+            {
+              "id": "b",
+              "text": "Les lipides = la réserve d’énergie, l’isolant et une partie des membranes."
+            },
+            {
+              "id": "c",
+              "text": "Les protéines sont des assemblages d’acides aminés."
+            },
+            {
+              "id": "d",
+              "text": "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Les glucides = le carburant."
+        },
+        {
+          "id": "s2-q3",
+          "type": "mc",
+          "prompt": "Quelle image le texte retient pour les lipides ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les glucides = le carburant."
+            },
+            {
+              "id": "b",
+              "text": "Les protéines sont des assemblages d’acides aminés."
+            },
+            {
+              "id": "c",
+              "text": "Les lipides = la réserve d’énergie, l’isolant et une partie des membranes."
+            },
+            {
+              "id": "d",
+              "text": "Eau : fonctionnement général."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Les lipides = la réserve d’énergie, l’isolant et une partie des membranes."
+        },
+        {
+          "id": "s2-q4",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit pour définir le glucose ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mono et disaccharides : glucose, fructose, lactose. Sources citées : notamment les fruits."
+            },
+            {
+              "id": "b",
+              "text": "Longues chaînes de sucres : amidon chez les végétaux, glycogène chez les animaux."
+            },
+            {
+              "id": "c",
+              "text": "Cellulose des végétaux ; chitine des exosquelettes."
+            },
+            {
+              "id": "d",
+              "text": "Le glucose est un monosaccharide : une seule unité de sucre."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Le glucose est un monosaccharide : une seule unité de sucre."
+        },
+        {
+          "id": "s2-q5",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit pour les polysaccharides de réserve ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Longues chaînes de sucres : amidon chez les végétaux, glycogène chez les animaux."
+            },
+            {
+              "id": "b",
+              "text": "Cellulose des végétaux ; chitine des exosquelettes."
+            },
+            {
+              "id": "c",
+              "text": "Insolubles : cellulose, lignine — légumes, parties dures des végétaux, son."
+            },
+            {
+              "id": "d",
+              "text": "Solubles : pectines et agar — fruits à pépins, certains fruits rouges, algues."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Longues chaînes de sucres : amidon chez les végétaux, glycogène chez les animaux."
+        },
+        {
+          "id": "s2-q6",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit sur le pouvoir des fibres ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sources à retenir : fruits, légumes, herbe et fourrages."
+            },
+            {
+              "id": "b",
+              "text": "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l’eau, favorisent la satiété et participent au volume des selles et au transit."
+            },
+            {
+              "id": "c",
+              "text": "Chez les herbivores, les bactéries présentes dans le caecum permettent leur digestion."
+            },
+            {
+              "id": "d",
+              "text": "Deux familles : acides gras saturés et acides gras insaturés."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l’eau, favorisent la satiété et participent au volume des selles et au transit."
+        },
+        {
+          "id": "s2-q7",
+          "type": "mc",
+          "prompt": "Quelles sources le texte cite pour les oméga 3 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sources citées : huiles végétales, viandes, volailles et œufs."
+            },
+            {
+              "id": "b",
+              "text": "Effets pro-inflammatoires mis en avant dans le cours."
+            },
+            {
+              "id": "c",
+              "text": "Sources citées : poissons gras, certaines huiles, noix et œufs."
+            },
+            {
+              "id": "d",
+              "text": "Effets anti-inflammatoires mis en avant dans le cours."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Sources citées : poissons gras, certaines huiles, noix et œufs."
+        },
+        {
+          "id": "s2-q8",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Certains acides gras sont essentiels : ils doivent être apportés par l’alimentation.",
+          "correct": true,
+          "source": "Certains acides gras sont essentiels : ils doivent être apportés par l’alimentation. Le cours souligne leur rôle cardiovasculaire, cérébral et dans les processus inflammatoires."
+        },
+        {
+          "id": "s2-q9",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Le phospholipide comprend une tête polaire (groupement phosphate hydrophile) et deux queues apolaires (acides gras hydrophobes).",
+          "correct": true,
+          "source": "Le phospholipide comprend une tête polaire (groupement phosphate hydrophile) et deux queues apolaires (acides gras hydrophobes)."
+        },
+        {
+          "id": "s2-q10",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
+          "correct": false,
+          "source": "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
+          "sourceSectionTitle": "3 Protéines et particularités du chat"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "3 Protéines et particularités du chat",
+      "questions": [
+        {
+          "id": "s3-q1",
+          "type": "mc",
+          "prompt": "Pourquoi le pourcentage de protéines ne suffit-il pas pour juger un aliment ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sources animales : viande, poisson, œufs, produits laitiers."
+            },
+            {
+              "id": "b",
+              "text": "Sources végétales : céréales, soja, légumineuses."
+            },
+            {
+              "id": "c",
+              "text": "Il faut aussi regarder les acides aminés essentiels et la digestibilité."
+            },
+            {
+              "id": "d",
+              "text": "Muscles, peau, poils, ongles."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Réponse à cacher : Il faut aussi regarder les acides aminés essentiels et la digestibilité."
+        },
+        {
+          "id": "s3-q2",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases est écrite dans « Le chat et la taurine » ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le chat ne convertit pas le bêta-carotène en vitamine A."
+            },
+            {
+              "id": "b",
+              "text": "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien."
+            },
+            {
+              "id": "c",
+              "text": "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter."
+            },
+            {
+              "id": "d",
+              "text": "Carnivore strict. À l’origine : prédateur de petites proies, avec un taux d’échec élevé."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien."
+        },
+        {
+          "id": "s3-q3",
+          "type": "mc",
+          "prompt": "Quelle suite le texte écrit de l’aliment aux tissus ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets."
+            },
+            {
+              "id": "b",
+              "text": "Protéines alimentaires → enzymes digestives dans l’estomac et l’intestin grêle → acides aminés → absorption → fabrication de nouvelles protéines."
+            },
+            {
+              "id": "c",
+              "text": "Fer et cuivre → anémie."
+            },
+            {
+              "id": "d",
+              "text": "Les protéines sont des assemblages d’acides aminés."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Protéines alimentaires → enzymes digestives dans l’estomac et l’intestin grêle → acides aminés → absorption → fabrication de nouvelles protéines."
+        },
+        {
+          "id": "s3-q4",
+          "type": "mc",
+          "prompt": "Quel exemple le texte place avec « Transporter » ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Anticorps."
+            },
+            {
+              "id": "b",
+              "text": "Enzymes, notamment digestives."
+            },
+            {
+              "id": "c",
+              "text": "Hémoglobine : transport de l’oxygène."
+            },
+            {
+              "id": "d",
+              "text": "Muscles, peau, poils, ongles."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Hémoglobine : transport de l’oxygène."
+        },
+        {
+          "id": "s3-q5",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Les acides aminés essentiels ne peuvent pas être produits par le corps et doivent être apportés par l’alimentation.",
+          "correct": true,
+          "source": "Les acides aminés essentiels ne peuvent pas être produits par le corps et doivent être apportés par l’alimentation."
+        },
+        {
+          "id": "s3-q6",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Une bonne qualité protéique dépend de la digestibilité et de la présence des acides aminés essentiels dans les bonnes proportions.",
+          "correct": true,
+          "source": "Une bonne qualité protéique dépend de la digestibilité et de la présence des acides aminés essentiels dans les bonnes proportions."
+        },
+        {
+          "id": "s3-q7",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Le support met en avant la richesse en acides aminés essentiels et la digestibilité des protéines animales.",
+          "correct": true,
+          "source": "Le support met en avant la richesse en acides aminés essentiels et la digestibilité des protéines animales."
+        },
+        {
+          "id": "s3-q8",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit pour les conséquences d’une carence en protéines ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Causes possibles : apport insuffisant, mauvaise qualité, mauvaise digestibilité ou pertes liées à des troubles digestifs ou à une maladie."
+            },
+            {
+              "id": "b",
+              "text": "Carence : croissance perturbée, fragilité osseuse."
+            },
+            {
+              "id": "c",
+              "text": "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."
+            },
+            {
+              "id": "d",
+              "text": "Conséquences : croissance réduite, perte de poids et de muscle, baisse des performances, pelage de mauvaise qualité et immunité affaiblie."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Conséquences : croissance réduite, perte de poids et de muscle, baisse des performances, pelage de mauvaise qualité et immunité affaiblie."
+        },
+        {
+          "id": "s3-q9",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit sur le fait de nourrir un chat avec un aliment pour chiens ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "C’est une différence essentielle avec le chien : on ne nourrit pas un chat avec un aliment pour chiens."
+            },
+            {
+              "id": "b",
+              "text": "Sources végétales : céréales, soja, légumineuses."
+            },
+            {
+              "id": "c",
+              "text": "En cas de famine, par exemple chez les animaux cachectiques."
+            },
+            {
+              "id": "d",
+              "text": "Défendre l’organisme"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "C’est une différence essentielle avec le chien : on ne nourrit pas un chat avec un aliment pour chiens."
+        },
+        {
+          "id": "s3-q10",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
+          "correct": false,
+          "source": "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
+          "sourceSectionTitle": "5 Vitamines"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "4 Minéraux et oligoéléments",
+      "questions": [
+        {
+          "id": "s4-q1",
+          "type": "mc",
+          "prompt": "Fer, iode, zinc : retrouve leur mot clé.",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fer et cuivre → anémie."
+            },
+            {
+              "id": "b",
+              "text": "Iode → goitre, hypothyroïdie, retard de croissance."
+            },
+            {
+              "id": "c",
+              "text": "Fer = oxygène ; iode = thyroïde ; zinc = peau et immunité."
+            },
+            {
+              "id": "d",
+              "text": "Sélénium → faiblesse musculaire et troubles de croissance."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Réponse à cacher : Fer = oxygène ; iode = thyroïde ; zinc = peau et immunité."
+        },
+        {
+          "id": "s4-q2",
+          "type": "mc",
+          "prompt": "Que dit le texte du point commun des minéraux et des oligoéléments ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Oligoéléments : petites quantités, rôles spécifiques."
+            },
+            {
+              "id": "b",
+              "text": "Ils sont indispensables, même en petites quantités. Ils n’apportent pas d’énergie comme les glucides, les lipides et les protéines."
+            },
+            {
+              "id": "c",
+              "text": "Minéraux : squelette et fonctions de l’organisme."
+            },
+            {
+              "id": "d",
+              "text": "En excès, ces éléments peuvent aussi être toxiques."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Ils sont indispensables, même en petites quantités. Ils n’apportent pas d’énergie comme les glucides, les lipides et les protéines."
+        },
+        {
+          "id": "s4-q3",
+          "type": "mc",
+          "prompt": "Quelle association le texte écrit pour le fer et le cuivre ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fer et cuivre → anémie."
+            },
+            {
+              "id": "b",
+              "text": "Iode → goitre, hypothyroïdie, retard de croissance."
+            },
+            {
+              "id": "c",
+              "text": "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."
+            },
+            {
+              "id": "d",
+              "text": "Sélénium → faiblesse musculaire et troubles de croissance."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Fer et cuivre → anémie."
+        },
+        {
+          "id": "s4-q4",
+          "type": "mc",
+          "prompt": "Quelle association le texte écrit pour l’iode ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fer et cuivre → anémie."
+            },
+            {
+              "id": "b",
+              "text": "Iode → goitre, hypothyroïdie, retard de croissance."
+            },
+            {
+              "id": "c",
+              "text": "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."
+            },
+            {
+              "id": "d",
+              "text": "Sélénium → faiblesse musculaire et troubles de croissance."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Iode → goitre, hypothyroïdie, retard de croissance."
+        },
+        {
+          "id": "s4-q5",
+          "type": "mc",
+          "prompt": "Quelle association le texte écrit pour le zinc ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fer et cuivre → anémie."
+            },
+            {
+              "id": "b",
+              "text": "Iode → goitre, hypothyroïdie, retard de croissance."
+            },
+            {
+              "id": "c",
+              "text": "Sélénium → faiblesse musculaire et troubles de croissance."
+            },
+            {
+              "id": "d",
+              "text": "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."
+        },
+        {
+          "id": "s4-q6",
+          "type": "mc",
+          "prompt": "Quelle association le texte écrit pour le sélénium ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sélénium → faiblesse musculaire et troubles de croissance."
+            },
+            {
+              "id": "b",
+              "text": "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."
+            },
+            {
+              "id": "c",
+              "text": "Iode → goitre, hypothyroïdie, retard de croissance."
+            },
+            {
+              "id": "d",
+              "text": "Fer et cuivre → anémie."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Sélénium → faiblesse musculaire et troubles de croissance."
+        },
+        {
+          "id": "s4-q7",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "La vitamine D favorise l’absorption intestinale du calcium et du phosphore.",
+          "correct": true,
+          "source": "Le rapport Ca/P compte autant que les quantités. Un déséquilibre peut perturber le squelette en croissance et à l’âge adulte. La vitamine D favorise l’absorption intestinale du calcium et du phosphore."
+        },
+        {
+          "id": "s4-q8",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "En excès, ces éléments peuvent aussi être toxiques.",
+          "correct": true,
+          "source": "En excès, ces éléments peuvent aussi être toxiques."
+        },
+        {
+          "id": "s4-q9",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases figure dans cette section ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Excès : calcification des tissus mous."
+            },
+            {
+              "id": "b",
+              "text": "Excès : notamment troubles osseux chez le chien en croissance."
+            },
+            {
+              "id": "c",
+              "text": "Carence : dégénérescence ou faiblesse musculaire."
+            },
+            {
+              "id": "d",
+              "text": "Carence : anorexie, saignements gingivaux, œdème, émaciation, diarrhée et diminution de la résistance aux infections."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Excès : notamment troubles osseux chez le chien en croissance."
+        },
+        {
+          "id": "s4-q10",
+          "type": "mc",
+          "prompt": "Quelles sources le texte cite pour le fer ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Viande rouge, épinards, lentilles."
+            },
+            {
+              "id": "b",
+              "text": "Abats, fruits de mer, noix."
+            },
+            {
+              "id": "c",
+              "text": "Sel iodé, fruits de mer."
+            },
+            {
+              "id": "d",
+              "text": "Poissons, noix du Brésil."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Viande rouge, épinards, lentilles."
+        },
+        {
+          "id": "s4-q11",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases figure dans cette section ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Squelette, contraction musculaire, transmission nerveuse."
+            },
+            {
+              "id": "b",
+              "text": "Carence : troubles de vision et de reproduction."
+            },
+            {
+              "id": "c",
+              "text": "Les glucides regroupent les sucres."
+            },
+            {
+              "id": "d",
+              "text": "Un aliment contient de l’eau et de la matière sèche."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Squelette, contraction musculaire, transmission nerveuse."
+        },
+        {
+          "id": "s4-q12",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases figure dans cette section ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le glucose est un monosaccharide : une seule unité de sucre."
+            },
+            {
+              "id": "b",
+              "text": "Formation des hormones thyroïdiennes."
+            },
+            {
+              "id": "c",
+              "text": "La B12 est absorbée dans l’iléon et participe à la croissance cellulaire."
+            },
+            {
+              "id": "d",
+              "text": "Cache la correction."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Formation des hormones thyroïdiennes."
+        },
+        {
+          "id": "s4-q13",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Toujours laisser de l’eau propre et fraîche à disposition de l’animal.",
+          "correct": false,
+          "source": "Toujours laisser de l’eau propre et fraîche à disposition de l’animal.",
+          "sourceSectionTitle": "6 Eau et chiffres du cours"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "5 Vitamines",
+      "questions": [
+        {
+          "id": "s5-q1",
+          "type": "mc",
+          "prompt": "Quelle particularité relie le chat à la vitamine A et le cobaye à la vitamine C ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables."
+            },
+            {
+              "id": "b",
+              "text": "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines."
+            },
+            {
+              "id": "c",
+              "text": "La B12 est absorbée dans l’iléon et participe à la croissance cellulaire."
+            },
+            {
+              "id": "d",
+              "text": "Le chat a besoin de vitamine A utilisable d’origine animale ; le cobaye doit recevoir de la vitamine C dans son alimentation."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Réponse à cacher : Le chat a besoin de vitamine A utilisable d’origine animale ; le cobaye doit recevoir de la vitamine C dans son alimentation."
+        },
+        {
+          "id": "s5-q2",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
+          "correct": true,
+          "source": "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables."
+        },
+        {
+          "id": "s5-q3",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines.",
+          "correct": true,
+          "source": "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines."
+        },
+        {
+          "id": "s5-q4",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit sur l’hypervitaminose ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "L’hypervitaminose concerne un excès de vitamines ; le cours insiste sur le stockage des vitamines liposolubles."
+            },
+            {
+              "id": "b",
+              "text": "Leur fonction dépend de la vitamine : elles ne sont pas interchangeables."
+            },
+            {
+              "id": "c",
+              "text": "Les vitamines participent notamment au métabolisme, à l’immunité, à la cicatrisation et à la protection cellulaire."
+            },
+            {
+              "id": "d",
+              "text": "« Plus » ne veut donc pas dire « mieux »."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "L’hypervitaminose concerne un excès de vitamines ; le cours insiste sur le stockage des vitamines liposolubles."
+        },
+        {
+          "id": "s5-q5",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit sur le chat et le bêta-carotène ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le chat ne convertit pas le bêta-carotène en vitamine A."
+            },
+            {
+              "id": "b",
+              "text": "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou."
+            },
+            {
+              "id": "c",
+              "text": "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter."
+            },
+            {
+              "id": "d",
+              "text": "Vision et épithélium"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Le chat ne convertit pas le bêta-carotène en vitamine A."
+        },
+        {
+          "id": "s5-q6",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases figure dans cette section ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Intervient dans la coagulation du sang. Une carence perturbe la coagulation."
+            },
+            {
+              "id": "b",
+              "text": "Rétention d’eau, satiété, volume des selles et transit."
+            },
+            {
+              "id": "c",
+              "text": "Elle favorise leur absorption intestinale et participe à la formation du squelette."
+            },
+            {
+              "id": "d",
+              "text": "L’aliment est mangé ; il apporte des nutriments assimilables."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Intervient dans la coagulation du sang. Une carence perturbe la coagulation."
+        },
+        {
+          "id": "s5-q7",
+          "type": "mc",
+          "prompt": "Laquelle de ces phrases est écrite dans « Le cercle de la B12 » ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le cours évoque une administration injectable pour contourner cette mauvaise absorption."
+            },
+            {
+              "id": "b",
+              "text": "Les glucides = le carburant."
+            },
+            {
+              "id": "c",
+              "text": "Fer et cuivre → anémie."
+            },
+            {
+              "id": "d",
+              "text": "Toujours laisser de l’eau propre et fraîche à disposition de l’animal."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Le cours évoque une administration injectable pour contourner cette mauvaise absorption."
+        },
+        {
+          "id": "s5-q8",
+          "type": "mc",
+          "prompt": "Quelle phrase le texte écrit sur la synthèse de vitamine C chez le cobaye ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter."
+            },
+            {
+              "id": "b",
+              "text": "Carence : anorexie, saignements gingivaux, œdème, émaciation, diarrhée et diminution de la résistance aux infections."
+            },
+            {
+              "id": "c",
+              "text": "Le chat ne convertit pas le bêta-carotène en vitamine A."
+            },
+            {
+              "id": "d",
+              "text": "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter."
+        },
+        {
+          "id": "s5-q9",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou.",
+          "correct": true,
+          "source": "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou. « Plus » ne veut donc pas dire « mieux »."
+        },
+        {
+          "id": "s5-q10",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "« Plus » ne veut donc pas dire « mieux ».",
+          "correct": true,
+          "source": "« Plus » ne veut donc pas dire « mieux »."
+        },
+        {
+          "id": "s5-q11",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l’eau, favorisent la satiété et participent au volume des selles et au transit.",
+          "correct": false,
+          "source": "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l’eau, favorisent la satiété et participent au volume des selles et au transit.",
+          "sourceSectionTitle": "2 Glucides et lipides"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "6 Eau et chiffres du cours",
+      "questions": [
+        {
+          "id": "s6-q1",
+          "type": "mc",
+          "prompt": "Pourquoi les besoins en eau ne sont-ils pas une quantité fixe ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Toujours laisser de l’eau propre et fraîche à disposition de l’animal."
+            },
+            {
+              "id": "b",
+              "text": "Ils varient avec l’alimentation, l’activité, la température et l’état physiologique."
+            },
+            {
+              "id": "c",
+              "text": "Un manque d’eau expose à la déshydratation et favorise des problèmes urinaires."
+            },
+            {
+              "id": "d",
+              "text": "Les aliments frais apportent davantage d’eau que les aliments secs."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Réponse à cacher : Ils varient avec l’alimentation, l’activité, la température et l’état physiologique."
+        },
+        {
+          "id": "s6-q2",
+          "type": "mc",
+          "prompt": "Quelle valeur le texte indique pour l’eau dans le corps d’un animal adulte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Environ 70 %."
+            },
+            {
+              "id": "b",
+              "text": "50 ml/kg/jour."
+            },
+            {
+              "id": "c",
+              "text": "25 à 35 ml/kg/jour."
+            },
+            {
+              "id": "d",
+              "text": "Glucides 50 %, lipides 35 %, protéines 15 %."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Eau dans le corps d’un animal adulte Environ 70 %."
+        },
+        {
+          "id": "s6-q3",
+          "type": "mc",
+          "prompt": "Quelle valeur le texte indique pour l’eau quotidienne du chien ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "25 à 35 ml/kg/jour."
+            },
+            {
+              "id": "b",
+              "text": "Environ 70 %."
+            },
+            {
+              "id": "c",
+              "text": "50 ml/kg/jour."
+            },
+            {
+              "id": "d",
+              "text": "Chien : 20 à 25 % ; chat : 30 à 35 %."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Eau quotidienne du chien 50 ml/kg/jour."
+        },
+        {
+          "id": "s6-q4",
+          "type": "mc",
+          "prompt": "Quelle valeur le texte indique pour l’eau quotidienne du chat ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "50 ml/kg/jour."
+            },
+            {
+              "id": "b",
+              "text": "25 à 35 ml/kg/jour."
+            },
+            {
+              "id": "c",
+              "text": "Environ 70 %."
+            },
+            {
+              "id": "d",
+              "text": "Chien : 20 à 25 % ; chat : 30 à 35 %."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Eau quotidienne du chat 25 à 35 ml/kg/jour."
+        },
+        {
+          "id": "s6-q5",
+          "type": "mc",
+          "prompt": "Que dit le texte sur la base de calcul de la concentration en protéines de l’aliment ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Chien : 20 à 25 % ; chat : 30 à 35 %."
+            },
+            {
+              "id": "b",
+              "text": "Ces valeurs sont celles des supports pour réviser."
+            },
+            {
+              "id": "c",
+              "text": "La base de calcul n’est pas précisée dans le support."
+            },
+            {
+              "id": "d",
+              "text": "Elles ne remplacent pas le calcul d’une ration adaptée à un animal."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "La base de calcul n’est pas précisée dans le support."
+        },
+        {
+          "id": "s6-q6",
+          "type": "mc",
+          "prompt": "Quelles plages le texte indique pour le rapport calcium/phosphore ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le développement indique 1,1 à 1,3 ; la révision indique 1,1 à 1,5. Le support mentionne aussi des plages plus larges selon les sources."
+            },
+            {
+              "id": "b",
+              "text": "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1."
+            },
+            {
+              "id": "c",
+              "text": "Glucides 50 %, lipides 35 %, protéines 15 %."
+            },
+            {
+              "id": "d",
+              "text": "Environ 70 %."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Le développement indique 1,1 à 1,3 ; la révision indique 1,1 à 1,5. Le support mentionne aussi des plages plus larges selon les sources."
+        },
+        {
+          "id": "s6-q7",
+          "type": "mc",
+          "prompt": "Quel repère oméga 6 / oméga 3 le texte présente ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d’une ration canine ou féline."
+            },
+            {
+              "id": "b",
+              "text": "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1."
+            },
+            {
+              "id": "c",
+              "text": "Chien : 20 à 25 % ; chat : 30 à 35 %."
+            },
+            {
+              "id": "d",
+              "text": "50 ml/kg/jour."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1."
+        },
+        {
+          "id": "s6-q8",
+          "type": "mc",
+          "prompt": "Quelle répartition énergétique le texte attribue à l’introduction humaine ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d’une ration canine ou féline."
+            },
+            {
+              "id": "b",
+              "text": "Chien : 20 à 25 % ; chat : 30 à 35 %."
+            },
+            {
+              "id": "c",
+              "text": "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1."
+            },
+            {
+              "id": "d",
+              "text": "Environ 70 %."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d’une ration canine ou féline."
+        },
+        {
+          "id": "s6-q9",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Le cours cite notamment les cystites et les calculs urinaires, surtout chez le chat mâle.",
+          "correct": true,
+          "source": "Un manque d’eau expose à la déshydratation et favorise des problèmes urinaires. Le cours cite notamment les cystites et les calculs urinaires, surtout chez le chat mâle."
+        },
+        {
+          "id": "s6-q10",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Elle participe à la régulation de la température, à l’hydratation des muqueuses, à la production de lait, à l’élimination des déchets et aux réactions biochimiques, dont la digestion.",
+          "correct": true,
+          "source": "Elle participe à la régulation de la température, à l’hydratation des muqueuses, à la production de lait, à l’élimination des déchets et aux réactions biochimiques, dont la digestion."
+        },
+        {
+          "id": "s6-q11",
+          "type": "mc",
+          "prompt": "Quelle ligne le mémo écrit pour les vitamines ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eau : fonctionnement général."
+            },
+            {
+              "id": "b",
+              "text": "Minéraux : squelette et fonctions de l’organisme."
+            },
+            {
+              "id": "c",
+              "text": "Vitamines : régulation et protection."
+            },
+            {
+              "id": "d",
+              "text": "Oligoéléments : petites quantités, rôles spécifiques."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Vitamines : régulation et protection."
+        },
+        {
+          "id": "s6-q12",
+          "type": "mc",
+          "prompt": "Quelle ligne le mémo écrit pour les protéines ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Protéines : acides aminés et construction."
+            },
+            {
+              "id": "b",
+              "text": "Glucides : énergie."
+            },
+            {
+              "id": "c",
+              "text": "Lipides : réserve, membranes, vitamines ADEK."
+            },
+            {
+              "id": "d",
+              "text": "Minéraux : squelette et fonctions de l’organisme."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Protéines : acides aminés et construction."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "7 Ton défi de révision",
+      "questions": [
+        {
+          "id": "s7-q1",
+          "type": "mc",
+          "prompt": "Quelle est la différence entre un aliment et un nutriment ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "L’aliment est mangé ; il apporte des nutriments assimilables."
+            },
+            {
+              "id": "b",
+              "text": "Amidon chez les végétaux ; glycogène chez les animaux."
+            },
+            {
+              "id": "c",
+              "text": "Les besoins sont différents, notamment pour la taurine essentielle au chat."
+            },
+            {
+              "id": "d",
+              "text": "Le cobaye."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "L’aliment est mangé ; il apporte des nutriments assimilables."
+        },
+        {
+          "id": "s7-q2",
+          "type": "mc",
+          "prompt": "Quel organe absorbe principalement les nutriments ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "A, D, E et K."
+            },
+            {
+              "id": "b",
+              "text": "L’intestin grêle."
+            },
+            {
+              "id": "c",
+              "text": "Le cobaye."
+            },
+            {
+              "id": "d",
+              "text": "Amidon chez les végétaux ; glycogène chez les animaux."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "L’intestin grêle."
+        },
+        {
+          "id": "s7-q3",
+          "type": "mc",
+          "prompt": "Pourquoi le chat prend-il souvent plusieurs petits repas ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "L’aliment est mangé ; il apporte des nutriments assimilables."
+            },
+            {
+              "id": "b",
+              "text": "Rétention d’eau, satiété, volume des selles et transit."
+            },
+            {
+              "id": "c",
+              "text": "Son comportement vient de la chasse de petites proies, le jour et la nuit."
+            },
+            {
+              "id": "d",
+              "text": "Elle favorise leur absorption intestinale et participe à la formation du squelette."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Son comportement vient de la chasse de petites proies, le jour et la nuit."
+        },
+        {
+          "id": "s7-q4",
+          "type": "mc",
+          "prompt": "Quelles sont les réserves glucidiques des végétaux et des animaux ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Rétention d’eau, satiété, volume des selles et transit."
+            },
+            {
+              "id": "b",
+              "text": "A, D, E et K."
+            },
+            {
+              "id": "c",
+              "text": "Le cobaye."
+            },
+            {
+              "id": "d",
+              "text": "Amidon chez les végétaux ; glycogène chez les animaux."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Amidon chez les végétaux ; glycogène chez les animaux."
+        },
+        {
+          "id": "s7-q5",
+          "type": "mc",
+          "prompt": "À quoi servent les fibres ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Rétention d’eau, satiété, volume des selles et transit."
+            },
+            {
+              "id": "b",
+              "text": "L’aliment est mangé ; il apporte des nutriments assimilables."
+            },
+            {
+              "id": "c",
+              "text": "Elles sont faites d’acides aminés, séparés par la digestion puis réutilisés."
+            },
+            {
+              "id": "d",
+              "text": "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Rétention d’eau, satiété, volume des selles et transit."
+        },
+        {
+          "id": "s7-q6",
+          "type": "mc",
+          "prompt": "Quelles vitamines sont liposolubles ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "L’intestin grêle."
+            },
+            {
+              "id": "b",
+              "text": "A, D, E et K."
+            },
+            {
+              "id": "c",
+              "text": "Le cobaye."
+            },
+            {
+              "id": "d",
+              "text": "Amidon chez les végétaux ; glycogène chez les animaux."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "A, D, E et K."
+        },
+        {
+          "id": "s7-q7",
+          "type": "mc",
+          "prompt": "En quoi les protéines ressemblent-elles à un jeu de construction ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Son comportement vient de la chasse de petites proies, le jour et la nuit."
+            },
+            {
+              "id": "b",
+              "text": "Acides aminés essentiels en bonnes proportions et digestibilité."
+            },
+            {
+              "id": "c",
+              "text": "Elles sont faites d’acides aminés, séparés par la digestion puis réutilisés."
+            },
+            {
+              "id": "d",
+              "text": "L’aliment est mangé ; il apporte des nutriments assimilables."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Elles sont faites d’acides aminés, séparés par la digestion puis réutilisés."
+        },
+        {
+          "id": "s7-q8",
+          "type": "mc",
+          "prompt": "Pourquoi ne donne-t-on pas un aliment pour chiens au chat ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Son comportement vient de la chasse de petites proies, le jour et la nuit."
+            },
+            {
+              "id": "b",
+              "text": "Elle favorise leur absorption intestinale et participe à la formation du squelette."
+            },
+            {
+              "id": "c",
+              "text": "Rétention d’eau, satiété, volume des selles et transit."
+            },
+            {
+              "id": "d",
+              "text": "Les besoins sont différents, notamment pour la taurine essentielle au chat."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Les besoins sont différents, notamment pour la taurine essentielle au chat."
+        },
+        {
+          "id": "s7-q9",
+          "type": "mc",
+          "prompt": "Quels deux critères comptent dans la qualité des protéines ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Acides aminés essentiels en bonnes proportions et digestibilité."
+            },
+            {
+              "id": "b",
+              "text": "Elles sont faites d’acides aminés, séparés par la digestion puis réutilisés."
+            },
+            {
+              "id": "c",
+              "text": "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité."
+            },
+            {
+              "id": "d",
+              "text": "L’intestin grêle."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Acides aminés essentiels en bonnes proportions et digestibilité."
+        },
+        {
+          "id": "s7-q10",
+          "type": "mc",
+          "prompt": "Quel est le rôle de la vitamine D par rapport au calcium et au phosphore ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "A, D, E et K."
+            },
+            {
+              "id": "b",
+              "text": "Elle favorise leur absorption intestinale et participe à la formation du squelette."
+            },
+            {
+              "id": "c",
+              "text": "Les besoins sont différents, notamment pour la taurine essentielle au chat."
+            },
+            {
+              "id": "d",
+              "text": "Amidon chez les végétaux ; glycogène chez les animaux."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Elle favorise leur absorption intestinale et participe à la formation du squelette."
+        },
+        {
+          "id": "s7-q11",
+          "type": "mc",
+          "prompt": "Associe fer, iode et zinc à leurs fonctions.",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Acides aminés essentiels en bonnes proportions et digestibilité."
+            },
+            {
+              "id": "b",
+              "text": "Rétention d’eau, satiété, volume des selles et transit."
+            },
+            {
+              "id": "c",
+              "text": "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité."
+            },
+            {
+              "id": "d",
+              "text": "L’aliment est mangé ; il apporte des nutriments assimilables."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité."
+        },
+        {
+          "id": "s7-q12",
+          "type": "mc",
+          "prompt": "Quel animal doit recevoir sa vitamine C dans son alimentation ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "L’intestin grêle."
+            },
+            {
+              "id": "b",
+              "text": "A, D, E et K."
+            },
+            {
+              "id": "c",
+              "text": "Amidon chez les végétaux ; glycogène chez les animaux."
+            },
+            {
+              "id": "d",
+              "text": "Le cobaye."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Le cobaye."
+        },
+        {
+          "id": "s7-q13",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Si une réponse bloque, retourne uniquement à la fiche concernée.",
+          "correct": true,
+          "source": "Si une réponse bloque, retourne uniquement à la fiche concernée."
+        },
+        {
+          "id": "s7-q14",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Refais seulement les questions qui t’ont fait hésiter, puis remplis un tableau vierge du cours compact.",
+          "correct": true,
+          "source": "Refais seulement les questions qui t’ont fait hésiter, puis remplis un tableau vierge du cours compact."
+        },
+        {
+          "id": "s7-q15",
+          "type": "tf",
+          "prompt": "Cette phrase figure-t-elle dans cette section ?",
+          "statement": "Comprendre, retrouver de mémoire, vérifier : trois étapes utiles pour apprendre.",
+          "correct": true,
+          "source": "Comprendre, retrouver de mémoire, vérifier : trois étapes utiles pour apprendre."
+        }
+      ]
+    }
+  ]
+}
