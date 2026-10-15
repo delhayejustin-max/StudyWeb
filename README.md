@@ -1,6 +1,6 @@
 # Nutrition ASV
 
-Site statique pour lire la synthèse **Nutrition ASV** et s’entraîner section par section. Les questions, les bonnes réponses et les extraits affichés après une réponse sont des passages du PDF, sans reformulation.
+Site statique pour lire la synthèse **Nutrition ASV** et s’entraîner section par section. Chaque question a une seule bonne réponse : un passage du PDF. L’extrait affiché après la réponse est lui aussi repris tel quel. Les autres propositions sont fausses par rapport à la synthèse.
 
 Le fichier source est `public/Nutrition_ASV_synthese.pdf`.
 

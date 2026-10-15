@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build src/data/bank.json from verbatim spans and refuse anything not in the PDF."""
+"""Build src/data/bank.json from the synthesis.
+
+The correct option and the post-answer excerpt are verbatim PDF spans.
+Every other option is false relative to the PDF: it must not be another
+true sentence copied from the synthesis.
+"""
 
 from __future__ import annotations
 
@@ -12,13 +17,6 @@ ROOT = Path(__file__).resolve().parents[1]
 PDF = ROOT / "public" / "Nutrition_ASV_synthese.pdf"
 OUT = ROOT / "src" / "data" / "bank.json"
 
-A = "\u2019"  # right single quotation mark, as in the PDF
-OE = "\u0153"
-EM = "\u2014"
-AR = "\u2192"
-LQ = "\u00ab"
-RQ = "\u00bb"
-
 TITLES = [
     "1 Les bases et la digestion",
     "2 Glucides et lipides",
@@ -28,6 +26,8 @@ TITLES = [
     "6 Eau et chiffres du cours",
     "7 Ton défi de révision",
 ]
+
+TF_PROMPT = "D’après cette section, l’affirmation suivante est-elle exacte ?"
 
 
 def norm(text: str) -> str:
@@ -92,20 +92,18 @@ class Bank:
         statement: str,
         correct: bool,
         source: str,
-        source_section: str | None = None,
     ) -> None:
         assert self._current is not None
-        item = {
-            "id": qid,
-            "type": "tf",
-            "prompt": "Cette phrase figure-t-elle dans cette section ?",
-            "statement": statement,
-            "correct": correct,
-            "source": source,
-        }
-        if source_section:
-            item["sourceSectionTitle"] = source_section
-        self._current["questions"].append(item)
+        self._current["questions"].append(
+            {
+                "id": qid,
+                "type": "tf",
+                "prompt": TF_PROMPT,
+                "statement": statement,
+                "correct": correct,
+                "source": source,
+            }
+        )
 
 
 def build() -> dict:
@@ -116,1250 +114,957 @@ def build() -> dict:
         "s1-q1",
         "Quel intestin absorbe surtout les nutriments ?",
         [
-            (
-                "a",
-                "Le microbiote intestinal participe à la défense contre les agents pathogènes et à la régulation de l"
-                + A
-                + "inflammation.",
-            ),
-            (
-                "b",
-                "L" + A + "intestin grêle. Le gros intestin absorbe notamment l" + A + "eau.",
-            ),
-            (
-                "c",
-                "Chien et chat ont un seul estomac et un tube digestif relativement court.",
-            ),
-            ("d", "Ils ne digèrent pas eux-mêmes la cellulose."),
+            ("a", "Le gros intestin. L’intestin grêle absorbe notamment l’eau."),
+            ("b", "L’intestin grêle. Le gros intestin absorbe notamment l’eau."),
+            ("c", "L’estomac. Le gros intestin absorbe notamment les nutriments."),
+            ("d", "Le caecum. L’intestin grêle forme les selles et n’absorbe pas les nutriments."),
         ],
         "b",
-        "Réponse à cacher : L"
-        + A
-        + "intestin grêle. Le gros intestin absorbe notamment l"
-        + A
-        + "eau.",
+        "Réponse à cacher : L’intestin grêle. Le gros intestin absorbe notamment l’eau.",
     )
     b.mc(
         "s1-q2",
         "Quelle formulation le texte écrit pour un nutriment ?",
         [
-            (
-                "a",
-                "Un aliment est une substance ingérée, digérée, absorbée et utilisée par l"
-                + A
-                + "organisme.",
-            ),
-            (
-                "b",
-                "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau.",
-            ),
+            ("a", "Un nutriment est une substance ingérée qui n’est pas assimilable par l’organisme."),
+            ("b", "Un nutriment est uniquement une vitamine hydrosoluble, non assimilable."),
             (
                 "c",
-                "Un nutriment est "
-                + LQ
-                + " une substance organique ou minérale, assimilable par l"
-                + A
-                + "organisme "
-                + RQ
-                + ".",
+                "Un nutriment est « une substance organique ou minérale, assimilable par l’organisme ».",
             ),
-            ("d", "Un aliment contient de l" + A + "eau et de la matière sèche."),
+            ("d", "Un nutriment est une fibre insoluble que l’organisme n’absorbe pas."),
         ],
         "c",
-        "Un nutriment est "
-        + LQ
-        + " une substance organique ou minérale, assimilable par l"
-        + A
-        + "organisme "
-        + RQ
-        + ".",
+        "Un nutriment est « une substance organique ou minérale, assimilable par l’organisme ».",
     )
     b.mc(
         "s1-q3",
-        "Laquelle de ces phrases le texte écrit au sujet du chien ?",
+        "Dans la colonne « Le chien », quel portrait le texte donne-t-il ?",
         [
+            ("a", "Herbivore opportuniste. À l’origine : brouteur de fourrages en troupeau."),
             (
-                "a",
-                "Carnivore strict. À l"
-                + A
-                + "origine : prédateur de petites proies, avec un taux d"
-                + A
-                + "échec élevé.",
+                "b",
+                "Carnivore opportuniste. À l’origine : charognard et chasseur de grandes proies en groupe.",
             ),
-            ("b", "Nombreuses petites prises alimentaires le jour et la nuit."),
-            ("c", "Le support évoque une ration ad libidum."),
-            (
-                "d",
-                "Carnivore opportuniste. À l"
-                + A
-                + "origine : charognard et chasseur de grandes proies en groupe.",
-            ),
+            ("c", "Carnivore strict. À l’origine : prédateur solitaire de grandes proies, sans échec."),
+            ("d", "Omnivore facultatif. À l’origine : charognard de petites graines, en solitaire."),
         ],
-        "d",
-        "Carnivore opportuniste. À l"
-        + A
-        + "origine : charognard et chasseur de grandes proies en groupe.",
+        "b",
+        "Carnivore opportuniste. À l’origine : charognard et chasseur de grandes proies en groupe.",
     )
     b.mc(
         "s1-q4",
-        "Laquelle de ces phrases le texte écrit au sujet du chat ?",
+        "Dans la colonne « Le chat », quel portrait le texte donne-t-il ?",
         [
             (
                 "a",
-                "Carnivore strict. À l"
-                + A
-                + "origine : prédateur de petites proies, avec un taux d"
-                + A
-                + "échec élevé.",
-            ),
-            ("b", "Repas parfois importants ; comportement plutôt glouton."),
-            ("c", "Son alimentation doit répondre aux besoins de son espèce."),
-            (
-                "d",
-                "Carnivore opportuniste. À l"
-                + A
-                + "origine : charognard et chasseur de grandes proies en groupe.",
-            ),
-        ],
-        "a",
-        "Carnivore strict. À l"
-        + A
-        + "origine : prédateur de petites proies, avec un taux d"
-        + A
-        + "échec élevé.",
-    )
-    b.mc(
-        "s1-q5",
-        "Quelles trois étapes le texte numérote ?",
-        [
-            (
-                "a",
-                "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau.",
+                "Carnivore strict. À l’origine : prédateur de petites proies, avec un taux d’échec élevé.",
             ),
             (
                 "b",
-                "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets.",
+                "Carnivore opportuniste. À l’origine : charognard de grandes proies, avec un taux d’échec nul.",
             ),
-            (
-                "c",
-                "Glucides : énergie. Lipides : réserve, membranes, vitamines ADEK.",
-            ),
-            ("d", "Fer et cuivre " + AR + " anémie."),
+            ("c", "Herbivore strict. À l’origine : brouteur de petites plantes, avec un taux d’échec faible."),
+            ("d", "Omnivore. À l’origine : chasseur de grandes proies en groupe, sans échec."),
+        ],
+        "a",
+        "Carnivore strict. À l’origine : prédateur de petites proies, avec un taux d’échec élevé.",
+    )
+    b.mc(
+        "s1-q5",
+        "Quelles sont les trois étapes, dans l’ordre écrit par le texte ?",
+        [
+            ("a", "1. Absorber les nutriments. 2. Décomposer les aliments. 3. Stocker les graisses."),
+            ("b", "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets."),
+            ("c", "1. Former et éliminer les déchets. 2. Absorber l’eau. 3. Décomposer les vitamines."),
+            ("d", "1. Fabriquer les enzymes. 2. Éliminer les nutriments. 3. Décomposer les selles."),
         ],
         "b",
         "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets.",
     )
     b.mc(
         "s1-q6",
-        "Quelle liste de familles le texte écrit ?",
+        "Que dit le texte de l’intestin grêle et du gros intestin ?",
         [
             (
                 "a",
-                "Deux familles : acides gras saturés et acides gras insaturés.",
+                "L’intestin grêle récupère l’eau ; le gros intestin absorbe les nutriments et forme les enzymes.",
             ),
-            ("b", "Sources à retenir : fruits, légumes, herbe et fourrages."),
-            ("c", "Sept familles à retrouver"),
             (
-                "d",
-                "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau.",
+                "b",
+                "L’intestin grêle absorbe les nutriments ; le gros intestin récupère de l’eau et participe à la formation des selles.",
             ),
+            ("c", "L’intestin grêle digère la cellulose ; le gros intestin absorbe les lipides."),
+            ("d", "L’intestin grêle forme seul les selles ; le gros intestin décompose les aliments."),
         ],
-        "d",
-        "Les familles comprennent : glucides, lipides, protéines, minéraux, vitamines et eau.",
+        "b",
+        "L’intestin grêle absorbe les nutriments ; le gros intestin récupère de l’eau et participe à la formation des selles.",
     )
-    b.tf(
+    b.mc(
         "s1-q7",
-        "L"
-        + A
-        + "ASV conseille une alimentation adaptée, avec le vétérinaire pour les situations spécifiques.",
-        True,
-        "L"
-        + A
-        + "ASV conseille une alimentation adaptée, avec le vétérinaire pour les situations spécifiques.",
+        "Dans la colonne « Le chien », que dit le texte des repas ?",
+        [
+            ("a", "Repas parfois importants ; comportement plutôt glouton."),
+            ("b", "Repas toujours minuscules ; comportement plutôt frugal."),
+            ("c", "Une seule prise par semaine ; comportement plutôt lent."),
+            ("d", "Aucune prise le jour ; comportement plutôt sélectif."),
+        ],
+        "a",
+        "Repas parfois importants ; comportement plutôt glouton.",
     )
-    b.tf(
+    b.mc(
         "s1-q8",
-        "Un déséquilibre peut provoquer des troubles digestifs.",
-        True,
-        "Le microbiote intestinal participe à la défense contre les agents pathogènes et à la régulation de l"
-        + A
-        + "inflammation. Un déséquilibre peut provoquer des troubles digestifs.",
+        "Dans la colonne « Le chat », que dit le texte des prises alimentaires ?",
+        [
+            ("a", "Une seule grosse prise, uniquement le matin."),
+            ("b", "Aucune prise la nuit, seulement un repas du soir."),
+            ("c", "Nombreuses petites prises alimentaires le jour et la nuit."),
+            ("d", "Prises rares et très volumineuses, seulement en groupe."),
+        ],
+        "c",
+        "Nombreuses petites prises alimentaires le jour et la nuit.",
     )
     b.tf(
         "s1-q9",
-        "Les glucides = le carburant.",
+        "Chien et chat ont un seul estomac et un tube digestif relativement court.",
+        True,
+        "Chien et chat ont un seul estomac et un tube digestif relativement court.",
+    )
+    b.tf(
+        "s1-q10",
+        "Chien et chat digèrent eux-mêmes la cellulose.",
         False,
-        "Les glucides = le carburant.",
-        TITLES[1],
+        "Ils ne digèrent pas eux-mêmes la cellulose.",
+    )
+    b.tf(
+        "s1-q11",
+        "Le support évoque une ration ad libidum.",
+        True,
+        "Le support évoque une ration ad libidum.",
     )
 
     b.section("s2", TITLES[1])
     b.mc(
         "s2-q1",
-        "Quelles vitamines sont absorbées avec les graisses ?",
-        [
-            (
-                "a",
-                "B et C = vitamines hydrosolubles, liées à l"
-                + A
-                + "eau ; les excédents sont généralement éliminés par les urines.",
-            ),
-            (
-                "b",
-                "La vitamine C, ou acide ascorbique, participe à l"
-                + A
-                + "action antioxydante, à la formation du collagène, aux défenses et à la cicatrisation.",
-            ),
-            ("c", "A, D, E et K : les vitamines liposolubles."),
-            (
-                "d",
-                "La B12 est absorbée dans l" + A + "iléon et participe à la croissance cellulaire.",
-            ),
-        ],
-        "c",
-        "Réponse à cacher : A, D, E et K : les vitamines liposolubles.",
-    )
-    b.mc(
-        "s2-q2",
-        "Quelle image le texte retient pour les glucides ?",
+        "Quelle image le texte donne-t-il des glucides ?",
         [
             ("a", "Les glucides = le carburant."),
-            (
-                "b",
-                "Les lipides = la réserve d"
-                + A
-                + "énergie, l"
-                + A
-                + "isolant et une partie des membranes.",
-            ),
-            ("c", "Les protéines sont des assemblages d" + A + "acides aminés."),
-            (
-                "d",
-                "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
-            ),
+            ("b", "Les glucides = un isolant thermique sans rôle énergétique."),
+            ("c", "Les glucides = uniquement des minéraux stockables."),
+            ("d", "Les glucides = l’eau de constitution des cellules."),
         ],
         "a",
         "Les glucides = le carburant.",
     )
     b.mc(
-        "s2-q3",
-        "Quelle image le texte retient pour les lipides ?",
+        "s2-q2",
+        "Quelle image le texte donne-t-il des lipides ?",
         [
-            ("a", "Les glucides = le carburant."),
-            ("b", "Les protéines sont des assemblages d" + A + "acides aminés."),
-            (
-                "c",
-                "Les lipides = la réserve d"
-                + A
-                + "énergie, l"
-                + A
-                + "isolant et une partie des membranes.",
-            ),
-            ("d", "Eau : fonctionnement général."),
+            ("a", "Les lipides = le seul carburant immédiat, sans rôle de membrane."),
+            ("b", "Les lipides = des sucres simples solubles dans l’eau."),
+            ("c", "Les lipides = la réserve d’énergie, l’isolant et une partie des membranes."),
+            ("d", "Les lipides = des vitamines éliminées sans stockage."),
         ],
         "c",
-        "Les lipides = la réserve d"
-        + A
-        + "énergie, l"
-        + A
-        + "isolant et une partie des membranes.",
+        "Les lipides = la réserve d’énergie, l’isolant et une partie des membranes.",
     )
     b.mc(
-        "s2-q4",
-        "Quelle phrase le texte écrit pour définir le glucose ?",
+        "s2-q3",
+        "Comment le texte définit-il le glucose ?",
         [
-            (
-                "a",
-                "Mono et disaccharides : glucose, fructose, lactose. Sources citées : notamment les fruits.",
-            ),
-            (
-                "b",
-                "Longues chaînes de sucres : amidon chez les végétaux, glycogène chez les animaux.",
-            ),
-            ("c", "Cellulose des végétaux ; chitine des exosquelettes."),
-            (
-                "d",
-                "Le glucose est un monosaccharide : une seule unité de sucre.",
-            ),
+            ("a", "Le glucose est un polysaccharide : de longues chaînes de sucres."),
+            ("b", "Le glucose est un monosaccharide : une seule unité de sucre."),
+            ("c", "Le glucose est un minéral : une unité de calcium."),
+            ("d", "Le glucose est un disaccharide : deux unités de lipides."),
         ],
-        "d",
+        "b",
         "Le glucose est un monosaccharide : une seule unité de sucre.",
     )
     b.mc(
-        "s2-q5",
-        "Quelle phrase le texte écrit pour les polysaccharides de réserve ?",
+        "s2-q4",
+        "Quelles réserves glucidiques le texte attribue-t-il aux végétaux et aux animaux ?",
         [
-            (
-                "a",
-                "Longues chaînes de sucres : amidon chez les végétaux, glycogène chez les animaux.",
-            ),
-            ("b", "Cellulose des végétaux ; chitine des exosquelettes."),
-            (
-                "c",
-                "Insolubles : cellulose, lignine " + EM + " légumes, parties dures des végétaux, son.",
-            ),
-            (
-                "d",
-                "Solubles : pectines et agar " + EM + " fruits à pépins, certains fruits rouges, algues.",
-            ),
+            ("a", "glycogène chez les végétaux, amidon chez les animaux"),
+            ("b", "pectines chez les végétaux, agar chez les animaux"),
+            ("c", "amidon chez les végétaux, glycogène chez les animaux"),
+            ("d", "lactose chez les végétaux, fructose chez les animaux"),
         ],
-        "a",
+        "c",
         "Longues chaînes de sucres : amidon chez les végétaux, glycogène chez les animaux.",
     )
     b.mc(
-        "s2-q6",
-        "Quelle phrase le texte écrit sur le pouvoir des fibres ?",
+        "s2-q5",
+        "Quels polysaccharides structuraux le texte cite-t-il ?",
         [
-            ("a", "Sources à retenir : fruits, légumes, herbe et fourrages."),
-            (
-                "b",
-                "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l"
-                + A
-                + "eau, favorisent la satiété et participent au volume des selles et au transit.",
-            ),
-            (
-                "c",
-                "Chez les herbivores, les bactéries présentes dans le caecum permettent leur digestion.",
-            ),
-            (
-                "d",
-                "Deux familles : acides gras saturés et acides gras insaturés.",
-            ),
+            ("a", "Glucose des végétaux ; fructose des exosquelettes."),
+            ("b", "Cellulose des végétaux ; chitine des exosquelettes."),
+            ("c", "Pectines des minéraux ; agar des vitamines."),
+            ("d", "Lignine des animaux ; lactose des exosquelettes."),
         ],
         "b",
-        "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l"
-        + A
-        + "eau, favorisent la satiété et participent au volume des selles et au transit.",
+        "Cellulose des végétaux ; chitine des exosquelettes.",
+    )
+    b.mc(
+        "s2-q6",
+        "Quelles sources le texte cite-t-il pour les oméga 3 ?",
+        [
+            ("a", "poissons gras, certaines huiles, noix et œufs"),
+            ("b", "fruits à pépins, son et algues uniquement"),
+            ("c", "lait écrémé, plumes et eau sucrée"),
+            ("d", "épinards secs, son de riz et agar en poudre"),
+        ],
+        "a",
+        "Sources citées : poissons gras, certaines huiles, noix et œufs.",
     )
     b.mc(
         "s2-q7",
-        "Quelles sources le texte cite pour les oméga 3 ?",
+        "Comment le texte décrit-il un phospholipide ?",
         [
             (
                 "a",
-                "Sources citées : huiles végétales, viandes, volailles et " + OE + "ufs.",
+                "Le phospholipide comprend une tête apolaire hydrophobe et deux queues polaires hydrophiles.",
             ),
-            ("b", "Effets pro-inflammatoires mis en avant dans le cours."),
             (
-                "c",
-                "Sources citées : poissons gras, certaines huiles, noix et " + OE + "ufs.",
+                "b",
+                "Le phospholipide comprend une tête polaire (groupement phosphate hydrophile) et deux queues apolaires (acides gras hydrophobes).",
             ),
-            ("d", "Effets anti-inflammatoires mis en avant dans le cours."),
+            ("c", "Le phospholipide comprend trois têtes polaires et aucune queue."),
+            ("d", "Le phospholipide comprend une tête de glucose et quatre queues de minéraux."),
         ],
-        "c",
-        "Sources citées : poissons gras, certaines huiles, noix et " + OE + "ufs.",
+        "b",
+        "Le phospholipide comprend une tête polaire (groupement phosphate hydrophile) et deux queues apolaires (acides gras hydrophobes).",
     )
-    b.tf(
+    b.mc(
         "s2-q8",
-        "Certains acides gras sont essentiels : ils doivent être apportés par l"
-        + A
-        + "alimentation.",
-        True,
-        "Certains acides gras sont essentiels : ils doivent être apportés par l"
-        + A
-        + "alimentation. Le cours souligne leur rôle cardiovasculaire, cérébral et dans les processus inflammatoires.",
+        "Quelles vitamines sont absorbées avec les graisses ?",
+        [
+            ("a", "B et C : les vitamines liposolubles."),
+            ("b", "A, B, C et D : les vitamines hydrosolubles stockées."),
+            ("c", "Uniquement la vitamine C, stockée avec les graisses."),
+            ("d", "A, D, E et K : les vitamines liposolubles."),
+        ],
+        "d",
+        "Réponse à cacher : A, D, E et K : les vitamines liposolubles.",
     )
     b.tf(
         "s2-q9",
-        "Le phospholipide comprend une tête polaire (groupement phosphate hydrophile) et deux queues apolaires (acides gras hydrophobes).",
+        "Ce sont les matières grasses, insolubles dans l’eau.",
         True,
-        "Le phospholipide comprend une tête polaire (groupement phosphate hydrophile) et deux queues apolaires (acides gras hydrophobes).",
+        "Ce sont les matières grasses, insolubles dans l’eau.",
     )
     b.tf(
         "s2-q10",
-        "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
+        "Les fibres ont un faible pouvoir hydrophile : elles rejettent l’eau.",
         False,
-        "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
-        TITLES[2],
+        "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l’eau, favorisent la satiété et participent au volume des selles et au transit.",
+    )
+    b.tf(
+        "s2-q11",
+        "Certains acides gras sont essentiels : ils doivent être apportés par l’alimentation.",
+        True,
+        "Certains acides gras sont essentiels : ils doivent être apportés par l’alimentation.",
     )
 
     b.section("s3", TITLES[2])
     b.mc(
         "s3-q1",
-        "Pourquoi le pourcentage de protéines ne suffit-il pas pour juger un aliment ?",
+        "Comment le texte présente-t-il les protéines ?",
         [
-            ("a", "Sources animales : viande, poisson, " + OE + "ufs, produits laitiers."),
-            ("b", "Sources végétales : céréales, soja, légumineuses."),
-            (
-                "c",
-                "Il faut aussi regarder les acides aminés essentiels et la digestibilité.",
-            ),
-            ("d", "Muscles, peau, poils, ongles."),
+            ("a", "Les protéines sont des assemblages de sucres simples."),
+            ("b", "Les protéines sont des assemblages d’acides aminés."),
+            ("c", "Les protéines sont des minéraux insolubles dans l’eau."),
+            ("d", "Les protéines sont des vitamines stockées dans le foie."),
         ],
-        "c",
-        "Réponse à cacher : Il faut aussi regarder les acides aminés essentiels et la digestibilité.",
+        "b",
+        "Les protéines sont des assemblages d’acides aminés.",
     )
     b.mc(
         "s3-q2",
-        "Laquelle de ces phrases est écrite dans " + LQ + " Le chat et la taurine " + RQ + " ?",
+        "Quel enchaînement le texte écrit, de l’aliment jusqu’aux nouvelles protéines ?",
         [
-            ("a", "Le chat ne convertit pas le bêta-carotène en vitamine A."),
+            (
+                "a",
+                "Acides aminés alimentaires → stockage dans le gros intestin → protéines → rejet sans absorption.",
+            ),
+            (
+                "b",
+                "Protéines alimentaires → enzymes digestives dans l’estomac et l’intestin grêle → acides aminés → absorption → fabrication de nouvelles protéines.",
+            ),
+            (
+                "c",
+                "Glucides alimentaires → enzymes dans le caecum → lipides → absorption → fabrication de taurine.",
+            ),
+            (
+                "d",
+                "Protéines alimentaires → absorption directe sans enzyme → glucose → élimination urinaire.",
+            ),
+        ],
+        "b",
+        "Protéines alimentaires → enzymes digestives dans l’estomac et l’intestin grêle → acides aminés → absorption → fabrication de nouvelles protéines.",
+    )
+    b.mc(
+        "s3-q3",
+        "Quel exemple le texte donne pour la fonction « transporter » ?",
+        [
+            ("a", "Hémoglobine : transport du calcium."),
+            ("b", "Anticorps : transport de l’oxygène."),
+            ("c", "Hémoglobine : transport de l’oxygène."),
+            ("d", "Enzymes : transport des selles."),
+        ],
+        "c",
+        "Hémoglobine : transport de l’oxygène.",
+    )
+    b.mc(
+        "s3-q4",
+        "Que dit le texte d’un acide aminé essentiel ?",
+        [
+            (
+                "a",
+                "Les acides aminés essentiels sont produits par le corps et ne doivent pas être apportés par l’alimentation.",
+            ),
+            (
+                "b",
+                "Les acides aminés essentiels ne peuvent pas être produits par le corps et doivent être apportés par l’alimentation.",
+            ),
+            ("c", "Les acides aminés essentiels sont des sucres fabriqués par le gros intestin."),
+            ("d", "Les acides aminés essentiels sont éliminés par les urines sans être utilisés."),
+        ],
+        "b",
+        "Les acides aminés essentiels ne peuvent pas être produits par le corps et doivent être apportés par l’alimentation.",
+    )
+    b.mc(
+        "s3-q5",
+        "Que dit le texte de la taurine chez le chat et chez le chien ?",
+        [
+            (
+                "a",
+                "La taurine est un acide aminé essentiel chez le chien et un acide aminé non essentiel chez le chat.",
+            ),
             (
                 "b",
                 "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
             ),
-            (
-                "c",
-                "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter.",
-            ),
-            (
-                "d",
-                "Carnivore strict. À l"
-                + A
-                + "origine : prédateur de petites proies, avec un taux d"
-                + A
-                + "échec élevé.",
-            ),
+            ("c", "La taurine est une vitamine essentielle chez les deux espèces."),
+            ("d", "La taurine est un glucide non essentiel chez le chat et essentiel chez le cobaye."),
         ],
         "b",
         "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
     )
     b.mc(
-        "s3-q3",
-        "Quelle suite le texte écrit de l" + A + "aliment aux tissus ?",
+        "s3-q6",
+        "Pourquoi le pourcentage de protéines ne suffit-il pas pour juger un aliment ?",
         [
-            (
-                "a",
-                "1. Décomposer les aliments. 2. Absorber les nutriments. 3. Former et éliminer les déchets.",
-            ),
-            (
-                "b",
-                "Protéines alimentaires "
-                + AR
-                + " enzymes digestives dans l"
-                + A
-                + "estomac et l"
-                + A
-                + "intestin grêle "
-                + AR
-                + " acides aminés "
-                + AR
-                + " absorption "
-                + AR
-                + " fabrication de nouvelles protéines.",
-            ),
-            ("c", "Fer et cuivre " + AR + " anémie."),
-            ("d", "Les protéines sont des assemblages d" + A + "acides aminés."),
+            ("a", "Il suffit de lire le pourcentage, sans regarder les acides aminés."),
+            ("b", "Il faut seulement compter les fibres insolubles."),
+            ("c", "Il faut remplacer les protéines par des glucides."),
+            ("d", "Il faut aussi regarder les acides aminés essentiels et la digestibilité."),
         ],
-        "b",
-        "Protéines alimentaires "
-        + AR
-        + " enzymes digestives dans l"
-        + A
-        + "estomac et l"
-        + A
-        + "intestin grêle "
-        + AR
-        + " acides aminés "
-        + AR
-        + " absorption "
-        + AR
-        + " fabrication de nouvelles protéines.",
+        "d",
+        "Réponse à cacher : Il faut aussi regarder les acides aminés essentiels et la digestibilité.",
     )
     b.mc(
-        "s3-q4",
-        "Quel exemple le texte place avec " + LQ + " Transporter " + RQ + " ?",
-        [
-            ("a", "Anticorps."),
-            ("b", "Enzymes, notamment digestives."),
-            ("c", "Hémoglobine : transport de l" + A + "oxygène."),
-            ("d", "Muscles, peau, poils, ongles."),
-        ],
-        "c",
-        "Hémoglobine : transport de l" + A + "oxygène.",
-    )
-    b.tf(
-        "s3-q5",
-        "Les acides aminés essentiels ne peuvent pas être produits par le corps et doivent être apportés par l"
-        + A
-        + "alimentation.",
-        True,
-        "Les acides aminés essentiels ne peuvent pas être produits par le corps et doivent être apportés par l"
-        + A
-        + "alimentation.",
-    )
-    b.tf(
-        "s3-q6",
-        "Une bonne qualité protéique dépend de la digestibilité et de la présence des acides aminés essentiels dans les bonnes proportions.",
-        True,
-        "Une bonne qualité protéique dépend de la digestibilité et de la présence des acides aminés essentiels dans les bonnes proportions.",
-    )
-    b.tf(
         "s3-q7",
-        "Le support met en avant la richesse en acides aminés essentiels et la digestibilité des protéines animales.",
-        True,
-        "Le support met en avant la richesse en acides aminés essentiels et la digestibilité des protéines animales.",
+        "Quelles sources animales le texte cite-t-il ?",
+        [
+            ("a", "Sources animales : son, algues, pectines."),
+            ("b", "Sources animales : viande, poisson, œufs, produits laitiers."),
+            ("c", "Sources animales : fruits à pépins, agar, lignine."),
+            ("d", "Sources animales : eau, cellulose et vitamines seules."),
+        ],
+        "b",
+        "Sources animales : viande, poisson, œufs, produits laitiers.",
     )
     b.mc(
         "s3-q8",
-        "Quelle phrase le texte écrit pour les conséquences d"
-        + A
-        + "une carence en protéines ?",
+        "Quelles conséquences de la carence en protéines le texte écrit-il ?",
         [
             (
                 "a",
-                "Causes possibles : apport insuffisant, mauvaise qualité, mauvaise digestibilité ou pertes liées à des troubles digestifs ou à une maladie.",
-            ),
-            ("b", "Carence : croissance perturbée, fragilité osseuse."),
-            (
-                "c",
-                "Zinc "
-                + AR
-                + " troubles cutanés, croissance ralentie, immunité affaiblie.",
-            ),
-            (
-                "d",
                 "Conséquences : croissance réduite, perte de poids et de muscle, baisse des performances, pelage de mauvaise qualité et immunité affaiblie.",
             ),
-        ],
-        "d",
-        "Conséquences : croissance réduite, perte de poids et de muscle, baisse des performances, pelage de mauvaise qualité et immunité affaiblie.",
-    )
-    b.mc(
-        "s3-q9",
-        "Quelle phrase le texte écrit sur le fait de nourrir un chat avec un aliment pour chiens ?",
-        [
-            (
-                "a",
-                "C"
-                + A
-                + "est une différence essentielle avec le chien : on ne nourrit pas un chat avec un aliment pour chiens.",
-            ),
-            ("b", "Sources végétales : céréales, soja, légumineuses."),
-            (
-                "c",
-                "En cas de famine, par exemple chez les animaux cachectiques.",
-            ),
-            ("d", "Défendre l" + A + "organisme"),
+            ("b", "Conséquences : prise de poids, pelage plus brillant et immunité renforcée."),
+            ("c", "Conséquences : excès de collagène et calcification des tissus mous."),
+            ("d", "Conséquences : aucun signe, la carence reste sans effet."),
         ],
         "a",
-        "C"
-        + A
-        + "est une différence essentielle avec le chien : on ne nourrit pas un chat avec un aliment pour chiens.",
+        "Conséquences : croissance réduite, perte de poids et de muscle, baisse des performances, pelage de mauvaise qualité et immunité affaiblie.",
+    )
+    b.tf(
+        "s3-q9",
+        "Beaucoup de protéines ne suffisent pas si des acides aminés nécessaires manquent.",
+        True,
+        "Beaucoup de protéines ne suffisent pas si des acides aminés nécessaires manquent.",
     )
     b.tf(
         "s3-q10",
-        "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
+        "La taurine est un acide aminé non essentiel chez le chat et essentiel chez le chien.",
         False,
-        "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
-        TITLES[4],
+        "La taurine est un acide aminé essentiel chez le chat et un acide aminé non essentiel chez le chien.",
+    )
+    b.tf(
+        "s3-q11",
+        "Le support met en avant la richesse en acides aminés essentiels et la digestibilité des protéines animales.",
+        True,
+        "Le support met en avant la richesse en acides aminés essentiels et la digestibilité des protéines animales.",
     )
 
     b.section("s4", TITLES[3])
     b.mc(
         "s4-q1",
+        "Que dit le texte de l’énergie apportée par les minéraux et les oligoéléments ?",
+        [
+            ("a", "Ils apportent davantage d’énergie que les glucides, les lipides et les protéines."),
+            ("b", "Ils n’apportent pas d’énergie comme les glucides, les lipides et les protéines."),
+            ("c", "Ils remplacent les lipides comme unique carburant."),
+            ("d", "Ils sont facultatifs et n’ont aucun rôle dans l’organisme."),
+        ],
+        "b",
+        "Ils n’apportent pas d’énergie comme les glucides, les lipides et les protéines.",
+    )
+    b.mc(
+        "s4-q2",
+        "Que dit le texte du rapport calcium/phosphore ?",
+        [
+            ("a", "Le rapport Ca/P ne compte pas : seules les quantités importent."),
+            ("b", "Le rapport Ca/P doit toujours être inférieur à 0,1."),
+            ("c", "Le rapport Ca/P compte autant que les quantités."),
+            ("d", "Le rapport Ca/P remplace l’apport de vitamine C."),
+        ],
+        "c",
+        "Le rapport Ca/P compte autant que les quantités.",
+    )
+    b.mc(
+        "s4-q3",
+        "Quel rôle le texte donne-t-il à la vitamine D pour le calcium et le phosphore ?",
+        [
+            ("a", "La vitamine D bloque l’absorption intestinale du calcium et du phosphore."),
+            ("b", "La vitamine D favorise l’élimination urinaire du fer et du zinc."),
+            ("c", "La vitamine D remplace le calcium dans le squelette."),
+            ("d", "La vitamine D favorise l’absorption intestinale du calcium et du phosphore."),
+        ],
+        "d",
+        "La vitamine D favorise l’absorption intestinale du calcium et du phosphore.",
+    )
+    b.mc(
+        "s4-q4",
         "Fer, iode, zinc : retrouve leur mot clé.",
         [
-            ("a", "Fer et cuivre " + AR + " anémie."),
-            (
-                "b",
-                "Iode " + AR + " goitre, hypothyroïdie, retard de croissance.",
-            ),
-            (
-                "c",
-                "Fer = oxygène ; iode = thyroïde ; zinc = peau et immunité.",
-            ),
-            (
-                "d",
-                "Sélénium " + AR + " faiblesse musculaire et troubles de croissance.",
-            ),
+            ("a", "Fer = thyroïde ; iode = oxygène ; zinc = squelette uniquement."),
+            ("b", "Fer = peau ; iode = coagulation ; zinc = oxygène."),
+            ("c", "Fer = oxygène ; iode = thyroïde ; zinc = peau et immunité."),
+            ("d", "Fer = collagène ; iode = glucose ; zinc = vision."),
         ],
         "c",
         "Réponse à cacher : Fer = oxygène ; iode = thyroïde ; zinc = peau et immunité.",
     )
     b.mc(
-        "s4-q2",
-        "Que dit le texte du point commun des minéraux et des oligoéléments ?",
-        [
-            ("a", "Oligoéléments : petites quantités, rôles spécifiques."),
-            (
-                "b",
-                "Ils sont indispensables, même en petites quantités. Ils n"
-                + A
-                + "apportent pas d"
-                + A
-                + "énergie comme les glucides, les lipides et les protéines.",
-            ),
-            ("c", "Minéraux : squelette et fonctions de l" + A + "organisme."),
-            ("d", "En excès, ces éléments peuvent aussi être toxiques."),
-        ],
-        "b",
-        "Ils sont indispensables, même en petites quantités. Ils n"
-        + A
-        + "apportent pas d"
-        + A
-        + "énergie comme les glucides, les lipides et les protéines.",
-    )
-    b.mc(
-        "s4-q3",
-        "Quelle association le texte écrit pour le fer et le cuivre ?",
-        [
-            ("a", "Fer et cuivre " + AR + " anémie."),
-            ("b", "Iode " + AR + " goitre, hypothyroïdie, retard de croissance."),
-            (
-                "c",
-                "Zinc " + AR + " troubles cutanés, croissance ralentie, immunité affaiblie.",
-            ),
-            (
-                "d",
-                "Sélénium " + AR + " faiblesse musculaire et troubles de croissance.",
-            ),
-        ],
-        "a",
-        "Fer et cuivre " + AR + " anémie.",
-    )
-    b.mc(
-        "s4-q4",
-        "Quelle association le texte écrit pour l" + A + "iode ?",
-        [
-            ("a", "Fer et cuivre " + AR + " anémie."),
-            ("b", "Iode " + AR + " goitre, hypothyroïdie, retard de croissance."),
-            (
-                "c",
-                "Zinc " + AR + " troubles cutanés, croissance ralentie, immunité affaiblie.",
-            ),
-            (
-                "d",
-                "Sélénium " + AR + " faiblesse musculaire et troubles de croissance.",
-            ),
-        ],
-        "b",
-        "Iode " + AR + " goitre, hypothyroïdie, retard de croissance.",
-    )
-    b.mc(
         "s4-q5",
-        "Quelle association le texte écrit pour le zinc ?",
+        "Quelle association de carence le texte écrit-il pour le fer et le cuivre ?",
         [
-            ("a", "Fer et cuivre " + AR + " anémie."),
-            ("b", "Iode " + AR + " goitre, hypothyroïdie, retard de croissance."),
-            (
-                "c",
-                "Sélénium " + AR + " faiblesse musculaire et troubles de croissance.",
-            ),
-            (
-                "d",
-                "Zinc " + AR + " troubles cutanés, croissance ralentie, immunité affaiblie.",
-            ),
+            ("a", "Fer et cuivre → goitre isolé."),
+            ("b", "Fer et cuivre → anémie."),
+            ("c", "Fer et cuivre → calcification des tissus mous."),
+            ("d", "Fer et cuivre → excès de collagène."),
         ],
-        "d",
-        "Zinc " + AR + " troubles cutanés, croissance ralentie, immunité affaiblie.",
+        "b",
+        "Fer et cuivre → anémie.",
     )
     b.mc(
         "s4-q6",
-        "Quelle association le texte écrit pour le sélénium ?",
+        "Quelle association de carence le texte écrit-il pour l’iode ?",
         [
-            (
-                "a",
-                "Sélénium " + AR + " faiblesse musculaire et troubles de croissance.",
-            ),
-            (
-                "b",
-                "Zinc " + AR + " troubles cutanés, croissance ralentie, immunité affaiblie.",
-            ),
-            ("c", "Iode " + AR + " goitre, hypothyroïdie, retard de croissance."),
-            ("d", "Fer et cuivre " + AR + " anémie."),
+            ("a", "Iode → goitre, hypothyroïdie, retard de croissance."),
+            ("b", "Iode → anémie isolée, sans effet sur la thyroïde."),
+            ("c", "Iode → troubles cutanés seuls, avec immunité renforcée."),
+            ("d", "Iode → calcification des artères et vision améliorée."),
         ],
         "a",
-        "Sélénium " + AR + " faiblesse musculaire et troubles de croissance.",
+        "Iode → goitre, hypothyroïdie, retard de croissance.",
     )
-    b.tf(
+    b.mc(
         "s4-q7",
-        "La vitamine D favorise l"
-        + A
-        + "absorption intestinale du calcium et du phosphore.",
-        True,
-        "Le rapport Ca/P compte autant que les quantités. Un déséquilibre peut perturber le squelette en croissance et à l"
-        + A
-        + "âge adulte. La vitamine D favorise l"
-        + A
-        + "absorption intestinale du calcium et du phosphore.",
+        "Quelle association de carence le texte écrit-il pour le zinc ?",
+        [
+            ("a", "Zinc → goitre, hypothyroïdie et anémie isolée."),
+            ("b", "Zinc → excès de collagène et vision renforcée."),
+            ("c", "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie."),
+            ("d", "Zinc → aucune carence : le texte n’en décrit pas."),
+        ],
+        "c",
+        "Zinc → troubles cutanés, croissance ralentie, immunité affaiblie.",
     )
-    b.tf(
+    b.mc(
         "s4-q8",
+        "Quelle association de carence le texte écrit-il pour le sélénium ?",
+        [
+            ("a", "Sélénium → goitre et anémie uniquement."),
+            ("b", "Sélénium → troubles de la coagulation du sang."),
+            ("c", "Sélénium → excès d’oxygène dans l’hémoglobine."),
+            ("d", "Sélénium → faiblesse musculaire et troubles de croissance."),
+        ],
+        "d",
+        "Sélénium → faiblesse musculaire et troubles de croissance.",
+    )
+    b.tf(
+        "s4-q9",
+        "Ils sont indispensables, même en petites quantités.",
+        True,
+        "Ils sont indispensables, même en petites quantités.",
+    )
+    b.tf(
+        "s4-q10",
+        "Un déséquilibre du rapport calcium/phosphore laisse le squelette intact, en croissance comme à l’âge adulte.",
+        False,
+        "Un déséquilibre peut perturber le squelette en croissance et à l’âge adulte.",
+    )
+    b.tf(
+        "s4-q11",
         "En excès, ces éléments peuvent aussi être toxiques.",
         True,
         "En excès, ces éléments peuvent aussi être toxiques.",
-    )
-    b.mc(
-        "s4-q9",
-        "Laquelle de ces phrases figure dans cette section ?",
-        [
-            ("a", "Excès : calcification des tissus mous."),
-            (
-                "b",
-                "Excès : notamment troubles osseux chez le chien en croissance.",
-            ),
-            ("c", "Carence : dégénérescence ou faiblesse musculaire."),
-            (
-                "d",
-                "Carence : anorexie, saignements gingivaux, œdème, émaciation, diarrhée et diminution de la résistance aux infections.",
-            ),
-        ],
-        "b",
-        "Excès : notamment troubles osseux chez le chien en croissance.",
-    )
-    b.mc(
-        "s4-q10",
-        "Quelles sources le texte cite pour le fer ?",
-        [
-            ("a", "Viande rouge, épinards, lentilles."),
-            ("b", "Abats, fruits de mer, noix."),
-            ("c", "Sel iodé, fruits de mer."),
-            ("d", "Poissons, noix du Brésil."),
-        ],
-        "a",
-        "Viande rouge, épinards, lentilles.",
-    )
-    b.mc(
-        "s4-q11",
-        "Laquelle de ces phrases figure dans cette section ?",
-        [
-            ("a", "Squelette, contraction musculaire, transmission nerveuse."),
-            ("b", "Carence : troubles de vision et de reproduction."),
-            ("c", "Les glucides regroupent les sucres."),
-            ("d", "Un aliment contient de l" + A + "eau et de la matière sèche."),
-        ],
-        "a",
-        "Squelette, contraction musculaire, transmission nerveuse.",
-    )
-    b.mc(
-        "s4-q12",
-        "Laquelle de ces phrases figure dans cette section ?",
-        [
-            ("a", "Le glucose est un monosaccharide : une seule unité de sucre."),
-            ("b", "Formation des hormones thyroïdiennes."),
-            (
-                "c",
-                "La B12 est absorbée dans l"
-                + A
-                + "iléon et participe à la croissance cellulaire.",
-            ),
-            ("d", "Cache la correction."),
-        ],
-        "b",
-        "Formation des hormones thyroïdiennes.",
-    )
-    b.tf(
-        "s4-q13",
-        "Toujours laisser de l" + A + "eau propre et fraîche à disposition de l" + A + "animal.",
-        False,
-        "Toujours laisser de l" + A + "eau propre et fraîche à disposition de l" + A + "animal.",
-        TITLES[5],
     )
 
     b.section("s5", TITLES[4])
     b.mc(
         "s5-q1",
+        "Comment le texte classe-t-il les vitamines ADEK ?",
+        [
+            ("a", "ADEK = vitamines hydrosolubles, éliminées dès l’absorption et non stockables."),
+            ("b", "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables."),
+            ("c", "ADEK = minéraux qui apportent l’énergie principale."),
+            ("d", "ADEK = fibres insolubles du gros intestin."),
+        ],
+        "b",
+        "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
+    )
+    b.mc(
+        "s5-q2",
+        "Comment le texte classe-t-il les vitamines B et C ?",
+        [
+            (
+                "a",
+                "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines.",
+            ),
+            ("b", "B et C = vitamines liposolubles, stockées dans les graisses sans élimination."),
+            ("c", "B et C = oligoéléments de l’hémoglobine."),
+            ("d", "B et C = polysaccharides de réserve."),
+        ],
+        "a",
+        "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines.",
+    )
+    b.mc(
+        "s5-q3",
+        "Que dit le texte du chat et du bêta-carotène ?",
+        [
+            ("a", "Le chat convertit le bêta-carotène en vitamine A."),
+            ("b", "Le chat ne convertit pas le bêta-carotène en vitamine A."),
+            ("c", "Le chat convertit le bêta-carotène en vitamine C."),
+            ("d", "Le chat n’a pas besoin de vitamine A, le bêta-carotène suffit."),
+        ],
+        "b",
+        "Le chat ne convertit pas le bêta-carotène en vitamine A.",
+    )
+    b.mc(
+        "s5-q4",
+        "Que dit le texte d’un excès de foie chez le chat, pour la vitamine A ?",
+        [
+            (
+                "a",
+                "chez le chat, de grandes quantités de foie protègent le cou et évitent tout excès.",
+            ),
+            (
+                "b",
+                "chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou.",
+            ),
+            ("c", "chez le chat, le foie remplace toute vitamine A sans risque osseux."),
+            ("d", "chez le chat, le foie est la source de vitamine C et n’a aucun lien avec la vitamine A."),
+        ],
+        "b",
+        "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou.",
+    )
+    b.mc(
+        "s5-q5",
+        "Quelle formule le texte écrit après l’excès de vitamine A ?",
+        [
+            ("a", "« Plus » veut donc dire « mieux »."),
+            ("b", "« Moins » suffit toujours, sans limite inférieure."),
+            ("c", "« Plus » ne veut donc pas dire « mieux »."),
+            ("d", "Un excès de vitamines est toujours bénéfique."),
+        ],
+        "c",
+        "« Plus » ne veut donc pas dire « mieux ».",
+    )
+    b.mc(
+        "s5-q6",
+        "Où le texte situe-t-il l’absorption de la vitamine B12 ?",
+        [
+            ("a", "La B12 est absorbée dans l’estomac et ne participe pas à la croissance cellulaire."),
+            ("b", "La B12 est absorbée dans l’iléon et participe à la croissance cellulaire."),
+            ("c", "La B12 est absorbée dans le caecum et reste une vitamine liposoluble."),
+            ("d", "La B12 n’est pas absorbée : le texte la dit uniquement injectable d’emblée."),
+        ],
+        "b",
+        "La B12 est absorbée dans l’iléon et participe à la croissance cellulaire.",
+    )
+    b.mc(
+        "s5-q7",
+        "Que dit le texte du cobaye et de la vitamine C ?",
+        [
+            ("a", "Le cobaye synthétise la vitamine C : son alimentation ne doit pas lui en apporter."),
+            ("b", "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter."),
+            ("c", "Le cobaye convertit le bêta-carotène en vitamine C."),
+            ("d", "Le cobaye stocke la vitamine C avec les graisses et n’en reçoit pas dans l’aliment."),
+        ],
+        "b",
+        "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter.",
+    )
+    b.mc(
+        "s5-q8",
         "Quelle particularité relie le chat à la vitamine A et le cobaye à la vitamine C ?",
         [
             (
                 "a",
-                "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
+                "Le chat synthétise la vitamine A à partir du bêta-carotène ; le cobaye synthétise la vitamine C.",
             ),
             (
                 "b",
-                "B et C = vitamines hydrosolubles, liées à l"
-                + A
-                + "eau ; les excédents sont généralement éliminés par les urines.",
+                "Le chat doit recevoir de la vitamine C ; le cobaye a besoin de vitamine A d’origine végétale seule.",
             ),
             (
                 "c",
-                "La B12 est absorbée dans l"
-                + A
-                + "iléon et participe à la croissance cellulaire.",
+                "Le chat a besoin de vitamine A utilisable d’origine animale ; le cobaye doit recevoir de la vitamine C dans son alimentation.",
             ),
-            (
-                "d",
-                "Le chat a besoin de vitamine A utilisable d"
-                + A
-                + "origine animale ; le cobaye doit recevoir de la vitamine C dans son alimentation.",
-            ),
+            ("d", "Les deux synthétisent ces vitamines et n’ont rien à recevoir dans l’aliment."),
         ],
-        "d",
-        "Réponse à cacher : Le chat a besoin de vitamine A utilisable d"
-        + A
-        + "origine animale ; le cobaye doit recevoir de la vitamine C dans son alimentation.",
-    )
-    b.tf(
-        "s5-q2",
-        "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
-        True,
-        "ADEK = vitamines liposolubles, absorbées avec les lipides et stockables.",
-    )
-    b.tf(
-        "s5-q3",
-        "B et C = vitamines hydrosolubles, liées à l"
-        + A
-        + "eau ; les excédents sont généralement éliminés par les urines.",
-        True,
-        "B et C = vitamines hydrosolubles, liées à l"
-        + A
-        + "eau ; les excédents sont généralement éliminés par les urines.",
-    )
-    b.mc(
-        "s5-q4",
-        "Quelle phrase le texte écrit sur l" + A + "hypervitaminose ?",
-        [
-            (
-                "a",
-                "L"
-                + A
-                + "hypervitaminose concerne un excès de vitamines ; le cours insiste sur le stockage des vitamines liposolubles.",
-            ),
-            (
-                "b",
-                "Leur fonction dépend de la vitamine : elles ne sont pas interchangeables.",
-            ),
-            (
-                "c",
-                "Les vitamines participent notamment au métabolisme, à l"
-                + A
-                + "immunité, à la cicatrisation et à la protection cellulaire.",
-            ),
-            ("d", LQ + " Plus " + RQ + " ne veut donc pas dire " + LQ + " mieux " + RQ + "."),
-        ],
-        "a",
-        "L"
-        + A
-        + "hypervitaminose concerne un excès de vitamines ; le cours insiste sur le stockage des vitamines liposolubles.",
-    )
-    b.mc(
-        "s5-q5",
-        "Quelle phrase le texte écrit sur le chat et le bêta-carotène ?",
-        [
-            ("a", "Le chat ne convertit pas le bêta-carotène en vitamine A."),
-            (
-                "b",
-                "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou.",
-            ),
-            (
-                "c",
-                "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter.",
-            ),
-            ("d", "Vision et épithélium"),
-        ],
-        "a",
-        "Le chat ne convertit pas le bêta-carotène en vitamine A.",
-    )
-    b.mc(
-        "s5-q6",
-        "Laquelle de ces phrases figure dans cette section ?",
-        [
-            (
-                "a",
-                "Intervient dans la coagulation du sang. Une carence perturbe la coagulation.",
-            ),
-            ("b", "Rétention d" + A + "eau, satiété, volume des selles et transit."),
-            (
-                "c",
-                "Elle favorise leur absorption intestinale et participe à la formation du squelette.",
-            ),
-            (
-                "d",
-                "L" + A + "aliment est mangé ; il apporte des nutriments assimilables.",
-            ),
-        ],
-        "a",
-        "Intervient dans la coagulation du sang. Une carence perturbe la coagulation.",
-    )
-    b.mc(
-        "s5-q7",
-        "Laquelle de ces phrases est écrite dans " + LQ + " Le cercle de la B12 " + RQ + " ?",
-        [
-            (
-                "a",
-                "Le cours évoque une administration injectable pour contourner cette mauvaise absorption.",
-            ),
-            ("b", "Les glucides = le carburant."),
-            ("c", "Fer et cuivre " + AR + " anémie."),
-            (
-                "d",
-                "Toujours laisser de l"
-                + A
-                + "eau propre et fraîche à disposition de l"
-                + A
-                + "animal.",
-            ),
-        ],
-        "a",
-        "Le cours évoque une administration injectable pour contourner cette mauvaise absorption.",
-    )
-    b.mc(
-        "s5-q8",
-        "Quelle phrase le texte écrit sur la synthèse de vitamine C chez le cobaye ?",
-        [
-            (
-                "a",
-                "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter.",
-            ),
-            (
-                "b",
-                "Carence : anorexie, saignements gingivaux, œdème, émaciation, diarrhée et diminution de la résistance aux infections.",
-            ),
-            ("c", "Le chat ne convertit pas le bêta-carotène en vitamine A."),
-            (
-                "d",
-                "B et C = vitamines hydrosolubles, liées à l"
-                + A
-                + "eau ; les excédents sont généralement éliminés par les urines.",
-            ),
-        ],
-        "a",
-        "Le cobaye ne peut pas synthétiser la vitamine C : son alimentation doit lui en apporter.",
+        "c",
+        "Réponse à cacher : Le chat a besoin de vitamine A utilisable d’origine animale ; le cobaye doit recevoir de la vitamine C dans son alimentation.",
     )
     b.tf(
         "s5-q9",
-        "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou.",
+        "Leur fonction dépend de la vitamine : elles ne sont pas interchangeables.",
         True,
-        "Particularité de la vitamine A : chez le chat, de grandes quantités de foie peuvent entraîner un excès, avec des troubles osseux notamment au niveau du cou. "
-        + LQ
-        + " Plus "
-        + RQ
-        + " ne veut donc pas dire "
-        + LQ
-        + " mieux "
-        + RQ
-        + ".",
+        "Leur fonction dépend de la vitamine : elles ne sont pas interchangeables.",
     )
     b.tf(
         "s5-q10",
-        LQ + " Plus " + RQ + " ne veut donc pas dire " + LQ + " mieux " + RQ + ".",
-        True,
-        LQ + " Plus " + RQ + " ne veut donc pas dire " + LQ + " mieux " + RQ + ".",
+        "Le chat convertit le bêta-carotène en vitamine A.",
+        False,
+        "Le chat ne convertit pas le bêta-carotène en vitamine A.",
     )
     b.tf(
         "s5-q11",
-        "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l"
-        + A
-        + "eau, favorisent la satiété et participent au volume des selles et au transit.",
+        "Les excédents de vitamines B et C sont généralement stockés avec les graisses.",
         False,
-        "Les fibres ont un fort pouvoir hydrophile : elles absorbent et retiennent l"
-        + A
-        + "eau, favorisent la satiété et participent au volume des selles et au transit.",
-        TITLES[1],
+        "B et C = vitamines hydrosolubles, liées à l’eau ; les excédents sont généralement éliminés par les urines.",
     )
 
     b.section("s6", TITLES[5])
     b.mc(
         "s6-q1",
-        "Pourquoi les besoins en eau ne sont-ils pas une quantité fixe ?",
+        "Quelle part d’eau le cours indique-t-il dans le corps d’un animal adulte ?",
         [
-            (
-                "a",
-                "Toujours laisser de l"
-                + A
-                + "eau propre et fraîche à disposition de l"
-                + A
-                + "animal.",
-            ),
-            (
-                "b",
-                "Ils varient avec l"
-                + A
-                + "alimentation, l"
-                + A
-                + "activité, la température et l"
-                + A
-                + "état physiologique.",
-            ),
-            (
-                "c",
-                "Un manque d"
-                + A
-                + "eau expose à la déshydratation et favorise des problèmes urinaires.",
-            ),
-            (
-                "d",
-                "Les aliments frais apportent davantage d" + A + "eau que les aliments secs.",
-            ),
+            ("a", "Environ 30 %."),
+            ("b", "Environ 45 %."),
+            ("c", "Environ 70 %."),
+            ("d", "Environ 90 %."),
         ],
-        "b",
-        "Réponse à cacher : Ils varient avec l"
-        + A
-        + "alimentation, l"
-        + A
-        + "activité, la température et l"
-        + A
-        + "état physiologique.",
+        "c",
+        "Eau dans le corps d’un animal adulte Environ 70 %.",
     )
     b.mc(
         "s6-q2",
-        "Quelle valeur le texte indique pour l"
-        + A
-        + "eau dans le corps d"
-        + A
-        + "un animal adulte ?",
+        "Quelle valeur le cours indique-t-il pour l’eau quotidienne du chien ?",
         [
-            ("a", "Environ 70 %."),
+            ("a", "15 ml/kg/jour."),
             ("b", "50 ml/kg/jour."),
-            ("c", "25 à 35 ml/kg/jour."),
-            ("d", "Glucides 50 %, lipides 35 %, protéines 15 %."),
+            ("c", "80 ml/kg/jour."),
+            ("d", "120 ml/kg/jour."),
         ],
-        "a",
-        "Eau dans le corps d" + A + "un animal adulte Environ 70 %.",
-    )
-    b.mc(
-        "s6-q3",
-        "Quelle valeur le texte indique pour l" + A + "eau quotidienne du chien ?",
-        [
-            ("a", "25 à 35 ml/kg/jour."),
-            ("b", "Environ 70 %."),
-            ("c", "50 ml/kg/jour."),
-            ("d", "Chien : 20 à 25 % ; chat : 30 à 35 %."),
-        ],
-        "c",
+        "b",
         "Eau quotidienne du chien 50 ml/kg/jour.",
     )
     b.mc(
-        "s6-q4",
-        "Quelle valeur le texte indique pour l" + A + "eau quotidienne du chat ?",
+        "s6-q3",
+        "Quelle valeur le cours indique-t-il pour l’eau quotidienne du chat ?",
         [
-            ("a", "50 ml/kg/jour."),
+            ("a", "10 à 15 ml/kg/jour."),
             ("b", "25 à 35 ml/kg/jour."),
-            ("c", "Environ 70 %."),
-            ("d", "Chien : 20 à 25 % ; chat : 30 à 35 %."),
+            ("c", "60 à 90 ml/kg/jour."),
+            ("d", "100 ml/kg/jour."),
         ],
         "b",
         "Eau quotidienne du chat 25 à 35 ml/kg/jour.",
     )
     b.mc(
-        "s6-q5",
-        "Que dit le texte sur la base de calcul de la concentration en protéines de l"
-        + A
-        + "aliment ?",
+        "s6-q4",
+        "Quelles concentrations en protéines de l’aliment le cours indique-t-il pour le chien et le chat ?",
         [
-            ("a", "Chien : 20 à 25 % ; chat : 30 à 35 %."),
-            ("b", "Ces valeurs sont celles des supports pour réviser."),
-            ("c", "La base de calcul n" + A + "est pas précisée dans le support."),
-            (
-                "d",
-                "Elles ne remplacent pas le calcul d" + A + "une ration adaptée à un animal.",
-            ),
+            ("a", "Chien : 40 à 45 % ; chat : 10 à 12 %."),
+            ("b", "Chien : 5 à 8 % ; chat : 60 à 65 %."),
+            ("c", "Chien : 20 à 25 % ; chat : 30 à 35 %."),
+            ("d", "Chien : 90 % ; chat : 90 %."),
         ],
         "c",
-        "La base de calcul n" + A + "est pas précisée dans le support.",
+        "Chien : 20 à 25 % ; chat : 30 à 35 %.",
+    )
+    b.mc(
+        "s6-q5",
+        "Que dit le support sur la base de calcul de ces pourcentages de protéines ?",
+        [
+            ("a", "La base de calcul est la matière grasse, et le support la fixe à 12 %."),
+            ("b", "La base de calcul n’est pas précisée dans le support."),
+            ("c", "La base de calcul est le poids des os, précisée dans le support."),
+            ("d", "La base de calcul est l’amidon, fixé à 8 % dans le support."),
+        ],
+        "b",
+        "La base de calcul n’est pas précisée dans le support.",
     )
     b.mc(
         "s6-q6",
-        "Quelles plages le texte indique pour le rapport calcium/phosphore ?",
+        "Quelles plages de rapport calcium/phosphore le texte attribue-t-il au développement et à la révision ?",
         [
-            (
-                "a",
-                "Le développement indique 1,1 à 1,3 ; la révision indique 1,1 à 1,5. Le support mentionne aussi des plages plus larges selon les sources.",
-            ),
-            (
-                "b",
-                "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1.",
-            ),
-            ("c", "Glucides 50 %, lipides 35 %, protéines 15 %."),
-            ("d", "Environ 70 %."),
+            ("a", "Le développement indique 2,8 à 3,4 ; la révision indique 0,2 à 0,3."),
+            ("b", "Le développement indique 6 à 8 ; la révision indique 9 à 10."),
+            ("c", "Le cours indique un rapport unique de 0,4, sans autre plage."),
+            ("d", "Le développement indique 1,1 à 1,3 ; la révision indique 1,1 à 1,5."),
         ],
-        "a",
-        "Le développement indique 1,1 à 1,3 ; la révision indique 1,1 à 1,5. Le support mentionne aussi des plages plus larges selon les sources.",
+        "d",
+        "Le développement indique 1,1 à 1,3 ; la révision indique 1,1 à 1,5.",
     )
     b.mc(
         "s6-q7",
-        "Quel repère oméga 6 / oméga 3 le texte présente ?",
+        "Quel repère oméga 6 / oméga 3 le cours présente-t-il, et quelle comparaison humaine cite-t-il ?",
         [
-            (
-                "a",
-                "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d"
-                + A
-                + "une ration canine ou féline.",
-            ),
-            (
-                "b",
-                "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1.",
-            ),
-            ("c", "Chien : 20 à 25 % ; chat : 30 à 35 %."),
-            ("d", "50 ml/kg/jour."),
+            ("a", "Repère présenté : 1 pour 9 ; comparaison humaine citée : environ 2 pour 1."),
+            ("b", "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1."),
+            ("c", "Repère présenté : 12 pour 1 ; comparaison humaine citée : environ 3 pour 1."),
+            ("d", "Repère présenté : 30 pour 1 ; comparaison humaine citée : environ 1 pour 2."),
         ],
         "b",
         "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1.",
     )
     b.mc(
         "s6-q8",
-        "Quelle répartition énergétique le texte attribue à l" + A + "introduction humaine ?",
+        "Quelle répartition énergétique le texte donne-t-il pour l’introduction humaine ?",
         [
-            (
-                "a",
-                "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d"
-                + A
-                + "une ration canine ou féline.",
-            ),
-            ("b", "Chien : 20 à 25 % ; chat : 30 à 35 %."),
-            (
-                "c",
-                "Repère présenté : 4 pour 1 ; comparaison humaine citée : environ 15 pour 1.",
-            ),
-            ("d", "Environ 70 %."),
+            ("a", "Glucides 40 %, lipides 40 %, protéines 20 %."),
+            ("b", "Glucides 80 %, lipides 10 %, protéines 10 %."),
+            ("c", "Glucides 50 %, lipides 35 %, protéines 15 %."),
+            ("d", "Glucides 25 %, lipides 25 %, protéines 50 %."),
         ],
-        "a",
-        "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d"
-        + A
-        + "une ration canine ou féline.",
+        "c",
+        "Glucides 50 %, lipides 35 %, protéines 15 %. À distinguer d’une ration canine ou féline.",
     )
-    b.tf(
+    b.mc(
         "s6-q9",
-        "Le cours cite notamment les cystites et les calculs urinaires, surtout chez le chat mâle.",
-        True,
-        "Un manque d"
-        + A
-        + "eau expose à la déshydratation et favorise des problèmes urinaires. Le cours cite notamment les cystites et les calculs urinaires, surtout chez le chat mâle.",
+        "Pourquoi les besoins en eau ne sont-ils pas une quantité fixe ?",
+        [
+            ("a", "Ils sont identiques pour tous les animaux, quel que soit l’aliment."),
+            ("b", "Ils ne dépendent que de la couleur du pelage."),
+            ("c", "Ils deviennent nuls pendant la lactation."),
+            ("d", "Ils varient avec l’alimentation, l’activité, la température et l’état physiologique."),
+        ],
+        "d",
+        "Réponse à cacher : Ils varient avec l’alimentation, l’activité, la température et l’état physiologique.",
     )
     b.tf(
         "s6-q10",
-        "Elle participe à la régulation de la température, à l"
-        + A
-        + "hydratation des muqueuses, à la production de lait, à l"
-        + A
-        + "élimination des déchets et aux réactions biochimiques, dont la digestion.",
+        "Toujours laisser de l’eau propre et fraîche à disposition de l’animal.",
         True,
-        "Elle participe à la régulation de la température, à l"
-        + A
-        + "hydratation des muqueuses, à la production de lait, à l"
-        + A
-        + "élimination des déchets et aux réactions biochimiques, dont la digestion.",
+        "Toujours laisser de l’eau propre et fraîche à disposition de l’animal.",
     )
-    b.mc(
+    b.tf(
         "s6-q11",
-        "Quelle ligne le mémo écrit pour les vitamines ?",
-        [
-            ("a", "Eau : fonctionnement général."),
-            ("b", "Minéraux : squelette et fonctions de l" + A + "organisme."),
-            ("c", "Vitamines : régulation et protection."),
-            ("d", "Oligoéléments : petites quantités, rôles spécifiques."),
-        ],
-        "c",
-        "Vitamines : régulation et protection.",
+        "Les aliments secs apportent davantage d’eau que les aliments frais.",
+        False,
+        "Les aliments frais apportent davantage d’eau que les aliments secs.",
     )
-    b.mc(
+    b.tf(
         "s6-q12",
-        "Quelle ligne le mémo écrit pour les protéines ?",
-        [
-            ("a", "Protéines : acides aminés et construction."),
-            ("b", "Glucides : énergie."),
-            ("c", "Lipides : réserve, membranes, vitamines ADEK."),
-            ("d", "Minéraux : squelette et fonctions de l" + A + "organisme."),
-        ],
-        "a",
-        "Protéines : acides aminés et construction.",
+        "Le cours cite notamment les cystites et les calculs urinaires, surtout chez le chat mâle.",
+        True,
+        "Le cours cite notamment les cystites et les calculs urinaires, surtout chez le chat mâle.",
     )
 
     b.section("s7", TITLES[6])
-    corrections = {
-        "1": "L" + A + "aliment est mangé ; il apporte des nutriments assimilables.",
-        "2": "L" + A + "intestin grêle.",
-        "3": "Son comportement vient de la chasse de petites proies, le jour et la nuit.",
-        "4": "Amidon chez les végétaux ; glycogène chez les animaux.",
-        "5": "Rétention d" + A + "eau, satiété, volume des selles et transit.",
-        "6": "A, D, E et K.",
-        "7": "Elles sont faites d"
-        + A
-        + "acides aminés, séparés par la digestion puis réutilisés.",
-        "8": "Les besoins sont différents, notamment pour la taurine essentielle au chat.",
-        "9": "Acides aminés essentiels en bonnes proportions et digestibilité.",
-        "10": "Elle favorise leur absorption intestinale et participe à la formation du squelette.",
-        "11": "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité.",
-        "12": "Le cobaye.",
-    }
-    defi = [
-        ("s7-q1", "Quelle est la différence entre un aliment et un nutriment ?", "1", ["4", "8", "12"]),
-        ("s7-q2", "Quel organe absorbe principalement les nutriments ?", "2", ["6", "12", "4"]),
-        (
-            "s7-q3",
-            "Pourquoi le chat prend-il souvent plusieurs petits repas ?",
-            "3",
-            ["1", "5", "10"],
-        ),
-        (
-            "s7-q4",
-            "Quelles sont les réserves glucidiques des végétaux et des animaux ?",
-            "4",
-            ["5", "6", "12"],
-        ),
-        ("s7-q5", "À quoi servent les fibres ?", "5", ["1", "7", "11"]),
-        ("s7-q6", "Quelles vitamines sont liposolubles ?", "6", ["2", "12", "4"]),
-        (
-            "s7-q7",
-            "En quoi les protéines ressemblent-elles à un jeu de construction ?",
-            "7",
-            ["3", "9", "1"],
-        ),
-        (
-            "s7-q8",
-            "Pourquoi ne donne-t-on pas un aliment pour chiens au chat ?",
-            "8",
-            ["3", "10", "5"],
-        ),
-        (
-            "s7-q9",
-            "Quels deux critères comptent dans la qualité des protéines ?",
-            "9",
-            ["7", "11", "2"],
-        ),
-        (
-            "s7-q10",
-            "Quel est le rôle de la vitamine D par rapport au calcium et au phosphore ?",
-            "10",
-            ["6", "8", "4"],
-        ),
-        (
-            "s7-q11",
-            "Associe fer, iode et zinc à leurs fonctions.",
-            "11",
-            ["9", "5", "1"],
-        ),
-        (
-            "s7-q12",
-            "Quel animal doit recevoir sa vitamine C dans son alimentation ?",
-            "12",
-            ["2", "6", "4"],
-        ),
-    ]
-    letters = ["a", "b", "c", "d"]
-    # Place the correct correction in a rotating slot so it is not always first.
-    for index, (qid, prompt, correct_key, wrong_keys) in enumerate(defi):
-        slot = index % 4
-        texts = [corrections[k] for k in wrong_keys]
-        texts.insert(slot, corrections[correct_key])
-        choices = [(letters[i], texts[i]) for i in range(4)]
-        b.mc(qid, prompt, choices, letters[slot], corrections[correct_key])
-
+    b.mc(
+        "s7-q1",
+        "Quelle est la différence entre un aliment et un nutriment ?",
+        [
+            ("a", "Le nutriment est mangé ; il apporte des aliments non assimilables."),
+            ("b", "L’aliment est mangé ; il apporte des nutriments assimilables."),
+            ("c", "L’aliment et le nutriment sont le même mot dans le cours."),
+            ("d", "L’aliment n’apporte aucun nutriment."),
+        ],
+        "b",
+        "L’aliment est mangé ; il apporte des nutriments assimilables.",
+    )
+    b.mc(
+        "s7-q2",
+        "Quel organe absorbe principalement les nutriments ?",
+        [
+            ("a", "Le gros intestin, qui absorbe les nutriments."),
+            ("b", "L’estomac, seul organe d’absorption."),
+            ("c", "L’intestin grêle."),
+            ("d", "Le caecum des herbivores, cité comme organe principal."),
+        ],
+        "c",
+        "2. L’intestin grêle.",
+    )
+    b.mc(
+        "s7-q3",
+        "Pourquoi le chat prend-il souvent plusieurs petits repas ?",
+        [
+            ("a", "Son comportement vient de la chasse de grandes proies, une fois par semaine."),
+            ("b", "Son comportement vient de la chasse de petites proies, le jour et la nuit."),
+            ("c", "Il ne prend qu’un repas, toujours au matin."),
+            ("d", "Parce qu’il broute en continu comme un herbivore."),
+        ],
+        "b",
+        "Son comportement vient de la chasse de petites proies, le jour et la nuit.",
+    )
+    b.mc(
+        "s7-q4",
+        "Quelles sont les réserves glucidiques des végétaux et des animaux ?",
+        [
+            ("a", "Glycogène chez les végétaux ; amidon chez les animaux."),
+            ("b", "Pectines chez les végétaux ; agar chez les animaux."),
+            ("c", "Lactose chez les végétaux ; fructose chez les animaux."),
+            ("d", "Amidon chez les végétaux ; glycogène chez les animaux."),
+        ],
+        "d",
+        "Amidon chez les végétaux ; glycogène chez les animaux.",
+    )
+    b.mc(
+        "s7-q5",
+        "À quoi servent les fibres ?",
+        [
+            ("a", "Apport d’énergie principal, isolation thermique et membranes."),
+            ("b", "Rétention d’eau, satiété, volume des selles et transit."),
+            ("c", "Coagulation du sang et vision nocturne."),
+            ("d", "Synthèse de la vitamine C chez le cobaye."),
+        ],
+        "b",
+        "Rétention d’eau, satiété, volume des selles et transit.",
+    )
+    b.mc(
+        "s7-q6",
+        "Quelles vitamines sont liposolubles ?",
+        [
+            ("a", "B et C uniquement, stockées dans les graisses."),
+            ("b", "Uniquement la vitamine C."),
+            ("c", "A, D, E et K."),
+            ("d", "Fer, iode et zinc, cités comme vitamines."),
+        ],
+        "c",
+        "6. A, D, E et K.",
+    )
+    b.mc(
+        "s7-q7",
+        "En quoi les protéines ressemblent-elles à un jeu de construction ?",
+        [
+            ("a", "Elles sont faites de sucres, collés sans digestion."),
+            ("b", "Elles sont des minéraux impossibles à séparer."),
+            ("c", "Elles ne sont jamais réutilisées après la digestion."),
+            ("d", "Elles sont faites d’acides aminés, séparés par la digestion puis réutilisés."),
+        ],
+        "d",
+        "Elles sont faites d’acides aminés, séparés par la digestion puis réutilisés.",
+    )
+    b.mc(
+        "s7-q8",
+        "Pourquoi ne donne-t-on pas un aliment pour chiens au chat ?",
+        [
+            ("a", "Les besoins sont identiques ; la taurine est essentielle au chien seulement."),
+            ("b", "Le chat synthétise toute sa taurine, comme le chien."),
+            ("c", "Les besoins sont différents, notamment pour la taurine essentielle au chat."),
+            ("d", "L’aliment pour chiens contient trop de vitamine C pour le chat."),
+        ],
+        "c",
+        "Les besoins sont différents, notamment pour la taurine essentielle au chat.",
+    )
+    b.mc(
+        "s7-q9",
+        "Quels deux critères comptent dans la qualité des protéines ?",
+        [
+            ("a", "Uniquement le pourcentage de protéines affiché."),
+            ("b", "La teneur en cellulose et en eau seulement."),
+            ("c", "L’absence totale d’acides aminés."),
+            ("d", "Acides aminés essentiels en bonnes proportions et digestibilité."),
+        ],
+        "d",
+        "Acides aminés essentiels en bonnes proportions et digestibilité.",
+    )
+    b.mc(
+        "s7-q10",
+        "Quel est le rôle de la vitamine D par rapport au calcium et au phosphore ?",
+        [
+            ("a", "Elle bloque leur absorption intestinale et fragilise le squelette."),
+            ("b", "Elle favorise leur absorption intestinale et participe à la formation du squelette."),
+            ("c", "Elle remplace le calcium et le phosphore."),
+            ("d", "Elle n’a aucun lien avec le calcium ni le phosphore."),
+        ],
+        "b",
+        "Elle favorise leur absorption intestinale et participe à la formation du squelette.",
+    )
+    b.mc(
+        "s7-q11",
+        "Associe fer, iode et zinc à leurs fonctions.",
+        [
+            ("a", "Fer : thyroïde ; iode : peau ; zinc : hémoglobine uniquement."),
+            ("b", "Fer : coagulation ; iode : collagène ; zinc : glucose."),
+            ("c", "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité."),
+            ("d", "Fer : vision ; iode : satiété ; zinc : transit."),
+        ],
+        "c",
+        "Fer : hémoglobine et oxygène ; iode : thyroïde ; zinc : peau et immunité.",
+    )
+    b.mc(
+        "s7-q12",
+        "Quel animal doit recevoir sa vitamine C dans son alimentation ?",
+        [
+            ("a", "Le chaton sevré."),
+            ("b", "Le chien adulte, jamais un rongeur."),
+            ("c", "La vache laitière."),
+            ("d", "Le cobaye."),
+        ],
+        "d",
+        "12. Le cobaye.",
+    )
     b.tf(
         "s7-q13",
-        "Si une réponse bloque, retourne uniquement à la fiche concernée.",
+        "Comprendre, retrouver de mémoire, vérifier : trois étapes utiles pour apprendre.",
         True,
-        "Si une réponse bloque, retourne uniquement à la fiche concernée.",
+        "Comprendre, retrouver de mémoire, vérifier : trois étapes utiles pour apprendre.",
     )
     b.tf(
         "s7-q14",
-        "Refais seulement les questions qui t"
-        + A
-        + "ont fait hésiter, puis remplis un tableau vierge du cours compact.",
-        True,
-        "Refais seulement les questions qui t"
-        + A
-        + "ont fait hésiter, puis remplis un tableau vierge du cours compact.",
-    )
-    b.tf(
-        "s7-q15",
-        "Comprendre, retrouver de mémoire, vérifier : trois étapes utiles pour apprendre.",
-        True,
-        "Comprendre, retrouver de mémoire, vérifier : trois étapes utiles pour apprendre.",
+        "L’organe qui absorbe principalement les nutriments est le gros intestin.",
+        False,
+        "2. L’intestin grêle.",
     )
 
     return {"sections": b.sections}
 
 
+def pdf_sentences(full: str) -> list[str]:
+    parts = re.split(r"(?<=[.!?]) ", full)
+    return [part.strip() for part in parts if len(part.strip()) >= 35]
+
+
 def verify(bank: dict, full: str, bodies: dict[str, str]) -> None:
     errors: list[str] = []
     seen_ids: set[str] = set()
+    folded = full.casefold()
+    sentences = pdf_sentences(full)
+
     for section in bank["sections"]:
         title = section["title"]
-        if title not in bodies:
+        if title not in TITLES:
             errors.append(f"unknown section title {title}")
             continue
+        if section["title"] != TITLES[int(section["id"][1]) - 1]:
+            errors.append(f"{section['id']} title mismatch")
         body = bodies[title]
         if not section["questions"]:
             errors.append(f"{section['id']} has no questions")
@@ -1370,60 +1075,62 @@ def verify(bank: dict, full: str, bodies: dict[str, str]) -> None:
             seen_ids.add(qid)
             source = question["source"]
             if source not in full:
-                errors.append(f"{qid} source not in PDF: {source[:80]}")
+                errors.append(f"{qid} source not in PDF: {source[:90]}")
+            if source not in body:
+                errors.append(f"{qid} source not in section")
             if question["type"] == "mc":
+                ids = [c["id"] for c in question["choices"]]
+                if ids != ["a", "b", "c", "d"]:
+                    errors.append(f"{qid} choices must be a b c d")
+                if question["correctChoiceId"] not in ids:
+                    errors.append(f"{qid} missing correct id")
                 correct = next(
-                    c["text"]
-                    for c in question["choices"]
-                    if c["id"] == question["correctChoiceId"]
+                    c["text"] for c in question["choices"] if c["id"] == question["correctChoiceId"]
                 )
                 if correct not in source:
                     errors.append(f"{qid} correct choice not inside source")
-                if correct not in body and source not in body:
-                    errors.append(f"{qid} answer not in section body")
-                if source not in body:
-                    errors.append(f"{qid} source not in section")
+                if correct not in full:
+                    errors.append(f"{qid} correct choice not in PDF")
+                if correct not in body:
+                    errors.append(f"{qid} correct choice not in section")
                 texts = [c["text"] for c in question["choices"]]
                 if len(set(texts)) != len(texts):
                     errors.append(f"{qid} duplicate choices")
-                if question["prompt"] == "Laquelle de ces phrases figure dans cette section ?":
-                    for choice in question["choices"]:
-                        if choice["id"] != question["correctChoiceId"] and choice["text"] in body:
-                            errors.append(
-                                f"{qid} distractor is also in this section: {choice['text'][:60]}"
-                            )
                 for choice in question["choices"]:
-                    if choice["text"] not in full:
-                        errors.append(f"{qid} choice not in PDF: {choice['text'][:80]}")
-                    if choice["id"] != question["correctChoiceId"] and choice["text"] in source:
-                        errors.append(
-                            f"{qid} distractor is inside the source excerpt: {choice['text'][:60]}"
-                        )
+                    text = choice["text"]
+                    if choice["id"] == question["correctChoiceId"]:
+                        continue
+                    if text in full or text.casefold() in folded:
+                        errors.append(f"{qid} distractor is a PDF span: {text[:80]}")
+                    if text in source or correct in text or text in correct:
+                        errors.append(f"{qid} distractor overlaps the correct answer: {text[:60]}")
+                    for sentence in sentences:
+                        if sentence.casefold() in text.casefold():
+                            errors.append(f"{qid} distractor contains a PDF sentence: {sentence[:60]}")
+                            break
             elif question["type"] == "tf":
+                if question["prompt"] != TF_PROMPT:
+                    errors.append(f"{qid} unexpected true/false prompt")
                 statement = question["statement"]
-                if statement not in full:
-                    errors.append(f"{qid} statement not in PDF")
-                if statement not in source:
-                    errors.append(f"{qid} statement not inside source")
-                other = question.get("sourceSectionTitle")
                 if question["correct"]:
+                    if statement not in full:
+                        errors.append(f"{qid} true statement not in PDF")
+                    if statement not in source:
+                        errors.append(f"{qid} true statement not inside source")
                     if statement not in body:
-                        errors.append(f"{qid} true statement missing from section")
-                    if other:
-                        errors.append(f"{qid} true item should not cite another section")
+                        errors.append(f"{qid} true statement not in section")
                 else:
-                    if statement in body:
-                        errors.append(f"{qid} false statement is actually in this section")
-                    if not other or other not in bodies:
-                        errors.append(f"{qid} false item needs a real source section")
-                    elif statement not in bodies[other]:
-                        errors.append(f"{qid} statement missing from cited section")
+                    if statement in full or statement.casefold() in folded:
+                        errors.append(f"{qid} false statement is actually in the PDF")
+                    if statement in source:
+                        errors.append(f"{qid} false statement is inside the source")
+                    for sentence in sentences:
+                        if sentence.casefold() in statement.casefold():
+                            errors.append(f"{qid} false statement contains a PDF sentence")
+                            break
             else:
                 errors.append(f"{qid} unknown type")
-            # Prompts copied from the synthesis must match exactly when they appear there.
-            prompt = question["prompt"]
-            if prompt in full or prompt.rstrip(" ?") in full:
-                pass
+
     if errors:
         raise SystemExit("Verbatim check failed:\n" + "\n".join(errors))
 
