@@ -733,33 +733,31 @@ KEY = [
     ("13", "centriole"),
     ("14", "membrane cytoplasmique"),
 ]
-# Not labels from the key, so none is a true answer for another number.
-FALSE_LABELS = [
-    "chloroplaste",
-    "vacuole",
-    "paroi",
-    "plasmodesme",
-    "amyloplaste",
-    "flagelle",
-    "peroxysome",
-    "tonoplaste",
-]
 
 
-def add_diagram(bank: dict, full: str) -> None:
-    labels = {label for _, label in KEY}
-    for word in FALSE_LABELS:
-        if word in labels:
-            raise SystemExit(f"false label is in the key: {word}")
-        if word.casefold() in full.casefold():
-            raise SystemExit(f"false label appears in the PDF: {word}")
-    section = next(item for item in bank["sections"] if item["id"] == "b3")
-    if section["title"] != "Cellule animale":
-        raise SystemExit("diagram section is not Cellule animale")
+def other_key_labels(key: list[tuple[str, str]], index: int, correct: str) -> list[str]:
+    """Three other labels from this diagram. A repeated correct label is skipped."""
+    chosen: list[str] = []
+    step = 0
+    while len(chosen) < 3:
+        if step >= len(key):
+            raise SystemExit(f"not enough other labels for {correct}")
+        _, candidate = key[(index + 1 + step) % len(key)]
+        step += 1
+        if candidate == correct or candidate in chosen:
+            continue
+        chosen.append(candidate)
+    return chosen
+
+
+def diagram_questions(key: list[tuple[str, str]], image: str, id_prefix: str) -> list[dict]:
+    allowed = {label for _, label in key}
     questions = []
     slots = ["a", "b", "c", "d"]
-    for index, (number, label) in enumerate(KEY):
-        distractors = [FALSE_LABELS[(index + offset) % len(FALSE_LABELS)] for offset in (0, 1, 2)]
+    for index, (number, label) in enumerate(key):
+        if label not in allowed:
+            raise SystemExit(f"correct label is not in the key: {label}")
+        distractors = other_key_labels(key, index, label)
         correct_slot = slots[index % 4]
         choices = []
         distractor_at = 0
@@ -772,18 +770,27 @@ def add_diagram(bank: dict, full: str) -> None:
         texts = [choice["text"] for choice in choices]
         if texts.count(label) != 1 or len(set(texts)) != 4:
             raise SystemExit(f"diagram {number} does not have one unique answer")
+        if any(text not in allowed for text in texts):
+            raise SystemExit(f"diagram {number} uses a label outside its key")
         questions.append(
             {
-                "id": f"b3-d{index + 1}",
+                "id": f"{id_prefix}{index + 1}",
                 "type": "mc",
                 "prompt": f"Sur le schéma, que désigne le numéro {number} ?",
-                "image": DIAGRAM,
+                "image": image,
                 "choices": choices,
                 "correctChoiceId": correct_slot,
                 "source": f"{number}. {label}",
             }
         )
-    section["questions"] = questions + section["questions"]
+    return questions
+
+
+def add_diagram(bank: dict) -> None:
+    section = next(item for item in bank["sections"] if item["id"] == "b3")
+    if section["title"] != "Cellule animale":
+        raise SystemExit("diagram section is not Cellule animale")
+    section["questions"] = diagram_questions(KEY, DIAGRAM, "b3-d") + section["questions"]
 
 
 PLANT_DIAGRAM = "/schema-cellule-vegetale.jpg"
@@ -808,59 +815,13 @@ PLANT_KEY = [
     ("17", "Cytoplasme"),
     ("18", "Membrane plasmique"),
 ]
-# Not labels from the plant key, so none is a true answer for another number.
-PLANT_FALSE_LABELS = [
-    "lysosome",
-    "centriole",
-    "cytosquelette",
-    "flagelle",
-    "peroxysome",
-    "centrosome",
-    "desmosome",
-    "glycogène",
-]
 
 
 def add_plant_diagram(bank: dict) -> None:
-    labels = [label for _, label in PLANT_KEY]
-    folded = {label.casefold() for label in labels}
-    for word in PLANT_FALSE_LABELS:
-        if word.casefold() in folded:
-            raise SystemExit(f"plant false label is in the key: {word}")
-        for label in labels:
-            if word.casefold() in label.casefold() or label.casefold() in word.casefold():
-                raise SystemExit(f"plant false label overlaps the key: {word} / {label}")
     section = next(item for item in bank["sections"] if item["id"] == "b5")
     if section["title"] != "Cellule végétale":
         raise SystemExit("plant diagram section is not Cellule végétale")
-    questions = []
-    slots = ["a", "b", "c", "d"]
-    for index, (number, label) in enumerate(PLANT_KEY):
-        distractors = [PLANT_FALSE_LABELS[(index + offset) % len(PLANT_FALSE_LABELS)] for offset in (0, 1, 2)]
-        correct_slot = slots[index % 4]
-        choices = []
-        distractor_at = 0
-        for slot in slots:
-            if slot == correct_slot:
-                choices.append({"id": slot, "text": label})
-            else:
-                choices.append({"id": slot, "text": distractors[distractor_at]})
-                distractor_at += 1
-        texts = [choice["text"] for choice in choices]
-        if texts.count(label) != 1 or len(set(texts)) != 4:
-            raise SystemExit(f"plant diagram {number} does not have one unique answer")
-        questions.append(
-            {
-                "id": f"b5-d{index + 1}",
-                "type": "mc",
-                "prompt": f"Sur le schéma, que désigne le numéro {number} ?",
-                "image": PLANT_DIAGRAM,
-                "choices": choices,
-                "correctChoiceId": correct_slot,
-                "source": f"{number}. {label}",
-            }
-        )
-    section["questions"] = questions
+    section["questions"] = diagram_questions(PLANT_KEY, PLANT_DIAGRAM, "b5-d")
 
 
 def main() -> None:
@@ -868,7 +829,7 @@ def main() -> None:
     bodies = section_slices(full)
     bank = build()
     verify(bank, full, bodies)
-    add_diagram(bank, full)
+    add_diagram(bank)
     add_plant_diagram(bank)
     OUT.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     counts = {s["id"]: (s["title"], len(s["questions"])) for s in bank["sections"]}
