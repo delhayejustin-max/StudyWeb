@@ -1114,7 +1114,476 @@
     {
       "id": "b5",
       "title": "Cellule végétale",
-      "questions": []
+      "questions": [
+        {
+          "id": "b5-d1",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 1 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vésicule"
+            },
+            {
+              "id": "b",
+              "text": "lysosome"
+            },
+            {
+              "id": "c",
+              "text": "centriole"
+            },
+            {
+              "id": "d",
+              "text": "cytosquelette"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "1. Vésicule"
+        },
+        {
+          "id": "b5-d2",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 2 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "centriole"
+            },
+            {
+              "id": "b",
+              "text": "Appareil de Golgi"
+            },
+            {
+              "id": "c",
+              "text": "cytosquelette"
+            },
+            {
+              "id": "d",
+              "text": "flagelle"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "2. Appareil de Golgi"
+        },
+        {
+          "id": "b5-d3",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 3 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "cytosquelette"
+            },
+            {
+              "id": "b",
+              "text": "flagelle"
+            },
+            {
+              "id": "c",
+              "text": "Ribosome Endoplasmique rugueux"
+            },
+            {
+              "id": "d",
+              "text": "peroxysome"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "3. Ribosome Endoplasmique rugueux"
+        },
+        {
+          "id": "b5-d4",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 4 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "flagelle"
+            },
+            {
+              "id": "b",
+              "text": "peroxysome"
+            },
+            {
+              "id": "c",
+              "text": "centrosome"
+            },
+            {
+              "id": "d",
+              "text": "Appareil de Golgi"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "4. Appareil de Golgi"
+        },
+        {
+          "id": "b5-d5",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 5 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Plasmodesme"
+            },
+            {
+              "id": "b",
+              "text": "peroxysome"
+            },
+            {
+              "id": "c",
+              "text": "centrosome"
+            },
+            {
+              "id": "d",
+              "text": "desmosome"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "5. Plasmodesme"
+        },
+        {
+          "id": "b5-d6",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 6 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "centrosome"
+            },
+            {
+              "id": "b",
+              "text": "Paroi cellulosique"
+            },
+            {
+              "id": "c",
+              "text": "desmosome"
+            },
+            {
+              "id": "d",
+              "text": "glycogène"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "6. Paroi cellulosique"
+        },
+        {
+          "id": "b5-d7",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 7 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "desmosome"
+            },
+            {
+              "id": "b",
+              "text": "glycogène"
+            },
+            {
+              "id": "c",
+              "text": "Pore Nucléaire"
+            },
+            {
+              "id": "d",
+              "text": "lysosome"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "7. Pore Nucléaire"
+        },
+        {
+          "id": "b5-d8",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 8 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "glycogène"
+            },
+            {
+              "id": "b",
+              "text": "lysosome"
+            },
+            {
+              "id": "c",
+              "text": "centriole"
+            },
+            {
+              "id": "d",
+              "text": "Membrane nucléaire"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "8. Membrane nucléaire"
+        },
+        {
+          "id": "b5-d9",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 9 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nucléole"
+            },
+            {
+              "id": "b",
+              "text": "lysosome"
+            },
+            {
+              "id": "c",
+              "text": "centriole"
+            },
+            {
+              "id": "d",
+              "text": "cytosquelette"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "9. Nucléole"
+        },
+        {
+          "id": "b5-d10",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 10 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "centriole"
+            },
+            {
+              "id": "b",
+              "text": "Noyau"
+            },
+            {
+              "id": "c",
+              "text": "cytosquelette"
+            },
+            {
+              "id": "d",
+              "text": "flagelle"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "10. Noyau"
+        },
+        {
+          "id": "b5-d11",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 11 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "cytosquelette"
+            },
+            {
+              "id": "b",
+              "text": "flagelle"
+            },
+            {
+              "id": "c",
+              "text": "Reticulum endoplasmique lisse"
+            },
+            {
+              "id": "d",
+              "text": "peroxysome"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "11. Reticulum endoplasmique lisse"
+        },
+        {
+          "id": "b5-d12",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 12 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "flagelle"
+            },
+            {
+              "id": "b",
+              "text": "peroxysome"
+            },
+            {
+              "id": "c",
+              "text": "centrosome"
+            },
+            {
+              "id": "d",
+              "text": "Thylakoide"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "12. Thylakoide"
+        },
+        {
+          "id": "b5-d13",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 13 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Grain d'amidon"
+            },
+            {
+              "id": "b",
+              "text": "peroxysome"
+            },
+            {
+              "id": "c",
+              "text": "centrosome"
+            },
+            {
+              "id": "d",
+              "text": "desmosome"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "13. Grain d'amidon"
+        },
+        {
+          "id": "b5-d14",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 14 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "centrosome"
+            },
+            {
+              "id": "b",
+              "text": "Chloroplaste"
+            },
+            {
+              "id": "c",
+              "text": "desmosome"
+            },
+            {
+              "id": "d",
+              "text": "glycogène"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "14. Chloroplaste"
+        },
+        {
+          "id": "b5-d15",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 15 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "desmosome"
+            },
+            {
+              "id": "b",
+              "text": "glycogène"
+            },
+            {
+              "id": "c",
+              "text": "Grande vacuole"
+            },
+            {
+              "id": "d",
+              "text": "lysosome"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "15. Grande vacuole"
+        },
+        {
+          "id": "b5-d16",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 16 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "glycogène"
+            },
+            {
+              "id": "b",
+              "text": "lysosome"
+            },
+            {
+              "id": "c",
+              "text": "centriole"
+            },
+            {
+              "id": "d",
+              "text": "Mitochondrie"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "16. Mitochondrie"
+        },
+        {
+          "id": "b5-d17",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 17 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cytoplasme"
+            },
+            {
+              "id": "b",
+              "text": "lysosome"
+            },
+            {
+              "id": "c",
+              "text": "centriole"
+            },
+            {
+              "id": "d",
+              "text": "cytosquelette"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "17. Cytoplasme"
+        },
+        {
+          "id": "b5-d18",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 18 ?",
+          "image": "/schema-cellule-vegetale.jpg",
+          "choices": [
+            {
+              "id": "a",
+              "text": "centriole"
+            },
+            {
+              "id": "b",
+              "text": "Membrane plasmique"
+            },
+            {
+              "id": "c",
+              "text": "cytosquelette"
+            },
+            {
+              "id": "d",
+              "text": "flagelle"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "18. Membrane plasmique"
+        }
+      ]
     },
     {
       "id": "b6",

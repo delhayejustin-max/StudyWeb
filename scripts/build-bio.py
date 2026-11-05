@@ -786,12 +786,90 @@ def add_diagram(bank: dict, full: str) -> None:
     section["questions"] = questions + section["questions"]
 
 
+PLANT_DIAGRAM = "/schema-cellule-vegetale.jpg"
+# Justin's key, verbatim. Numbers 2 and 4 are both « Appareil de Golgi ».
+PLANT_KEY = [
+    ("1", "Vésicule"),
+    ("2", "Appareil de Golgi"),
+    ("3", "Ribosome Endoplasmique rugueux"),
+    ("4", "Appareil de Golgi"),
+    ("5", "Plasmodesme"),
+    ("6", "Paroi cellulosique"),
+    ("7", "Pore Nucléaire"),
+    ("8", "Membrane nucléaire"),
+    ("9", "Nucléole"),
+    ("10", "Noyau"),
+    ("11", "Reticulum endoplasmique lisse"),
+    ("12", "Thylakoide"),
+    ("13", "Grain d'amidon"),
+    ("14", "Chloroplaste"),
+    ("15", "Grande vacuole"),
+    ("16", "Mitochondrie"),
+    ("17", "Cytoplasme"),
+    ("18", "Membrane plasmique"),
+]
+# Not labels from the plant key, so none is a true answer for another number.
+PLANT_FALSE_LABELS = [
+    "lysosome",
+    "centriole",
+    "cytosquelette",
+    "flagelle",
+    "peroxysome",
+    "centrosome",
+    "desmosome",
+    "glycogène",
+]
+
+
+def add_plant_diagram(bank: dict) -> None:
+    labels = [label for _, label in PLANT_KEY]
+    folded = {label.casefold() for label in labels}
+    for word in PLANT_FALSE_LABELS:
+        if word.casefold() in folded:
+            raise SystemExit(f"plant false label is in the key: {word}")
+        for label in labels:
+            if word.casefold() in label.casefold() or label.casefold() in word.casefold():
+                raise SystemExit(f"plant false label overlaps the key: {word} / {label}")
+    section = next(item for item in bank["sections"] if item["id"] == "b5")
+    if section["title"] != "Cellule végétale":
+        raise SystemExit("plant diagram section is not Cellule végétale")
+    questions = []
+    slots = ["a", "b", "c", "d"]
+    for index, (number, label) in enumerate(PLANT_KEY):
+        distractors = [PLANT_FALSE_LABELS[(index + offset) % len(PLANT_FALSE_LABELS)] for offset in (0, 1, 2)]
+        correct_slot = slots[index % 4]
+        choices = []
+        distractor_at = 0
+        for slot in slots:
+            if slot == correct_slot:
+                choices.append({"id": slot, "text": label})
+            else:
+                choices.append({"id": slot, "text": distractors[distractor_at]})
+                distractor_at += 1
+        texts = [choice["text"] for choice in choices]
+        if texts.count(label) != 1 or len(set(texts)) != 4:
+            raise SystemExit(f"plant diagram {number} does not have one unique answer")
+        questions.append(
+            {
+                "id": f"b5-d{index + 1}",
+                "type": "mc",
+                "prompt": f"Sur le schéma, que désigne le numéro {number} ?",
+                "image": PLANT_DIAGRAM,
+                "choices": choices,
+                "correctChoiceId": correct_slot,
+                "source": f"{number}. {label}",
+            }
+        )
+    section["questions"] = questions
+
+
 def main() -> None:
     full = load_pdf()
     bodies = section_slices(full)
     bank = build()
     verify(bank, full, bodies)
     add_diagram(bank, full)
+    add_plant_diagram(bank)
     OUT.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     counts = {s["id"]: (s["title"], len(s["questions"])) for s in bank["sections"]}
     print(counts)
