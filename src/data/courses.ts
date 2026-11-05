@@ -20,7 +20,7 @@ export const courses: Course[] = [
   {
     id: "caracteristiques-du-vivant",
     title: "Les caractéristiques du vivant",
-    label: "Les caractéristiques du vivant",
+    label: "La synthèse pour comprendre et mémoriser",
     pdf: "Les_caracteristiques_du_vivant.pdf",
     sections: bio.sections as StudySection[],
   },
