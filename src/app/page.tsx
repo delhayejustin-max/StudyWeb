@@ -43,7 +43,9 @@ export default function HomePage() {
               <li key={course.id}>
                 <Card className="h-full">
                   <CardHeader>
-                    <p className="text-sm font-medium text-[oklch(0.48_0.12_42)]">{course.label}</p>
+                    {course.label !== course.title ? (
+                      <p className="text-sm font-medium text-[oklch(0.48_0.12_42)]">{course.label}</p>
+                    ) : null}
                     <CardTitle className="font-heading text-2xl">{course.title}</CardTitle>
                     <CardDescription>
                       {sectionLabel}

@@ -2,7 +2,7 @@
 
 Site statique pour lire plusieurs synthèses de cours et s’entraîner sur chacune. Chaque cours a son PDF et ses questions. La bonne réponse et l’extrait affiché sont des passages de ce PDF. Les autres propositions sont fausses par rapport à cette synthèse.
 
-Le catalogue est la page d’accueil. Le seul cours pour l’instant est Nutrition ASV (`public/Nutrition_ASV_synthese.pdf`).
+Le catalogue est la page d’accueil. Les cours actuels sont Nutrition ASV (`public/Nutrition_ASV_synthese.pdf`) et Les caractéristiques du vivant (`public/Les_caracteristiques_du_vivant.pdf`).
 
 Pour ajouter un cours : déposer son PDF dans `public/`, puis ajouter une entrée dans `src/data/courses.ts`. Les pages n’ont pas à être réécrites.
 

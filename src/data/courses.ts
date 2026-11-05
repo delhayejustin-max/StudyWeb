@@ -1,4 +1,5 @@
 import bank from "./bank.json";
+import bio from "./bio.json";
 import type { Course, StudySection } from "./types";
 
 /**
@@ -15,6 +16,13 @@ export const courses: Course[] = [
     label: "La synthèse pour comprendre et mémoriser",
     pdf: "Nutrition_ASV_synthese.pdf",
     sections: bank.sections as StudySection[],
+  },
+  {
+    id: "caracteristiques-du-vivant",
+    title: "Les caractéristiques du vivant",
+    label: "Les caractéristiques du vivant",
+    pdf: "Les_caracteristiques_du_vivant.pdf",
+    sections: bio.sections as StudySection[],
   },
 ];
 

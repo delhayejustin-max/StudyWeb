@@ -1,0 +1,1002 @@
+{
+  "sections": [
+    {
+      "id": "b1",
+      "title": "Les caractéristiques du vivant",
+      "questions": [
+        {
+          "id": "b1-q1",
+          "type": "mc",
+          "prompt": "Que dit le texte de la cytologie ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cytologie : étude des organes entiers."
+            },
+            {
+              "id": "b",
+              "text": "Cytologie : étude des cellules"
+            },
+            {
+              "id": "c",
+              "text": "Cytologie : étude des systèmes digestifs."
+            },
+            {
+              "id": "d",
+              "text": "Cytologie : étude des atomes isolés."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Cytologie : étude des cellules"
+        },
+        {
+          "id": "b1-q2",
+          "type": "mc",
+          "prompt": "Quelle définition le texte donne-t-il d’un tissu ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un tissu : ensemble de cellules qui ont la même fonction"
+            },
+            {
+              "id": "b",
+              "text": "Un tissu : une seule cellule isolée, sans fonction."
+            },
+            {
+              "id": "c",
+              "text": "Un tissu : ensemble d’organes aux fonctions opposées."
+            },
+            {
+              "id": "d",
+              "text": "Un tissu : ensemble de molécules d’azote seulement."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Un tissu : ensemble de cellules qui ont la même fonction"
+        },
+        {
+          "id": "b1-q3",
+          "type": "mc",
+          "prompt": "Quelle définition le texte donne-t-il d’un organe ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un organe : une cellule unique, sans tissu autour."
+            },
+            {
+              "id": "b",
+              "text": "Un organe : ensemble de système sans limite."
+            },
+            {
+              "id": "c",
+              "text": "Un organe : ensemble de différent tissu organiser et limiter"
+            },
+            {
+              "id": "d",
+              "text": "Un organe : uniquement un atome de carbone."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Un organe : ensemble de différent tissu organiser et limiter"
+        },
+        {
+          "id": "b1-q4",
+          "type": "mc",
+          "prompt": "Quelle définition le texte donne-t-il d’un système ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un système : ensemble d'organe qui ont la même grande fonction"
+            },
+            {
+              "id": "b",
+              "text": "Un système : une seule molécule sans fonction."
+            },
+            {
+              "id": "c",
+              "text": "Un système : ensemble de cellules toutes de fonctions différentes."
+            },
+            {
+              "id": "d",
+              "text": "Un système : un atome isolé, hors de tout organe."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Un système : ensemble d'organe qui ont la même grande fonction"
+        },
+        {
+          "id": "b1-q5",
+          "type": "mc",
+          "prompt": "Quelle définition le texte donne-t-il d’un organisme ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un organisme : une cellule seule, sans aucun système."
+            },
+            {
+              "id": "b",
+              "text": "Un organisme : ensemble de système judicieusement organiser"
+            },
+            {
+              "id": "c",
+              "text": "Un organisme : seulement un tissu nerveux."
+            },
+            {
+              "id": "d",
+              "text": "Un organisme : un minéral qui ne forme pas de système."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Un organisme : ensemble de système judicieusement organiser"
+        },
+        {
+          "id": "b1-q6",
+          "type": "mc",
+          "prompt": "Quels éléments le texte cite-t-il comme composition essentielle des êtres vivants ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "fer, iode, calcium, sodium, potassium, chlore"
+            },
+            {
+              "id": "b",
+              "text": "hélium, néon, argon, xénon, radon, krypton"
+            },
+            {
+              "id": "c",
+              "text": "azote, carbone, hydrogène, oxygène, phosphore, soufre"
+            },
+            {
+              "id": "d",
+              "text": "or, argent, cuivre, plomb, étain, mercure"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Les être vivant sont composer essentiellement de ses éléments suivent : azote, carbone, hydrogène, oxygène, phosphore, soufre"
+        },
+        {
+          "id": "b1-q7",
+          "type": "mc",
+          "prompt": "Quelles 4 familles de molécules le texte écrit-il ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eau  Sel  Fer  Vitamine"
+            },
+            {
+              "id": "b",
+              "text": "Matier grasse  Glucide  Protéine  Acide nucléique"
+            },
+            {
+              "id": "c",
+              "text": "Os  Sang  Nerf  Muscle"
+            },
+            {
+              "id": "d",
+              "text": "Azote  Soufre  Or  Plomb"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Il y a 4 familles de molécules  Matier grasse  Glucide  Protéine  Acide nucléique"
+        },
+        {
+          "id": "b1-q8",
+          "type": "mc",
+          "prompt": "Quelle liste le texte place sous « Il y a 3 domaines et règne du vivant » ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Virus  Prion  Minéral  Gaz  Métal  Roche"
+            },
+            {
+              "id": "b",
+              "text": "Poisson  Oiseau  Insecte  Ver  Méduse  Éponge"
+            },
+            {
+              "id": "c",
+              "text": "Bactérie  Archées  Eucaryote  Regne végétale  Regne animale  Reigne des champignon"
+            },
+            {
+              "id": "d",
+              "text": "Foie  Cœur  Poumon  Rein  Peau  Os"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Il y a 3 domaines et règne du vivant  Bactérie  Archées  Eucaryote  Regne végétale  Regne animale  Reigne des champignon"
+        },
+        {
+          "id": "b1-q9",
+          "type": "mc",
+          "prompt": "Quels tissus le texte énumère-t-il chez un être vivant ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tissu hépatique  Tissu rénal  Tissu pulmonaire"
+            },
+            {
+              "id": "b",
+              "text": "Tissu nerveux  Tissu osseux  Tissu musculaire  Tissu conjonctif  Tissu sanguin  Tissu cartilagineux  Tissu épithélial"
+            },
+            {
+              "id": "c",
+              "text": "Tissu minéral  Tissu gazeux  Tissu métallique"
+            },
+            {
+              "id": "d",
+              "text": "Tissu viral  Tissu fossile  Tissu vide"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Il y a plusieurs tissus chez un être vivant  Tissu nerveux  Tissu osseux  Tissu musculaire  Tissu conjonctif  Tissu sanguin  Tissu cartilagineux  Tissu épithélial"
+        },
+        {
+          "id": "b1-q10",
+          "type": "mc",
+          "prompt": "Que dit le texte de la matière et des molécules ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La matière est constituée d’atomes liens entre eux et forme ders molécules ces molécules vont s’organiser et former l’unité structurale tous les être vivant"
+            },
+            {
+              "id": "b",
+              "text": "La matière est vide d’atomes et ne forme aucune molécule."
+            },
+            {
+              "id": "c",
+              "text": "La matière est faite seulement de cellules déjà organisées, sans atome."
+            },
+            {
+              "id": "d",
+              "text": "La matière refuse les molécules et reste en atomes séparés."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "La matière est constituée d’atomes liens entre eux et forme ders molécules ces molécules vont s’organiser et former l’unité structurale tous les être vivant"
+        },
+        {
+          "id": "b1-q11",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Elles sont constituées d'une ou plusieurs cellules",
+          "correct": true,
+          "source": "Elles sont constituées d'une ou plusieurs cellules"
+        },
+        {
+          "id": "b1-q12",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Un tissu est une seule molécule, sans cellule et sans fonction.",
+          "correct": false,
+          "source": "Un tissu : ensemble de cellules qui ont la même fonction"
+        },
+        {
+          "id": "b1-q13",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "L'ensemble des systèmes= un être vivant",
+          "correct": true,
+          "source": "L'ensemble des systèmes= un être vivant"
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "title": "Il y a différent système",
+      "questions": [
+        {
+          "id": "b2-q1",
+          "type": "mc",
+          "prompt": "Quels systèmes le texte énumère-t-il ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Solaire  Lunaire  Minéral  Gazeux"
+            },
+            {
+              "id": "b",
+              "text": "Systèmes digestifs  Reproducteur  Nerveux  Cardiovasculaire  Locomoteur  Endocrinien  Urinaire  Respiratoire  Lymphatique  Immunitaire"
+            },
+            {
+              "id": "c",
+              "text": "Hépatique seul  Cutané seul  Osseux seul"
+            },
+            {
+              "id": "d",
+              "text": "Optique  Auditif  Olfactif  Gustatif"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Il y a différent système  Systèmes digestifs  Reproducteur  Nerveux  Cardiovasculaire  Locomoteur  Endocrinien  Urinaire  Respiratoire  Lymphatique  Immunitaire"
+        },
+        {
+          "id": "b2-q2",
+          "type": "mc",
+          "prompt": "Le texte écrit-il un système digestif dans cette liste ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Non : la liste commence par un système minéral."
+            },
+            {
+              "id": "b",
+              "text": "Systèmes digestifs"
+            },
+            {
+              "id": "c",
+              "text": "Non : le texte ne cite que le système solaire."
+            },
+            {
+              "id": "d",
+              "text": "Non : la liste ne contient que des tissus osseux."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Il y a différent système  Systèmes digestifs"
+        },
+        {
+          "id": "b2-q3",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Il y a différent système",
+          "correct": true,
+          "source": "Il y a différent système"
+        },
+        {
+          "id": "b2-q4",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Le texte ne cite aucun système respiratoire ni immunitaire.",
+          "correct": false,
+          "source": "Respiratoire  Lymphatique  Immunitaire"
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "title": "Cellule animale",
+      "questions": [
+        {
+          "id": "b3-q1",
+          "type": "mc",
+          "prompt": "Que place le texte au numéro 1 de la cellule animale ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "1.mitochondrie"
+            },
+            {
+              "id": "b",
+              "text": "1.noyaux"
+            },
+            {
+              "id": "c",
+              "text": "1.centriole"
+            },
+            {
+              "id": "d",
+              "text": "1.vacuole"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "1.noyaux"
+        },
+        {
+          "id": "b3-q2",
+          "type": "mc",
+          "prompt": "Que place le texte au repère 1’ ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "1’. glucose"
+            },
+            {
+              "id": "b",
+              "text": "1’. lipide"
+            },
+            {
+              "id": "c",
+              "text": "1’. ADN"
+            },
+            {
+              "id": "d",
+              "text": "1’. ATP"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "1’. ADN"
+        },
+        {
+          "id": "b3-q3",
+          "type": "mc",
+          "prompt": "Quel numéro le texte donne-t-il à l’appareil de Golgi ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "3.appareil de Golgi"
+            },
+            {
+              "id": "b",
+              "text": "9.appareil de Golgi"
+            },
+            {
+              "id": "c",
+              "text": "14.appareil de Golgi"
+            },
+            {
+              "id": "d",
+              "text": "6.appareil de Golgi"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "6.appareil de Golgi"
+        },
+        {
+          "id": "b3-q4",
+          "type": "mc",
+          "prompt": "Quel numéro le texte donne-t-il à la mitochondrie ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "9.mitochondrie"
+            },
+            {
+              "id": "b",
+              "text": "2.mitochondrie"
+            },
+            {
+              "id": "c",
+              "text": "13.mitochondrie"
+            },
+            {
+              "id": "d",
+              "text": "5.mitochondrie"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "9.mitochondrie"
+        },
+        {
+          "id": "b3-q5",
+          "type": "mc",
+          "prompt": "Que place le texte au numéro 5 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "5.REL"
+            },
+            {
+              "id": "b",
+              "text": "5.noyaux"
+            },
+            {
+              "id": "c",
+              "text": "5.RER"
+            },
+            {
+              "id": "d",
+              "text": "5.centriole"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "5.RER"
+        },
+        {
+          "id": "b3-q9",
+          "type": "mc",
+          "prompt": "Que place le texte au numéro 8 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "8.RER"
+            },
+            {
+              "id": "b",
+              "text": "8.REL"
+            },
+            {
+              "id": "c",
+              "text": "8.noyaux"
+            },
+            {
+              "id": "d",
+              "text": "8.vacuole"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "8.REL"
+        },
+        {
+          "id": "b3-q6",
+          "type": "mc",
+          "prompt": "Que place le texte au numéro 14 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "14.noyaux"
+            },
+            {
+              "id": "b",
+              "text": "14.ribosome"
+            },
+            {
+              "id": "c",
+              "text": "14.vacuole centrale"
+            },
+            {
+              "id": "d",
+              "text": "14.membrane cytoplasmique"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "14.membrane cytoplasmique"
+        },
+        {
+          "id": "b3-q7",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "13.centriole",
+          "correct": true,
+          "source": "13.centriole"
+        },
+        {
+          "id": "b3-q8",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Le texte place une vacuole au numéro 11 de la cellule animale.",
+          "correct": false,
+          "source": "11.cytoplasme"
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "title": "Fonction des organites",
+      "questions": [
+        {
+          "id": "b4-q1",
+          "type": "mc",
+          "prompt": "Quelle fonction le texte donne-t-il au RE rugueux ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fonction RE rugueux : détruit l’ADN dans le noyau."
+            },
+            {
+              "id": "b",
+              "text": "Fonction RE rugueux : stoker les protéines fabriquées par les ribosomes"
+            },
+            {
+              "id": "c",
+              "text": "Fonction RE rugueux : produit l’ATP de la respiration."
+            },
+            {
+              "id": "d",
+              "text": "Fonction RE rugueux : fabrique la paroi de cellulose."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Fonction RE rugueux : stoker les protéines fabriquées par les ribosomes"
+        },
+        {
+          "id": "b4-q2",
+          "type": "mc",
+          "prompt": "Quelle fonction le texte donne-t-il au RE lisse ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fonction RE lisse : synthétise les lipides pour ensuite pénétrer dans des vésicules"
+            },
+            {
+              "id": "b",
+              "text": "Fonction RE lisse : stocke l’ADN hors de la cellule."
+            },
+            {
+              "id": "c",
+              "text": "Fonction RE lisse : brise les protéines en eau pure."
+            },
+            {
+              "id": "d",
+              "text": "Fonction RE lisse : bloque tout passage de lipides."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Fonction RE lisse : synthétise les lipides pour ensuite pénétrer dans des vésicules"
+        },
+        {
+          "id": "b4-q3",
+          "type": "mc",
+          "prompt": "Quelle fonction le texte donne-t-il au ribosome ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fonction ribosome : synthèse des lipides sur le RE lisse."
+            },
+            {
+              "id": "b",
+              "text": "Fonction ribosome : respiration cellulaire et production d’ATP."
+            },
+            {
+              "id": "c",
+              "text": "Fonction ribosome : synthèse des protéines sur le RE rugueux"
+            },
+            {
+              "id": "d",
+              "text": "Fonction ribosome : destruction des vésicules."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Fonction ribosome : synthèse des protéines sur le RE rugueux"
+        },
+        {
+          "id": "b4-q4",
+          "type": "mc",
+          "prompt": "Quelle fonction le texte donne-t-il à l’appareil de Golgi ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fonction appareille de Golgi : transformations des protéines provenant du RER et apparait comme des organites de stockage et distribution des protéines"
+            },
+            {
+              "id": "b",
+              "text": "Fonction appareille de Golgi : synthèse de l’ADN dans les mitochondries."
+            },
+            {
+              "id": "c",
+              "text": "Fonction appareille de Golgi : destruction de tous les lipides."
+            },
+            {
+              "id": "d",
+              "text": "Fonction appareille de Golgi : aucun stockage et aucune distribution."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Fonction appareille de Golgi : transformations des protéines provenant du RER et apparait comme des organites de stockage et distribution des protéines"
+        },
+        {
+          "id": "b4-q5",
+          "type": "mc",
+          "prompt": "Quelle fonction le texte donne-t-il aux lysosomes ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fonction des lysosomes : stockent les lipides sans les modifier."
+            },
+            {
+              "id": "b",
+              "text": "Fonction des lysosomes : assurent la respiration et produisent l’ATP."
+            },
+            {
+              "id": "c",
+              "text": "Fonction des lysosomes : fabriquent la membrane nucléaire."
+            },
+            {
+              "id": "d",
+              "text": "Fonction des lysosomes : brise les macromolécules à savoir les protéines puis sont dégrader en acide animer"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Fonction des lysosomes : brise les macromolécules à savoir les protéines puis sont dégrader en acide animer"
+        },
+        {
+          "id": "b4-q6",
+          "type": "mc",
+          "prompt": "Quelle fonction le texte donne-t-il aux mitochondries ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fonction des mitochondries : les mitochondries assurent la respiration cellulaire et produit de l'énergie sous forme d'adénosine triphosphate"
+            },
+            {
+              "id": "b",
+              "text": "Fonction des mitochondries : elles stockent les protéines des ribosomes sans énergie."
+            },
+            {
+              "id": "c",
+              "text": "Fonction des mitochondries : elles synthétisent les lipides des vésicules."
+            },
+            {
+              "id": "d",
+              "text": "Fonction des mitochondries : elles n’ont aucun rôle énergétique."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Fonction des mitochondries : les mitochondries assurent la respiration cellulaire et produit de l'énergie sous forme d'adénosine triphosphate"
+        },
+        {
+          "id": "b4-q7",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Le RE lisse stocke les protéines fabriquées par les ribosomes.",
+          "correct": false,
+          "source": "Fonction RE lisse : synthétise les lipides pour ensuite pénétrer dans des vésicules"
+        },
+        {
+          "id": "b4-q8",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Le texte dit que les mitochondries ne produisent pas d’énergie.",
+          "correct": false,
+          "source": "Fonction des mitochondries : les mitochondries assurent la respiration cellulaire et produit de l'énergie sous forme d'adénosine triphosphate"
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "title": "Cellule végétale",
+      "questions": []
+    },
+    {
+      "id": "b6",
+      "title": "Transport membranaire",
+      "questions": [
+        {
+          "id": "b6-q1",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il la diffusion simple au début du transport ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Diffusion simple : les molécules remontent le gradient en dépensant de l’ATP."
+            },
+            {
+              "id": "b",
+              "text": "Diffusion simple : diffusent librement au travers de la membrane d'une région à forte concentration vers une région faible concentration en la même molécule"
+            },
+            {
+              "id": "c",
+              "text": "Diffusion simple : l’eau seule traverse, jamais les autres molécules."
+            },
+            {
+              "id": "d",
+              "text": "Diffusion simple : le passage exige une protéine et de l’ATP."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Diffusion simple : diffusent librement au travers de la membrane d'une région à forte concentration vers une région faible concentration en la même molécule"
+        },
+        {
+          "id": "b6-q2",
+          "type": "mc",
+          "prompt": "Que dit le texte de l’énergie du transport passif ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le transport passif dépense toujours de l’ATP."
+            },
+            {
+              "id": "b",
+              "text": "Le transport passif est un mécanisme de transport membranaire qui permet le passage de molécules ou d'ions à travers la membrane cellulaire sans aucune dépense d'énergie (sans ATP)."
+            },
+            {
+              "id": "c",
+              "text": "Le transport passif est impossible sans une pompe à ATP."
+            },
+            {
+              "id": "d",
+              "text": "Le transport passif ne concerne ni les molécules ni les ions."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Le transport passif est un mécanisme de transport membranaire qui permet le passage de molécules ou d'ions à travers la membrane cellulaire sans aucune dépense d'énergie (sans ATP)."
+        },
+        {
+          "id": "b6-q3",
+          "type": "mc",
+          "prompt": "Dans quel sens le texte dit-il que le transport passif se fait ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Il remonte le gradient, de la zone la moins concentrée vers la plus concentrée."
+            },
+            {
+              "id": "b",
+              "text": "Il s’arrête avant tout déplacement de substance."
+            },
+            {
+              "id": "c",
+              "text": "Il se fait spontanément dans le sens du gradient de concentration (ou gradient électrochimique), c'est-à-dire d'une zone où la substance est la plus concentrée vers une zone où elle l'est moins, jusqu'à l'équilibre."
+            },
+            {
+              "id": "d",
+              "text": "Il ne suit aucun gradient et consomme de l’ATP."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Il se fait spontanément dans le sens du gradient de concentration (ou gradient électrochimique), c'est-à-dire d'une zone où la substance est la plus concentrée vers une zone où elle l'est moins, jusqu'à l'équilibre."
+        },
+        {
+          "id": "b6-q4",
+          "type": "mc",
+          "prompt": "Quel principe le texte donne-t-il à la diffusion simple (ou libre) ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Principe : Les molécules traversent directement la bicouche lipidique de la membrane."
+            },
+            {
+              "id": "b",
+              "text": "Principe : Les molécules restent bloquées hors de la bicouche."
+            },
+            {
+              "id": "c",
+              "text": "Principe : Seuls les ions chargés traversent la bicouche sans protéine."
+            },
+            {
+              "id": "d",
+              "text": "Principe : La bicouche lipidique interdit tout passage."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Principe : Les molécules traversent directement la bicouche lipidique de la membrane."
+        },
+        {
+          "id": "b6-q5",
+          "type": "mc",
+          "prompt": "Quelles molécules le texte associe-t-il à la diffusion simple ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Molécules concernées : grosses molécules chargées, comme les protéines et l’ADN."
+            },
+            {
+              "id": "b",
+              "text": "Molécules concernées : Petites molécules non chargées et non polaires (comme l'oxygène O₂ , le dioxyde de carbone CO₂ ) ou molécules lipophiles."
+            },
+            {
+              "id": "c",
+              "text": "Molécules concernées : uniquement l’eau, jamais l’oxygène."
+            },
+            {
+              "id": "d",
+              "text": "Molécules concernées : seulement les ions, jamais le dioxyde de carbone."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Molécules concernées : Petites molécules non chargées et non polaires (comme l'oxygène O₂ , le dioxyde de carbone CO₂ ) ou molécules lipophiles."
+        },
+        {
+          "id": "b6-q6",
+          "type": "mc",
+          "prompt": "Quel principe le texte donne-t-il à la diffusion facilitée ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Principe : Le passage se fait sans protéine et avec une forte dépense d’ATP."
+            },
+            {
+              "id": "b",
+              "text": "Principe : Le passage se fait contre le gradient grâce à une pompe."
+            },
+            {
+              "id": "c",
+              "text": "Principe : Le passage se fait avec l'aide de protéines membranaires spécialisées qui n'utilisent pas d'énergie."
+            },
+            {
+              "id": "d",
+              "text": "Principe : Le passage est impossible pour le glucose."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Principe : Le passage se fait avec l'aide de protéines membranaires spécialisées qui n'utilisent pas d'énergie."
+        },
+        {
+          "id": "b6-q7",
+          "type": "mc",
+          "prompt": "Que dit le texte des canaux ioniques ou porines ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les canaux ioniques ou porines : ferment la membrane et bloquent tous les ions."
+            },
+            {
+              "id": "b",
+              "text": "Les canaux ioniques ou porines : forment des pores hydrophiles laissant passer rapidement des ions spécifiques."
+            },
+            {
+              "id": "c",
+              "text": "Les canaux ioniques ou porines : synthétisent l’ATP dans la mitochondrie."
+            },
+            {
+              "id": "d",
+              "text": "Les canaux ioniques ou porines : ne laissent passer que des lipides neutres."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Les canaux ioniques ou porines : forment des pores hydrophiles laissant passer rapidement des ions spécifiques."
+        },
+        {
+          "id": "b6-q8",
+          "type": "mc",
+          "prompt": "Que dit le texte des transporteurs (uniports) ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les transporteurs (uniports) : changent de conformation pour faire traverser des molécules polaires ou plus grosses (comme le glucose) dans le sens de leur gradient"
+            },
+            {
+              "id": "b",
+              "text": "Les transporteurs (uniports) : dépensent de l’ATP pour remonter le gradient du glucose."
+            },
+            {
+              "id": "c",
+              "text": "Les transporteurs (uniports) : ne changent jamais de forme."
+            },
+            {
+              "id": "d",
+              "text": "Les transporteurs (uniports) : ne laissent passer que l’ADN."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Les transporteurs (uniports) : changent de conformation pour faire traverser des molécules polaires ou plus grosses (comme le glucose) dans le sens de leur gradient"
+        },
+        {
+          "id": "b6-q9",
+          "type": "mc",
+          "prompt": "Comment le texte définit-il l’osmose ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Principe : C'est un cas particulier de diffusion qui concerne spécifiquement le mouvement de l'eau (H₂ O) à travers une membrane semi-perméable."
+            },
+            {
+              "id": "b",
+              "text": "Principe : C’est le mouvement des protéines à travers une membrane sans eau."
+            },
+            {
+              "id": "c",
+              "text": "Principe : C’est un transport qui dépense de l’ATP pour l’ADN."
+            },
+            {
+              "id": "d",
+              "text": "Principe : C’est le passage des ions par des porines, sans eau."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Principe : C'est un cas particulier de diffusion qui concerne spécifiquement le mouvement de l'eau (H₂ O) à travers une membrane semi-perméable."
+        },
+        {
+          "id": "b6-q10",
+          "type": "mc",
+          "prompt": "Dans quel sens le texte dit-il que l’eau se déplace lors de l’osmose ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "De l’hypertonique vers l’hypotonique, pour augmenter l’écart."
+            },
+            {
+              "id": "b",
+              "text": "Elle ne se déplace pas : les deux milieux restent isolés."
+            },
+            {
+              "id": "c",
+              "text": "Du milieu sans soluté vers un milieu sans membrane."
+            },
+            {
+              "id": "d",
+              "text": "Direction : L'eau se déplace d'une zone faiblement concentrée en solutés (milieu hypotonique) vers une zone fortement concentrée en solutés (milieu hypertonique) pour équilibrer les concentrations."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Direction : L'eau se déplace d'une zone faiblement concentrée en solutés (milieu hypotonique) vers une zone fortement concentrée en solutés (milieu hypertonique) pour équilibrer les concentrations."
+        },
+        {
+          "id": "b6-q11",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "La diffusion facilitée dépense de l’ATP et se fait sans protéine membranaire.",
+          "correct": false,
+          "source": "Principe : Le passage se fait avec l'aide de protéines membranaires spécialisées qui n'utilisent pas d'énergie."
+        },
+        {
+          "id": "b6-q12",
+          "type": "tf",
+          "prompt": "D’après cette section, l’affirmation suivante est-elle exacte ?",
+          "statement": "Lors de l’osmose, l’eau va du milieu hypertonique vers le milieu hypotonique.",
+          "correct": false,
+          "source": "Direction : L'eau se déplace d'une zone faiblement concentrée en solutés (milieu hypotonique) vers une zone fortement concentrée en solutés (milieu hypertonique) pour équilibrer les concentrations."
+        }
+      ]
+    }
+  ]
+}
