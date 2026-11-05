@@ -30,3 +30,12 @@ export type StudySection = {
   title: string;
   questions: Question[];
 };
+
+/** One course. Add the next one in `src/data/courses.ts`, plus its PDF in `public/`. */
+export type Course = {
+  id: string;
+  title: string;
+  label: string;
+  pdf: string;
+  sections: StudySection[];
+};

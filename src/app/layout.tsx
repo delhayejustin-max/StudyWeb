@@ -19,11 +19,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nutrition ASV",
-    template: "%s — Nutrition ASV",
+    default: "Synthèses",
+    template: "%s — Synthèses",
   },
   description:
-    "Lire la synthèse Nutrition ASV et s’entraîner section par section.",
+    "Lire la synthèse d’un cours et s’entraîner section par section.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

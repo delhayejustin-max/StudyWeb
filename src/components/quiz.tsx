@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useBestScores } from "@/components/score-store";
+import { courseQuizPath, courseSectionPath } from "@/data/courses";
 import type { Question, StudySection } from "@/data/types";
+import { scoreKey } from "@/lib/scores";
 import { cn } from "@/lib/utils";
 
 type Given = {
@@ -29,9 +31,11 @@ function givenLabel(question: Question, selection: string): string {
 }
 
 export function Quiz({
+  courseId,
   section,
   nextSection,
 }: {
+  courseId: string;
   section: StudySection;
   nextSection: { id: string; title: string } | null;
 }) {
@@ -67,7 +71,7 @@ export function Quiz({
           <AlertDescription>Aucune question dans cette section.</AlertDescription>
         </Alert>
         <Button asChild variant="outline" className="h-11">
-          <Link href="/entrainement">Toutes les sections</Link>
+          <Link href={courseQuizPath(courseId)}>Toutes les sections</Link>
         </Button>
       </div>
     );
@@ -87,7 +91,7 @@ export function Quiz({
 
   function goNext() {
     if (index + 1 >= questions.length) {
-      const result = record(section.id, correctCount, questions.length);
+      const result = record(scoreKey(courseId, section.id), correctCount, questions.length);
       setImproved(result.ok && result.improved);
       setPhase("results");
       return;
@@ -98,12 +102,12 @@ export function Quiz({
   }
 
   const best =
-    scoreState.status === "ready" ? scoreState.scores[section.id] : undefined;
+    scoreState.status === "ready" ? scoreState.scores[scoreKey(courseId, section.id)] : undefined;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <p className="text-sm text-muted-foreground">
-        <Link href="/entrainement" className="underline-offset-4 hover:underline">
+        <Link href={courseQuizPath(courseId)} className="underline-offset-4 hover:underline">
           Entraînement
         </Link>
       </p>
@@ -200,6 +204,7 @@ export function Quiz({
         </Card>
       ) : (
         <Results
+          courseId={courseId}
           section={section}
           questions={questions}
           answers={answers}
@@ -276,6 +281,7 @@ function SourceBlock({
 }
 
 function Results({
+  courseId,
   section,
   questions,
   answers,
@@ -285,6 +291,7 @@ function Results({
   nextSection,
   onRetry,
 }: {
+  courseId: string;
   section: StudySection;
   questions: Question[];
   answers: Record<string, Given>;
@@ -354,11 +361,11 @@ function Results({
         </Button>
         {nextSection ? (
           <Button asChild variant="outline" className="h-11 px-4">
-            <Link href={`/entrainement/${nextSection.id}`}>{nextSection.title}</Link>
+            <Link href={courseSectionPath(courseId, nextSection.id)}>{nextSection.title}</Link>
           </Button>
         ) : null}
         <Button asChild variant="ghost" className="h-11 px-4">
-          <Link href="/entrainement">Toutes les sections</Link>
+          <Link href={courseQuizPath(courseId)}>Toutes les sections</Link>
         </Button>
       </div>
       <p className="text-xs text-muted-foreground">Section : {section.title}</p>

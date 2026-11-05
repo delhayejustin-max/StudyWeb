@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { PDF_FILE, publicUrl } from "@/lib/base-path";
+import { publicUrl } from "@/lib/base-path";
 
 type Status = "loading" | "ready" | "missing" | "error";
 
-export function PdfViewer() {
-  const url = publicUrl(`/${PDF_FILE}`);
+export function PdfViewer({ file, title }: { file: string; title: string }) {
+  const url = file ? publicUrl(`/${file}`) : "";
   const frameRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("loading");
@@ -77,11 +77,21 @@ export function PdfViewer() {
       }
     }
 
+    if (!url) return;
     void load();
     return () => {
       cancelled = true;
     };
   }, [url]);
+
+  if (!file) {
+    return (
+      <Alert>
+        <AlertTitle>Pas de synthèse</AlertTitle>
+        <AlertDescription>Ce cours n’a pas encore de PDF.</AlertDescription>
+      </Alert>
+    );
+  }
 
   return (
     <div ref={frameRef} className="space-y-4">
@@ -96,7 +106,7 @@ export function PdfViewer() {
         <Alert variant="destructive">
           <AlertTitle>Synthèse introuvable</AlertTitle>
           <AlertDescription>
-            Le fichier {PDF_FILE} n’est pas accessible.
+            Le fichier {file} n’est pas accessible.
           </AlertDescription>
         </Alert>
       ) : null}
@@ -112,7 +122,7 @@ export function PdfViewer() {
           </Alert>
           <iframe
             src={url}
-            title="Nutrition ASV, synthèse"
+            title={`${title}, synthèse`}
             className="h-[75vh] w-full rounded-lg bg-white ring-1 ring-foreground/10"
           />
         </div>

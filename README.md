@@ -1,8 +1,10 @@
-# Nutrition ASV
+# Synthèses
 
-Site statique pour lire la synthèse **Nutrition ASV** et s’entraîner section par section. Chaque question a une seule bonne réponse : un passage du PDF. L’extrait affiché après la réponse est lui aussi repris tel quel. Les autres propositions sont fausses par rapport à la synthèse.
+Site statique pour lire plusieurs synthèses de cours et s’entraîner sur chacune. Chaque cours a son PDF et ses questions. La bonne réponse et l’extrait affiché sont des passages de ce PDF. Les autres propositions sont fausses par rapport à cette synthèse.
 
-Le fichier source est `public/Nutrition_ASV_synthese.pdf`.
+Le catalogue est la page d’accueil. Le seul cours pour l’instant est Nutrition ASV (`public/Nutrition_ASV_synthese.pdf`).
+
+Pour ajouter un cours : déposer son PDF dans `public/`, puis ajouter une entrée dans `src/data/courses.ts`. Les pages n’ont pas à être réécrites.
 
 ## Lancer en local
 

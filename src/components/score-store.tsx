@@ -1,10 +1,9 @@
 "use client";
 
 import { useCallback, useSyncExternalStore } from "react";
-import { writeBest, type BestScore } from "@/lib/scores";
+import { readStored, writeBest, type BestScore } from "@/lib/scores";
 
-const STORAGE_KEY = "nutrition-asv-best-scores";
-const CHANGE_EVENT = "nutrition-asv-scores";
+const CHANGE_EVENT = "studyweb-scores";
 
 type ScoreState =
   | { status: "loading" }
@@ -21,11 +20,7 @@ function subscribe(onChange: () => void) {
 }
 
 function readSnapshot(): string {
-  try {
-    return localStorage.getItem(STORAGE_KEY) ?? "";
-  } catch {
-    return "error";
-  }
+  return readStored();
 }
 
 function parseSnapshot(raw: string): ScoreState {

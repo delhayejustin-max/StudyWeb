@@ -5,5 +5,3 @@ export function publicUrl(path: string): string {
   const suffix = path.startsWith("/") ? path : `/${path}`;
   return `${base}${suffix}`;
 }
-
-export const PDF_FILE = "Nutrition_ASV_synthese.pdf";
