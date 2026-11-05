@@ -798,7 +798,7 @@ PLANT_DIAGRAM = "/schema-cellule-vegetale.jpg"
 PLANT_KEY = [
     ("1", "Vésicule"),
     ("2", "Appareil de Golgi"),
-    ("3", "Ribosome Endoplasmique rugueux"),
+    ("3", "Reticulum Endoplasmique rugueux"),
     ("4", "Appareil de Golgi"),
     ("5", "Plasmodesme"),
     ("6", "Paroi cellulosique"),

@@ -1131,7 +1131,7 @@
             },
             {
               "id": "c",
-              "text": "Ribosome Endoplasmique rugueux"
+              "text": "Reticulum Endoplasmique rugueux"
             },
             {
               "id": "d",
@@ -1149,7 +1149,7 @@
           "choices": [
             {
               "id": "a",
-              "text": "Ribosome Endoplasmique rugueux"
+              "text": "Reticulum Endoplasmique rugueux"
             },
             {
               "id": "b",
@@ -1183,7 +1183,7 @@
             },
             {
               "id": "c",
-              "text": "Ribosome Endoplasmique rugueux"
+              "text": "Reticulum Endoplasmique rugueux"
             },
             {
               "id": "d",
@@ -1191,7 +1191,7 @@
             }
           ],
           "correctChoiceId": "c",
-          "source": "3. Ribosome Endoplasmique rugueux"
+          "source": "3. Reticulum Endoplasmique rugueux"
         },
         {
           "id": "b5-d4",
@@ -1577,7 +1577,7 @@
             },
             {
               "id": "d",
-              "text": "Ribosome Endoplasmique rugueux"
+              "text": "Reticulum Endoplasmique rugueux"
             }
           ],
           "correctChoiceId": "b",
