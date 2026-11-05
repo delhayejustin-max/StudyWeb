@@ -11,6 +11,7 @@ import { Progress } from "@/components/ui/progress";
 import { useBestScores } from "@/components/score-store";
 import { courseQuizPath, courseSectionPath } from "@/data/courses";
 import type { Question, StudySection } from "@/data/types";
+import { publicUrl } from "@/lib/base-path";
 import { scoreKey } from "@/lib/scores";
 import { cn } from "@/lib/utils";
 
@@ -264,7 +265,7 @@ function QuestionImage({ question }: { question: Question }) {
   if (question.type !== "mc" || !question.image) return null;
   return (
     <Image
-      src={question.image}
+      src={publicUrl(question.image)}
       alt="Schéma numéroté, sans légende"
       width={1200}
       height={800}
