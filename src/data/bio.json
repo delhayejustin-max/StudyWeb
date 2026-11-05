@@ -357,6 +357,396 @@
       "title": "Cellule animale",
       "questions": [
         {
+          "id": "b3-d1",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 1 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "noyaux"
+            },
+            {
+              "id": "b",
+              "text": "chloroplaste"
+            },
+            {
+              "id": "c",
+              "text": "vacuole"
+            },
+            {
+              "id": "d",
+              "text": "paroi"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "1. noyaux"
+        },
+        {
+          "id": "b3-d2",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 1' ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "vacuole"
+            },
+            {
+              "id": "b",
+              "text": "ADN"
+            },
+            {
+              "id": "c",
+              "text": "paroi"
+            },
+            {
+              "id": "d",
+              "text": "plasmodesme"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "1'. ADN"
+        },
+        {
+          "id": "b3-d3",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 2 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "paroi"
+            },
+            {
+              "id": "b",
+              "text": "plasmodesme"
+            },
+            {
+              "id": "c",
+              "text": "membrane nucléaire"
+            },
+            {
+              "id": "d",
+              "text": "amyloplaste"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "2. membrane nucléaire"
+        },
+        {
+          "id": "b3-d4",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 3 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "plasmodesme"
+            },
+            {
+              "id": "b",
+              "text": "amyloplaste"
+            },
+            {
+              "id": "c",
+              "text": "flagelle"
+            },
+            {
+              "id": "d",
+              "text": "ribosome"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "3. ribosome"
+        },
+        {
+          "id": "b3-d5",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 4 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "lysosome"
+            },
+            {
+              "id": "b",
+              "text": "amyloplaste"
+            },
+            {
+              "id": "c",
+              "text": "flagelle"
+            },
+            {
+              "id": "d",
+              "text": "peroxysome"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "4. lysosome"
+        },
+        {
+          "id": "b3-d6",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 5 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "flagelle"
+            },
+            {
+              "id": "b",
+              "text": "RER"
+            },
+            {
+              "id": "c",
+              "text": "peroxysome"
+            },
+            {
+              "id": "d",
+              "text": "tonoplaste"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "5. RER"
+        },
+        {
+          "id": "b3-d7",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 6 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "peroxysome"
+            },
+            {
+              "id": "b",
+              "text": "tonoplaste"
+            },
+            {
+              "id": "c",
+              "text": "appareil de Golgi"
+            },
+            {
+              "id": "d",
+              "text": "chloroplaste"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "6. appareil de Golgi"
+        },
+        {
+          "id": "b3-d8",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 7 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "tonoplaste"
+            },
+            {
+              "id": "b",
+              "text": "chloroplaste"
+            },
+            {
+              "id": "c",
+              "text": "vacuole"
+            },
+            {
+              "id": "d",
+              "text": "cytosquelette"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "7. cytosquelette"
+        },
+        {
+          "id": "b3-d9",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 8 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "REL"
+            },
+            {
+              "id": "b",
+              "text": "chloroplaste"
+            },
+            {
+              "id": "c",
+              "text": "vacuole"
+            },
+            {
+              "id": "d",
+              "text": "paroi"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "8. REL"
+        },
+        {
+          "id": "b3-d10",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 9 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "vacuole"
+            },
+            {
+              "id": "b",
+              "text": "mitochondrie"
+            },
+            {
+              "id": "c",
+              "text": "paroi"
+            },
+            {
+              "id": "d",
+              "text": "plasmodesme"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "9. mitochondrie"
+        },
+        {
+          "id": "b3-d11",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 10 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "paroi"
+            },
+            {
+              "id": "b",
+              "text": "plasmodesme"
+            },
+            {
+              "id": "c",
+              "text": "lysosome"
+            },
+            {
+              "id": "d",
+              "text": "amyloplaste"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "10. lysosome"
+        },
+        {
+          "id": "b3-d12",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 11 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "plasmodesme"
+            },
+            {
+              "id": "b",
+              "text": "amyloplaste"
+            },
+            {
+              "id": "c",
+              "text": "flagelle"
+            },
+            {
+              "id": "d",
+              "text": "cytoplasme"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "11. cytoplasme"
+        },
+        {
+          "id": "b3-d13",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 12 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "vésicule"
+            },
+            {
+              "id": "b",
+              "text": "amyloplaste"
+            },
+            {
+              "id": "c",
+              "text": "flagelle"
+            },
+            {
+              "id": "d",
+              "text": "peroxysome"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "12. vésicule"
+        },
+        {
+          "id": "b3-d14",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 13 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "flagelle"
+            },
+            {
+              "id": "b",
+              "text": "centriole"
+            },
+            {
+              "id": "c",
+              "text": "peroxysome"
+            },
+            {
+              "id": "d",
+              "text": "tonoplaste"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "13. centriole"
+        },
+        {
+          "id": "b3-d15",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 14 ?",
+          "image": "/schema-cellule-animale.webp",
+          "choices": [
+            {
+              "id": "a",
+              "text": "peroxysome"
+            },
+            {
+              "id": "b",
+              "text": "tonoplaste"
+            },
+            {
+              "id": "c",
+              "text": "membrane cytoplasmique"
+            },
+            {
+              "id": "d",
+              "text": "chloroplaste"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "14. membrane cytoplasmique"
+        },
+        {
           "id": "b3-q1",
           "type": "mc",
           "prompt": "Que place le texte au numéro 1 de la cellule animale ?",

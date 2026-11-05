@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -141,6 +142,7 @@ export function Quiz({
             <CardTitle className="text-xl leading-snug sm:text-2xl">{question.prompt}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
+            <QuestionImage question={question} />
             {question.type === "tf" ? (
               <blockquote className="rounded-lg bg-muted px-4 py-3 font-heading text-lg leading-relaxed">
                 {question.statement}
@@ -258,6 +260,20 @@ function ChoiceButton({
   );
 }
 
+function QuestionImage({ question }: { question: Question }) {
+  if (question.type !== "mc" || !question.image) return null;
+  return (
+    <Image
+      src={question.image}
+      alt="Schéma numéroté, sans légende"
+      width={1200}
+      height={800}
+      unoptimized
+      className="h-auto w-full rounded-lg bg-white object-contain"
+    />
+  );
+}
+
 function SourceBlock({
   source,
   sourceSectionTitle,
@@ -337,6 +353,7 @@ function Results({
                     <CardTitle className="leading-snug">{question.prompt}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
+                    <QuestionImage question={question} />
                     {question.type === "tf" ? (
                       <p className="font-heading leading-relaxed">{question.statement}</p>
                     ) : null}

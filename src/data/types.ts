@@ -11,6 +11,8 @@ export type McQuestion = {
   correctChoiceId: string;
   source: string;
   sourceSectionTitle?: string;
+  /** Public file shown with the question. The legend stays in the choices. */
+  image?: string;
 };
 
 export type TfQuestion = {

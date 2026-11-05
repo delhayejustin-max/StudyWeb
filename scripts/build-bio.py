@@ -714,11 +714,84 @@ def verify(bank: dict, full: str, bodies: dict[str, str]) -> None:
         raise SystemExit("Verbatim check failed:\n" + "\n".join(errors))
 
 
+DIAGRAM = "/schema-cellule-animale.webp"
+# Justin's key, verbatim. Not the plant-cell figure: these labels match the animal cell.
+KEY = [
+    ("1", "noyaux"),
+    ("1'", "ADN"),
+    ("2", "membrane nucléaire"),
+    ("3", "ribosome"),
+    ("4", "lysosome"),
+    ("5", "RER"),
+    ("6", "appareil de Golgi"),
+    ("7", "cytosquelette"),
+    ("8", "REL"),
+    ("9", "mitochondrie"),
+    ("10", "lysosome"),
+    ("11", "cytoplasme"),
+    ("12", "vésicule"),
+    ("13", "centriole"),
+    ("14", "membrane cytoplasmique"),
+]
+# Not labels from the key, so none is a true answer for another number.
+FALSE_LABELS = [
+    "chloroplaste",
+    "vacuole",
+    "paroi",
+    "plasmodesme",
+    "amyloplaste",
+    "flagelle",
+    "peroxysome",
+    "tonoplaste",
+]
+
+
+def add_diagram(bank: dict, full: str) -> None:
+    labels = {label for _, label in KEY}
+    for word in FALSE_LABELS:
+        if word in labels:
+            raise SystemExit(f"false label is in the key: {word}")
+        if word.casefold() in full.casefold():
+            raise SystemExit(f"false label appears in the PDF: {word}")
+    section = next(item for item in bank["sections"] if item["id"] == "b3")
+    if section["title"] != "Cellule animale":
+        raise SystemExit("diagram section is not Cellule animale")
+    questions = []
+    slots = ["a", "b", "c", "d"]
+    for index, (number, label) in enumerate(KEY):
+        distractors = [FALSE_LABELS[(index + offset) % len(FALSE_LABELS)] for offset in (0, 1, 2)]
+        correct_slot = slots[index % 4]
+        choices = []
+        distractor_at = 0
+        for slot in slots:
+            if slot == correct_slot:
+                choices.append({"id": slot, "text": label})
+            else:
+                choices.append({"id": slot, "text": distractors[distractor_at]})
+                distractor_at += 1
+        texts = [choice["text"] for choice in choices]
+        if texts.count(label) != 1 or len(set(texts)) != 4:
+            raise SystemExit(f"diagram {number} does not have one unique answer")
+        questions.append(
+            {
+                "id": f"b3-d{index + 1}",
+                "type": "mc",
+                "prompt": f"Sur le schéma, que désigne le numéro {number} ?",
+                "image": DIAGRAM,
+                "choices": choices,
+                "correctChoiceId": correct_slot,
+                "source": f"{number}. {label}",
+            }
+        )
+    section["questions"] = questions + section["questions"]
+
+
 def main() -> None:
     full = load_pdf()
     bodies = section_slices(full)
     bank = build()
     verify(bank, full, bodies)
+    add_diagram(bank, full)
     OUT.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     counts = {s["id"]: (s["title"], len(s["questions"])) for s in bank["sections"]}
     print(counts)
