@@ -20,7 +20,6 @@ SCHEMA = "/schema-anatomie-chien.jpg"
 DASH = "\u2013"
 
 TITLES = [
-    f"Schéma original {DASH} photo entière",
     "Repères du schéma",
     "1. Classification des chiens",
     "2. Les trois types d'os",
@@ -159,35 +158,9 @@ def add_schema(bank: Bank, key: list[tuple[str, str]]) -> None:
 
 def build(key: list[tuple[str, str]]) -> dict:
     b = Bank()
-    b.section("a1", TITLES[0])
-    b.mc(
-        "a1-q1",
-        "Que dit le texte de la photo du schéma ?",
-        [
-            ("a", "La photo complète est recadrée avant d’être posée."),
-            ("b", "La photo complète est conservée, sans recadrage."),
-            ("c", "La photo complète est remplacée par un dessin neuf."),
-            ("d", "La photo complète est coupée pour ne garder que la tête."),
-        ],
-        "b",
-        "La photo complète est conservée, sans recadrage.",
-    )
-    b.mc(
-        "a1-q2",
-        "Que dit le texte de la taille de cette photo ?",
-        [
-            ("a", "Elle est agrandie pour déborder de la page."),
-            ("b", "Elle est redessinée pour remplir toute la page."),
-            ("c", "Elle est simplement réduite pour tenir sur la page."),
-            ("d", "Elle est tournée pour occuper deux pages."),
-        ],
-        "c",
-        "Elle est simplement réduite pour tenir sur la page.",
-    )
-
     add_schema(b, key)
 
-    b.section("a3", TITLES[2])
+    b.section("a3", TITLES[1])
     b.mc(
         "a3-q1",
         "Que dit le texte sur l’origine des races de chiens ?",
@@ -237,7 +210,7 @@ def build(key: list[tuple[str, str]]) -> dict:
         "grands chiens (plus de 61 cm ou plus de 25 kg)",
     )
 
-    b.section("a4", TITLES[3])
+    b.section("a4", TITLES[2])
     b.mc(
         "a4-q1",
         "Comment le texte décrit-il les os longs ?",
@@ -287,7 +260,7 @@ def build(key: list[tuple[str, str]]) -> dict:
         "Os courts : petits os sans canal médullaire, notamment au carpe et au tarse.",
     )
 
-    b.section("a5", TITLES[4])
+    b.section("a5", TITLES[3])
     definitions = [
         (
             "a5-q1",
@@ -409,7 +382,7 @@ def build(key: list[tuple[str, str]]) -> dict:
             correct,
         )
 
-    b.section("a6", TITLES[5])
+    b.section("a6", TITLES[4])
     b.mc(
         "a6-q1",
         "Quelles parties le texte place-t-il dans la tête ?",
@@ -435,7 +408,7 @@ def build(key: list[tuple[str, str]]) -> dict:
         "Tronc : encolure (cou), gorge, garrot, dos, région lombaire (rein), croupe ou région sacrée, flanc, région costale, sternum et queue.",
     )
 
-    b.section("a7", TITLES[6])
+    b.section("a7", TITLES[5])
     b.mc(
         "a7-q1",
         "Quelles régions le texte donne-t-il au membre antérieur ?",
@@ -485,7 +458,7 @@ def build(key: list[tuple[str, str]]) -> dict:
         "Le pied comprend le tarse, les métatarses et les phalanges.",
     )
 
-    b.section("a8", TITLES[7])
+    b.section("a8", TITLES[6])
     b.mc(
         "a8-q1",
         "Que comprend la ceinture thoracique, selon le texte ?",
@@ -571,7 +544,7 @@ def build(key: list[tuple[str, str]]) -> dict:
         "Les mouvements de pronation et de supination permettent la rotation de l'avant-bras.",
     )
 
-    b.section("a9", TITLES[8])
+    b.section("a9", TITLES[7])
     b.mc(
         "a9-q1",
         "Que repère le texte en vue de dessous ?",
@@ -657,7 +630,7 @@ def build(key: list[tuple[str, str]]) -> dict:
         "Un chien sans queue est dit anoure.",
     )
 
-    b.section("a10", TITLES[9])
+    b.section("a10", TITLES[8])
     vocab = [
         (
             "a10-q1",

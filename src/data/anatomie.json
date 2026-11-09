@@ -1,62 +1,6 @@
 {
   "sections": [
     {
-      "id": "a1",
-      "title": "Schéma original – photo entière",
-      "questions": [
-        {
-          "id": "a1-q1",
-          "type": "mc",
-          "prompt": "Que dit le texte de la photo du schéma ?",
-          "choices": [
-            {
-              "id": "a",
-              "text": "La photo complète est recadrée avant d’être posée."
-            },
-            {
-              "id": "b",
-              "text": "La photo complète est conservée, sans recadrage."
-            },
-            {
-              "id": "c",
-              "text": "La photo complète est remplacée par un dessin neuf."
-            },
-            {
-              "id": "d",
-              "text": "La photo complète est coupée pour ne garder que la tête."
-            }
-          ],
-          "correctChoiceId": "b",
-          "source": "La photo complète est conservée, sans recadrage."
-        },
-        {
-          "id": "a1-q2",
-          "type": "mc",
-          "prompt": "Que dit le texte de la taille de cette photo ?",
-          "choices": [
-            {
-              "id": "a",
-              "text": "Elle est agrandie pour déborder de la page."
-            },
-            {
-              "id": "b",
-              "text": "Elle est redessinée pour remplir toute la page."
-            },
-            {
-              "id": "c",
-              "text": "Elle est simplement réduite pour tenir sur la page."
-            },
-            {
-              "id": "d",
-              "text": "Elle est tournée pour occuper deux pages."
-            }
-          ],
-          "correctChoiceId": "c",
-          "source": "Elle est simplement réduite pour tenir sur la page."
-        }
-      ]
-    },
-    {
       "id": "a2",
       "title": "Repères du schéma",
       "questions": [
