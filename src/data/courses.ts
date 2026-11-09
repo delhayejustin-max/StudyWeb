@@ -1,3 +1,4 @@
+import anatomie from "./anatomie.json";
 import bank from "./bank.json";
 import bio from "./bio.json";
 import type { Course, StudySection } from "./types";
@@ -23,6 +24,13 @@ export const courses: Course[] = [
     label: "La synthèse pour comprendre et mémoriser",
     pdf: "Les_caracteristiques_du_vivant.pdf",
     sections: bio.sections as StudySection[],
+  },
+  {
+    id: "anatomie-du-chien",
+    title: "ANATOMIE DU CHIEN – SYNTHÈSE",
+    label: "La synthèse pour comprendre et mémoriser",
+    pdf: "Anatomie_du_chien_synthese.pdf",
+    sections: anatomie.sections as StudySection[],
   },
 ];
 

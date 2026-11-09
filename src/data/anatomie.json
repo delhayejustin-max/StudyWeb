@@ -1,0 +1,2172 @@
+{
+  "sections": [
+    {
+      "id": "a1",
+      "title": "Schéma original – photo entière",
+      "questions": [
+        {
+          "id": "a1-q1",
+          "type": "mc",
+          "prompt": "Que dit le texte de la photo du schéma ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La photo complète est recadrée avant d’être posée."
+            },
+            {
+              "id": "b",
+              "text": "La photo complète est conservée, sans recadrage."
+            },
+            {
+              "id": "c",
+              "text": "La photo complète est remplacée par un dessin neuf."
+            },
+            {
+              "id": "d",
+              "text": "La photo complète est coupée pour ne garder que la tête."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "La photo complète est conservée, sans recadrage."
+        },
+        {
+          "id": "a1-q2",
+          "type": "mc",
+          "prompt": "Que dit le texte de la taille de cette photo ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Elle est agrandie pour déborder de la page."
+            },
+            {
+              "id": "b",
+              "text": "Elle est redessinée pour remplir toute la page."
+            },
+            {
+              "id": "c",
+              "text": "Elle est simplement réduite pour tenir sur la page."
+            },
+            {
+              "id": "d",
+              "text": "Elle est tournée pour occuper deux pages."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Elle est simplement réduite pour tenir sur la page."
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "title": "Repères du schéma",
+      "questions": [
+        {
+          "id": "a2-d1",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 1 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Truffe"
+            },
+            {
+              "id": "b",
+              "text": "Chanfrein"
+            },
+            {
+              "id": "c",
+              "text": "Front"
+            },
+            {
+              "id": "d",
+              "text": "Oreille"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "1. Truffe",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d2",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 2 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Front"
+            },
+            {
+              "id": "b",
+              "text": "Chanfrein"
+            },
+            {
+              "id": "c",
+              "text": "Oreille"
+            },
+            {
+              "id": "d",
+              "text": "Œil"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "2. Chanfrein",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d3",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 3 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Oreille"
+            },
+            {
+              "id": "b",
+              "text": "Œil"
+            },
+            {
+              "id": "c",
+              "text": "Front"
+            },
+            {
+              "id": "d",
+              "text": "Babine supérieure"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "3. Front",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d4",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 4 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Œil"
+            },
+            {
+              "id": "b",
+              "text": "Babine supérieure"
+            },
+            {
+              "id": "c",
+              "text": "Joue / région de la joue"
+            },
+            {
+              "id": "d",
+              "text": "Oreille"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "4. Oreille",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d5",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 5 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Œil"
+            },
+            {
+              "id": "b",
+              "text": "Babine supérieure"
+            },
+            {
+              "id": "c",
+              "text": "Joue / région de la joue"
+            },
+            {
+              "id": "d",
+              "text": "Encolure"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "5. Œil",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d6",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 6 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Joue / région de la joue"
+            },
+            {
+              "id": "b",
+              "text": "Babine supérieure"
+            },
+            {
+              "id": "c",
+              "text": "Encolure"
+            },
+            {
+              "id": "d",
+              "text": "Garrot"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "6. Babine supérieure",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d7",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 7 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Encolure"
+            },
+            {
+              "id": "b",
+              "text": "Garrot"
+            },
+            {
+              "id": "c",
+              "text": "Joue / région de la joue"
+            },
+            {
+              "id": "d",
+              "text": "Dos"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "7. Joue / région de la joue",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d8",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 8 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Garrot"
+            },
+            {
+              "id": "b",
+              "text": "Dos"
+            },
+            {
+              "id": "c",
+              "text": "Région lombaire (rein)"
+            },
+            {
+              "id": "d",
+              "text": "Encolure"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "8. Encolure",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d9",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 9 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Garrot"
+            },
+            {
+              "id": "b",
+              "text": "Dos"
+            },
+            {
+              "id": "c",
+              "text": "Région lombaire (rein)"
+            },
+            {
+              "id": "d",
+              "text": "Région lombaire"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "9. Garrot",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d10",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 10 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région lombaire (rein)"
+            },
+            {
+              "id": "b",
+              "text": "Dos"
+            },
+            {
+              "id": "c",
+              "text": "Région lombaire"
+            },
+            {
+              "id": "d",
+              "text": "Croupe ou région sacrée"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "10. Dos",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d11",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 11 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région lombaire"
+            },
+            {
+              "id": "b",
+              "text": "Croupe ou région sacrée"
+            },
+            {
+              "id": "c",
+              "text": "Région lombaire (rein)"
+            },
+            {
+              "id": "d",
+              "text": "Queue"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "11. Région lombaire (rein)",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d12",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 12 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Croupe ou région sacrée"
+            },
+            {
+              "id": "b",
+              "text": "Queue"
+            },
+            {
+              "id": "c",
+              "text": "Flanc"
+            },
+            {
+              "id": "d",
+              "text": "Région lombaire"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "12. Région lombaire",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d13",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 13 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Croupe ou région sacrée"
+            },
+            {
+              "id": "b",
+              "text": "Queue"
+            },
+            {
+              "id": "c",
+              "text": "Flanc"
+            },
+            {
+              "id": "d",
+              "text": "Région de la cuisse"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "13. Croupe ou région sacrée",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d14",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 14 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Flanc"
+            },
+            {
+              "id": "b",
+              "text": "Queue"
+            },
+            {
+              "id": "c",
+              "text": "Région de la cuisse"
+            },
+            {
+              "id": "d",
+              "text": "Région du grasset"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "14. Queue",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d15",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 15 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région de la cuisse"
+            },
+            {
+              "id": "b",
+              "text": "Région du grasset"
+            },
+            {
+              "id": "c",
+              "text": "Flanc"
+            },
+            {
+              "id": "d",
+              "text": "Région de la jambe"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "15. Flanc",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d16",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 16 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région du grasset"
+            },
+            {
+              "id": "b",
+              "text": "Région de la jambe"
+            },
+            {
+              "id": "c",
+              "text": "Pointe du jarret"
+            },
+            {
+              "id": "d",
+              "text": "Région de la cuisse"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "16. Région de la cuisse",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d17",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 17 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région du grasset"
+            },
+            {
+              "id": "b",
+              "text": "Région de la jambe"
+            },
+            {
+              "id": "c",
+              "text": "Pointe du jarret"
+            },
+            {
+              "id": "d",
+              "text": "Région du jarret (tarse)"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "17. Région du grasset",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d18",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 18 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Pointe du jarret"
+            },
+            {
+              "id": "b",
+              "text": "Région de la jambe"
+            },
+            {
+              "id": "c",
+              "text": "Région du jarret (tarse)"
+            },
+            {
+              "id": "d",
+              "text": "Région métatarsienne"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "18. Région de la jambe",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d19",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 19 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région du jarret (tarse)"
+            },
+            {
+              "id": "b",
+              "text": "Région métatarsienne"
+            },
+            {
+              "id": "c",
+              "text": "Pointe du jarret"
+            },
+            {
+              "id": "d",
+              "text": "Doigts"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "19. Pointe du jarret",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d20",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 20 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région métatarsienne"
+            },
+            {
+              "id": "b",
+              "text": "Doigts"
+            },
+            {
+              "id": "c",
+              "text": "Métacarpe"
+            },
+            {
+              "id": "d",
+              "text": "Région du jarret (tarse)"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "20. Région du jarret (tarse)",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d21",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 21 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région métatarsienne"
+            },
+            {
+              "id": "b",
+              "text": "Doigts"
+            },
+            {
+              "id": "c",
+              "text": "Métacarpe"
+            },
+            {
+              "id": "d",
+              "text": "Coude"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "21. Région métatarsienne",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d22",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 22 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Métacarpe"
+            },
+            {
+              "id": "b",
+              "text": "Doigts"
+            },
+            {
+              "id": "c",
+              "text": "Coude"
+            },
+            {
+              "id": "d",
+              "text": "Région antibrachiale (avant-bras)"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "22. Doigts",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d23",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 23 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Coude"
+            },
+            {
+              "id": "b",
+              "text": "Région antibrachiale (avant-bras)"
+            },
+            {
+              "id": "c",
+              "text": "Métacarpe"
+            },
+            {
+              "id": "d",
+              "text": "Pointe du coude"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "23. Métacarpe",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d24",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 24 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région antibrachiale (avant-bras)"
+            },
+            {
+              "id": "b",
+              "text": "Pointe du coude"
+            },
+            {
+              "id": "c",
+              "text": "Région costale"
+            },
+            {
+              "id": "d",
+              "text": "Coude"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "24. Coude",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d25",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 25 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région antibrachiale (avant-bras)"
+            },
+            {
+              "id": "b",
+              "text": "Pointe du coude"
+            },
+            {
+              "id": "c",
+              "text": "Région costale"
+            },
+            {
+              "id": "d",
+              "text": "Région brachiale (bras)"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "25. Région antibrachiale (avant-bras)",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d26",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 26 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région costale"
+            },
+            {
+              "id": "b",
+              "text": "Pointe du coude"
+            },
+            {
+              "id": "c",
+              "text": "Région brachiale (bras)"
+            },
+            {
+              "id": "d",
+              "text": "Pointe de l'épaule"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "26. Pointe du coude",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d27",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 27 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région brachiale (bras)"
+            },
+            {
+              "id": "b",
+              "text": "Pointe de l'épaule"
+            },
+            {
+              "id": "c",
+              "text": "Région costale"
+            },
+            {
+              "id": "d",
+              "text": "Région scapulaire"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "27. Région costale",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d28",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 28 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Pointe de l'épaule"
+            },
+            {
+              "id": "b",
+              "text": "Région scapulaire"
+            },
+            {
+              "id": "c",
+              "text": "Cercle de l'hypochondre"
+            },
+            {
+              "id": "d",
+              "text": "Région brachiale (bras)"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "28. Région brachiale (bras)",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d29",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 29 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Pointe de l'épaule"
+            },
+            {
+              "id": "b",
+              "text": "Région scapulaire"
+            },
+            {
+              "id": "c",
+              "text": "Cercle de l'hypochondre"
+            },
+            {
+              "id": "d",
+              "text": "Région xiphoïdienne"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "29. Pointe de l'épaule",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d30",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 30 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cercle de l'hypochondre"
+            },
+            {
+              "id": "b",
+              "text": "Région scapulaire"
+            },
+            {
+              "id": "c",
+              "text": "Région xiphoïdienne"
+            },
+            {
+              "id": "d",
+              "text": "Région du sternum"
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "30. Région scapulaire",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d31",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 31 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région xiphoïdienne"
+            },
+            {
+              "id": "b",
+              "text": "Région du sternum"
+            },
+            {
+              "id": "c",
+              "text": "Cercle de l'hypochondre"
+            },
+            {
+              "id": "d",
+              "text": "Truffe"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "31. Cercle de l'hypochondre",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d32",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 32 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région du sternum"
+            },
+            {
+              "id": "b",
+              "text": "Truffe"
+            },
+            {
+              "id": "c",
+              "text": "Chanfrein"
+            },
+            {
+              "id": "d",
+              "text": "Région xiphoïdienne"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "32. Région xiphoïdienne",
+          "image": "/schema-anatomie-chien.jpg"
+        },
+        {
+          "id": "a2-d33",
+          "type": "mc",
+          "prompt": "Sur le schéma, que désigne le numéro 33 ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Région du sternum"
+            },
+            {
+              "id": "b",
+              "text": "Truffe"
+            },
+            {
+              "id": "c",
+              "text": "Chanfrein"
+            },
+            {
+              "id": "d",
+              "text": "Front"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "33. Région du sternum",
+          "image": "/schema-anatomie-chien.jpg"
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "title": "1. Classification des chiens",
+      "questions": [
+        {
+          "id": "a3-q1",
+          "type": "mc",
+          "prompt": "Que dit le texte sur l’origine des races de chiens ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les races de chiens résultent de choix humains et ne constituent pas une classification biologique."
+            },
+            {
+              "id": "b",
+              "text": "Les races de chiens résultent d’une classification biologique, sans choix humain."
+            },
+            {
+              "id": "c",
+              "text": "Les races de chiens résultent du climat seul et constituent une classification biologique."
+            },
+            {
+              "id": "d",
+              "text": "Les races de chiens résultent de choix humains et constituent une classification biologique."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Les races de chiens résultent de choix humains et ne constituent pas une classification biologique."
+        },
+        {
+          "id": "a3-q2",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il les petits chiens ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "petits chiens (plus de 61 cm au garrot ou plus de 25 kg)"
+            },
+            {
+              "id": "b",
+              "text": "petits chiens (46 à 61 cm au garrot ou 10 à 25 kg)"
+            },
+            {
+              "id": "c",
+              "text": "petits chiens (moins de 46 cm au garrot ou moins de 10 kg)"
+            },
+            {
+              "id": "d",
+              "text": "petits chiens (moins de 20 cm au garrot ou moins de 2 kg)"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "petits chiens (moins de 46 cm au garrot ou moins de 10 kg)"
+        },
+        {
+          "id": "a3-q3",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il les chiens moyens ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "chiens moyens (46 à 61 cm ou 10 à 25 kg)"
+            },
+            {
+              "id": "b",
+              "text": "chiens moyens (moins de 46 cm ou moins de 10 kg)"
+            },
+            {
+              "id": "c",
+              "text": "chiens moyens (plus de 61 cm ou plus de 25 kg)"
+            },
+            {
+              "id": "d",
+              "text": "chiens moyens (61 à 80 cm ou 25 à 40 kg)"
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "chiens moyens (46 à 61 cm ou 10 à 25 kg)"
+        },
+        {
+          "id": "a3-q4",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il les grands chiens ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "grands chiens (moins de 46 cm ou moins de 10 kg)"
+            },
+            {
+              "id": "b",
+              "text": "grands chiens (46 à 61 cm ou 10 à 25 kg)"
+            },
+            {
+              "id": "c",
+              "text": "grands chiens (plus de 80 cm ou plus de 40 kg)"
+            },
+            {
+              "id": "d",
+              "text": "grands chiens (plus de 61 cm ou plus de 25 kg)"
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "grands chiens (plus de 61 cm ou plus de 25 kg)"
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "title": "2. Les trois types d'os",
+      "questions": [
+        {
+          "id": "a4-q1",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il les os longs ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Os longs : deux diaphyses et aucune épiphyse."
+            },
+            {
+              "id": "b",
+              "text": "Os longs : une diaphyse centrale et deux épiphyses"
+            },
+            {
+              "id": "c",
+              "text": "Os longs : un os plat sans diaphyse."
+            },
+            {
+              "id": "d",
+              "text": "Os longs : trois épiphyses sans partie centrale."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Os longs : une diaphyse centrale et deux épiphyses"
+        },
+        {
+          "id": "a4-q2",
+          "type": "mc",
+          "prompt": "Où le texte place-t-il les os longs, et que possèdent-ils ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "ils ne possèdent pas de canal médullaire et se trouvent surtout dans le crâne"
+            },
+            {
+              "id": "b",
+              "text": "ils possèdent un canal médullaire et se trouvent surtout au carpe"
+            },
+            {
+              "id": "c",
+              "text": "ils possèdent un canal médullaire et se trouvent surtout dans les membres"
+            },
+            {
+              "id": "d",
+              "text": "ils possèdent deux canaux médullaires et se trouvent surtout au tarse"
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "ils possèdent un canal médullaire et se trouvent surtout dans les membres"
+        },
+        {
+          "id": "a4-q3",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il les os plats ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Os plats : surtout dans les membres, comme l’humérus."
+            },
+            {
+              "id": "b",
+              "text": "Os plats : surtout au carpe et au tarse, sans scapula."
+            },
+            {
+              "id": "c",
+              "text": "Os plats : surtout dans la cavité médullaire, comme la scapula."
+            },
+            {
+              "id": "d",
+              "text": "Os plats : surtout au crâne et aux ceintures, comme la scapula."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Os plats : surtout au crâne et aux ceintures, comme la scapula."
+        },
+        {
+          "id": "a4-q4",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il les os courts ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Os courts : petits os sans canal médullaire, notamment au carpe et au tarse."
+            },
+            {
+              "id": "b",
+              "text": "Os courts : petits os avec un canal médullaire, notamment au crâne."
+            },
+            {
+              "id": "c",
+              "text": "Os courts : grands os sans canal médullaire, notamment dans les membres."
+            },
+            {
+              "id": "d",
+              "text": "Os courts : petits os sans canal médullaire, notamment à la scapula."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Os courts : petits os sans canal médullaire, notamment au carpe et au tarse."
+        }
+      ]
+    },
+    {
+      "id": "a5",
+      "title": "3. Anatomie d'un os long",
+      "questions": [
+        {
+          "id": "a5-q1",
+          "type": "mc",
+          "prompt": "Que dit le texte de la diaphyse ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Diaphyse : partie centrale."
+            },
+            {
+              "id": "b",
+              "text": "Diaphyse : extrémité de l’os."
+            },
+            {
+              "id": "c",
+              "text": "Diaphyse : membrane externe."
+            },
+            {
+              "id": "d",
+              "text": "Diaphyse : cartilage de croissance."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Diaphyse : partie centrale."
+        },
+        {
+          "id": "a5-q2",
+          "type": "mc",
+          "prompt": "Que dit le texte des épiphyses ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Épiphyses : extrémités."
+            },
+            {
+              "id": "b",
+              "text": "Épiphyses : partie centrale."
+            },
+            {
+              "id": "c",
+              "text": "Épiphyses : moelle jaune."
+            },
+            {
+              "id": "d",
+              "text": "Épiphyses : membrane du périoste."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Épiphyses : extrémités."
+        },
+        {
+          "id": "a5-q3",
+          "type": "mc",
+          "prompt": "Que dit le texte de l’os compact ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Os compact : tissu dense."
+            },
+            {
+              "id": "b",
+              "text": "Os compact : tissu poreux."
+            },
+            {
+              "id": "c",
+              "text": "Os compact : cartilage articulaire."
+            },
+            {
+              "id": "d",
+              "text": "Os compact : moelle jaune."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Os compact : tissu dense."
+        },
+        {
+          "id": "a5-q4",
+          "type": "mc",
+          "prompt": "Que dit le texte de l’os spongieux ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Os spongieux : tissu poreux."
+            },
+            {
+              "id": "b",
+              "text": "Os spongieux : tissu dense."
+            },
+            {
+              "id": "c",
+              "text": "Os spongieux : membrane externe."
+            },
+            {
+              "id": "d",
+              "text": "Os spongieux : canal vide."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Os spongieux : tissu poreux."
+        },
+        {
+          "id": "a5-q5",
+          "type": "mc",
+          "prompt": "Que dit le texte du cartilage articulaire ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cartilage articulaire : recouvre les surfaces articulaires."
+            },
+            {
+              "id": "b",
+              "text": "Cartilage articulaire : permet la croissance en longueur."
+            },
+            {
+              "id": "c",
+              "text": "Cartilage articulaire : remplit la cavité médullaire."
+            },
+            {
+              "id": "d",
+              "text": "Cartilage articulaire : recouvre le périoste seulement."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Cartilage articulaire : recouvre les surfaces articulaires."
+        },
+        {
+          "id": "a5-q6",
+          "type": "mc",
+          "prompt": "Que dit le texte du cartilage de conjugaison ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cartilage de conjugaison : permet la croissance en longueur."
+            },
+            {
+              "id": "b",
+              "text": "Cartilage de conjugaison : recouvre les surfaces articulaires."
+            },
+            {
+              "id": "c",
+              "text": "Cartilage de conjugaison : contient la moelle jaune."
+            },
+            {
+              "id": "d",
+              "text": "Cartilage de conjugaison : forme le périoste."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Cartilage de conjugaison : permet la croissance en longueur."
+        },
+        {
+          "id": "a5-q7",
+          "type": "mc",
+          "prompt": "Que dit le texte de la cavité médullaire ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cavité médullaire : espace dans la diaphyse contenant principalement la moelle jaune."
+            },
+            {
+              "id": "b",
+              "text": "Cavité médullaire : espace dans l’épiphyse contenant principalement le périoste."
+            },
+            {
+              "id": "c",
+              "text": "Cavité médullaire : membrane qui recouvre tout l’os."
+            },
+            {
+              "id": "d",
+              "text": "Cavité médullaire : cartilage qui recouvre les surfaces articulaires."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Cavité médullaire : espace dans la diaphyse contenant principalement la moelle jaune."
+        },
+        {
+          "id": "a5-q8",
+          "type": "mc",
+          "prompt": "Que dit le texte du périoste ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Périoste : membrane qui recouvre l'os, sauf les surfaces articulaires."
+            },
+            {
+              "id": "b",
+              "text": "Périoste : membrane qui recouvre seulement les surfaces articulaires."
+            },
+            {
+              "id": "c",
+              "text": "Périoste : espace dans la diaphyse contenant la moelle jaune."
+            },
+            {
+              "id": "d",
+              "text": "Périoste : tissu poreux au centre de l’os."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Périoste : membrane qui recouvre l'os, sauf les surfaces articulaires."
+        },
+        {
+          "id": "a5-q9",
+          "type": "mc",
+          "prompt": "Que comprend un os, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un os comprend du tissu osseux, du périoste, du cartilage et de la moelle osseuse."
+            },
+            {
+              "id": "b",
+              "text": "Un os comprend seulement du cartilage, sans périoste ni moelle."
+            },
+            {
+              "id": "c",
+              "text": "Un os comprend du tissu nerveux, du sang et aucun cartilage."
+            },
+            {
+              "id": "d",
+              "text": "Un os comprend de la moelle osseuse, sans tissu osseux."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Un os comprend du tissu osseux, du périoste, du cartilage et de la moelle osseuse."
+        },
+        {
+          "id": "a5-q10",
+          "type": "mc",
+          "prompt": "Comment le texte décrit-il l’irrigation et l’innervation de l’os ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Il est irrigué par des vaisseaux sanguins et innervé par des nerfs."
+            },
+            {
+              "id": "b",
+              "text": "Il est irrigué par des nerfs et innervé par des vaisseaux sanguins."
+            },
+            {
+              "id": "c",
+              "text": "Il est sans vaisseau sanguin et sans nerf."
+            },
+            {
+              "id": "d",
+              "text": "Il est irrigué par la moelle jaune et innervé par le cartilage."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Il est irrigué par des vaisseaux sanguins et innervé par des nerfs."
+        },
+        {
+          "id": "a5-q11",
+          "type": "mc",
+          "prompt": "Que contient notamment un os, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Il contient notamment de l'osséine (protéines) et des sels minéraux."
+            },
+            {
+              "id": "b",
+              "text": "Il contient notamment de l’osséine (sucres) et aucun sel minéral."
+            },
+            {
+              "id": "c",
+              "text": "Il contient notamment du cartilage articulaire et aucun sel minéral."
+            },
+            {
+              "id": "d",
+              "text": "Il contient notamment de l’osséine (lipides) et des gaz."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Il contient notamment de l'osséine (protéines) et des sels minéraux."
+        }
+      ]
+    },
+    {
+      "id": "a6",
+      "title": "4. Les régions de la tête et du tronc",
+      "questions": [
+        {
+          "id": "a6-q1",
+          "type": "mc",
+          "prompt": "Quelles parties le texte place-t-il dans la tête ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tête : encolure, garrot, dos, flanc, sternum et queue."
+            },
+            {
+              "id": "b",
+              "text": "Tête : bassin, cuisse, grasset, jambe, tarse et doigts."
+            },
+            {
+              "id": "c",
+              "text": "Tête : truffe, chanfrein, front, oreille, œil, babines, joue et museau."
+            },
+            {
+              "id": "d",
+              "text": "Tête : diaphyse, épiphyse, périoste, cartilage et moelle."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Tête : truffe, chanfrein, front, oreille, œil, babines, joue et museau."
+        },
+        {
+          "id": "a6-q2",
+          "type": "mc",
+          "prompt": "Quelles parties le texte place-t-il dans le tronc ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tronc : encolure (cou), gorge, garrot, dos, région lombaire (rein), croupe ou région sacrée, flanc, région costale, sternum et queue."
+            },
+            {
+              "id": "b",
+              "text": "Tronc : truffe, chanfrein, front, oreille, œil et museau."
+            },
+            {
+              "id": "c",
+              "text": "Tronc : carpe, métacarpe, doigts, tarse et métatarse."
+            },
+            {
+              "id": "d",
+              "text": "Tronc : diaphyse, épiphyse, périoste, cartilage et moelle."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Tronc : encolure (cou), gorge, garrot, dos, région lombaire (rein), croupe ou région sacrée, flanc, région costale, sternum et queue."
+        }
+      ]
+    },
+    {
+      "id": "a7",
+      "title": "5. Les membres",
+      "questions": [
+        {
+          "id": "a7-q1",
+          "type": "mc",
+          "prompt": "Quelles régions le texte donne-t-il au membre antérieur ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Membre antérieur (thoracique) : bassin, cuisse, grasset, jambe, tarse et métatarse."
+            },
+            {
+              "id": "b",
+              "text": "Membre antérieur (thoracique) : région scapulaire (omoplate), pointe de l'épaule, région axillaire (aisselle), bras ou région brachiale, coude, pointe du coude, avant-bras ou région antibrachiale, carpe, métacarpe et doigts."
+            },
+            {
+              "id": "c",
+              "text": "Membre antérieur (thoracique) : truffe, chanfrein, front, oreille et œil."
+            },
+            {
+              "id": "d",
+              "text": "Membre antérieur (thoracique) : diaphyse, épiphyse, périoste et moelle jaune."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Membre antérieur (thoracique) : région scapulaire (omoplate), pointe de l'épaule, région axillaire (aisselle), bras ou région brachiale, coude, pointe du coude, avant-bras ou région antibrachiale, carpe, métacarpe et doigts."
+        },
+        {
+          "id": "a7-q2",
+          "type": "mc",
+          "prompt": "Que comprend la main, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La main comprend le tarse, les métatarses et les phalanges."
+            },
+            {
+              "id": "b",
+              "text": "La main comprend le bassin, la cuisse et le grasset."
+            },
+            {
+              "id": "c",
+              "text": "La main comprend la scapula, l’humérus et l’ulna."
+            },
+            {
+              "id": "d",
+              "text": "La main comprend le carpe, les métacarpes et les phalanges."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "La main comprend le carpe, les métacarpes et les phalanges."
+        },
+        {
+          "id": "a7-q3",
+          "type": "mc",
+          "prompt": "Quelles régions le texte donne-t-il au membre postérieur ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Membre postérieur (pelvien) : région scapulaire, coude, carpe et métacarpe."
+            },
+            {
+              "id": "b",
+              "text": "Membre postérieur (pelvien) : truffe, chanfrein, front et oreille."
+            },
+            {
+              "id": "c",
+              "text": "Membre postérieur (pelvien) : bassin, cuisse, grasset (équivalent du genou), jambe, tarse ou jarret, pointe du jarret, métatarse et doigts."
+            },
+            {
+              "id": "d",
+              "text": "Membre postérieur (pelvien) : diaphyse, cartilage articulaire et périoste."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Membre postérieur (pelvien) : bassin, cuisse, grasset (équivalent du genou), jambe, tarse ou jarret, pointe du jarret, métatarse et doigts."
+        },
+        {
+          "id": "a7-q4",
+          "type": "mc",
+          "prompt": "Que comprend le pied, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le pied comprend le carpe, les métacarpes et les phalanges."
+            },
+            {
+              "id": "b",
+              "text": "Le pied comprend le tarse, les métatarses et les phalanges."
+            },
+            {
+              "id": "c",
+              "text": "Le pied comprend le coude, le radius et l’ulna."
+            },
+            {
+              "id": "d",
+              "text": "Le pied comprend la scapula, le bras et le carpe."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Le pied comprend le tarse, les métatarses et les phalanges."
+        }
+      ]
+    },
+    {
+      "id": "a8",
+      "title": "6. Os du membre antérieur",
+      "questions": [
+        {
+          "id": "a8-q1",
+          "type": "mc",
+          "prompt": "Que comprend la ceinture thoracique, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La ceinture thoracique comprend l’humérus."
+            },
+            {
+              "id": "b",
+              "text": "La ceinture thoracique comprend le bassin."
+            },
+            {
+              "id": "c",
+              "text": "La ceinture thoracique comprend la scapula."
+            },
+            {
+              "id": "d",
+              "text": "La ceinture thoracique comprend le tarse."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "La ceinture thoracique comprend la scapula."
+        },
+        {
+          "id": "a8-q2",
+          "type": "mc",
+          "prompt": "Comment la ceinture thoracique est-elle reliée au rachis ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Elle n'est pas articulée directement avec le rachis : des muscles la maintiennent."
+            },
+            {
+              "id": "b",
+              "text": "Elle est articulée directement avec le rachis, sans muscle."
+            },
+            {
+              "id": "c",
+              "text": "Elle n’est pas articulée directement avec le rachis : un os la soude."
+            },
+            {
+              "id": "d",
+              "text": "Elle est articulée directement avec le sternum seulement."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Elle n'est pas articulée directement avec le rachis : des muscles la maintiennent."
+        },
+        {
+          "id": "a8-q3",
+          "type": "mc",
+          "prompt": "Que dit le texte de la clavicule ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La clavicule est complète et visible hors de tout muscle."
+            },
+            {
+              "id": "b",
+              "text": "La clavicule est rudimentaire et cachée dans le muscle du jarret."
+            },
+            {
+              "id": "c",
+              "text": "La clavicule est absente et remplacée par le tarse."
+            },
+            {
+              "id": "d",
+              "text": "La clavicule est rudimentaire et cachée dans le muscle brachio-céphalique."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "La clavicule est rudimentaire et cachée dans le muscle brachio-céphalique."
+        },
+        {
+          "id": "a8-q4",
+          "type": "mc",
+          "prompt": "Quel os le texte attribue-t-il à l’humérus ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Humérus : os de l’avant-bras."
+            },
+            {
+              "id": "b",
+              "text": "Humérus : os du bras."
+            },
+            {
+              "id": "c",
+              "text": "Humérus : os de la cuisse."
+            },
+            {
+              "id": "d",
+              "text": "Humérus : os du carpe."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Humérus : os du bras."
+        },
+        {
+          "id": "a8-q5",
+          "type": "mc",
+          "prompt": "Quels os le texte attribue-t-il à l’avant-bras ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Radius et ulna : os du bras."
+            },
+            {
+              "id": "b",
+              "text": "Radius et ulna : os de la jambe."
+            },
+            {
+              "id": "c",
+              "text": "Radius et ulna : os de l'avant-bras."
+            },
+            {
+              "id": "d",
+              "text": "Radius et ulna : os du crâne."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Radius et ulna : os de l'avant-bras."
+        },
+        {
+          "id": "a8-q6",
+          "type": "mc",
+          "prompt": "Que forme l’olécrâne, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "L'olécrâne, qui appartient au radius, forme la pointe du jarret."
+            },
+            {
+              "id": "b",
+              "text": "L'olécrâne, qui appartient à la scapula, forme la pointe de l'épaule."
+            },
+            {
+              "id": "c",
+              "text": "L'olécrâne, qui appartient à l'humérus, forme le carpe."
+            },
+            {
+              "id": "d",
+              "text": "L'olécrâne, qui appartient à l'ulna, forme la pointe du coude."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "L'olécrâne, qui appartient à l'ulna, forme la pointe du coude."
+        },
+        {
+          "id": "a8-q7",
+          "type": "mc",
+          "prompt": "Que permettent la pronation et la supination, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Les mouvements de pronation et de supination permettent la rotation de l'avant-bras."
+            },
+            {
+              "id": "b",
+              "text": "Les mouvements de pronation et de supination permettent la rotation de la queue."
+            },
+            {
+              "id": "c",
+              "text": "Les mouvements de pronation et de supination bloquent l’avant-bras."
+            },
+            {
+              "id": "d",
+              "text": "Les mouvements de pronation et de supination allongent la queue."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "Les mouvements de pronation et de supination permettent la rotation de l'avant-bras."
+        }
+      ]
+    },
+    {
+      "id": "a9",
+      "title": "7. Régions ventrales et bassin",
+      "questions": [
+        {
+          "id": "a9-q1",
+          "type": "mc",
+          "prompt": "Que repère le texte en vue de dessous ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "En vue de dessous, on repère notamment la truffe, le chanfrein, le front et l’oreille."
+            },
+            {
+              "id": "b",
+              "text": "En vue de dessous, on repère notamment le carpe, le métacarpe et les doigts."
+            },
+            {
+              "id": "c",
+              "text": "En vue de dessous, on repère notamment la mandibule, l'œsophage, la région pectorale, le sternum, l'hypochondre, l'ombilic, l'abdomen, le flanc, la région prépubienne et la région inguinale."
+            },
+            {
+              "id": "d",
+              "text": "En vue de dessous, on repère notamment la diaphyse, l’épiphyse et le périoste."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "En vue de dessous, on repère notamment la mandibule, l'œsophage, la région pectorale, le sternum, l'hypochondre, l'ombilic, l'abdomen, le flanc, la région prépubienne et la région inguinale."
+        },
+        {
+          "id": "a9-q2",
+          "type": "mc",
+          "prompt": "Que dit le texte du bassin par rapport à l’abdomen ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le bassin prolonge l’abdomen vers l’avant et donne attache aux membres antérieurs."
+            },
+            {
+              "id": "b",
+              "text": "Le bassin prolonge l'abdomen vers l'arrière et donne attache aux membres postérieurs."
+            },
+            {
+              "id": "c",
+              "text": "Le bassin sépare l’abdomen et ne donne aucune attache."
+            },
+            {
+              "id": "d",
+              "text": "Le bassin prolonge le crâne vers l’arrière et donne attache à la queue seule."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Le bassin prolonge l'abdomen vers l'arrière et donne attache aux membres postérieurs."
+        },
+        {
+          "id": "a9-q3",
+          "type": "mc",
+          "prompt": "Quelles régions le texte distingue-t-il avec la croupe ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "On distingue la truffe, le chanfrein et le front."
+            },
+            {
+              "id": "b",
+              "text": "On distingue le carpe, le métacarpe et les doigts."
+            },
+            {
+              "id": "c",
+              "text": "On distingue la diaphyse, l’épiphyse et le périoste."
+            },
+            {
+              "id": "d",
+              "text": "On distingue la croupe (région sacrée), les hanches et la région fessière."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "On distingue la croupe (région sacrée), les hanches et la région fessière."
+        },
+        {
+          "id": "a9-q4",
+          "type": "mc",
+          "prompt": "Où se trouve la région interfessière, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La région interfessière se trouve sous la base de la queue."
+            },
+            {
+              "id": "b",
+              "text": "La région interfessière se trouve sous la truffe."
+            },
+            {
+              "id": "c",
+              "text": "La région interfessière se trouve dans le carpe."
+            },
+            {
+              "id": "d",
+              "text": "La région interfessière se trouve au sommet du crâne."
+            }
+          ],
+          "correctChoiceId": "a",
+          "source": "La région interfessière se trouve sous la base de la queue."
+        },
+        {
+          "id": "a9-q5",
+          "type": "mc",
+          "prompt": "Où le texte situe-t-il le périnée ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Le périnée est situé entre les deux oreilles."
+            },
+            {
+              "id": "b",
+              "text": "Le périnée est situé entre le carpe et les doigts."
+            },
+            {
+              "id": "c",
+              "text": "Le périnée est situé entre l'anus et les organes génitaux."
+            },
+            {
+              "id": "d",
+              "text": "Le périnée est situé entre le front et la truffe."
+            }
+          ],
+          "correctChoiceId": "c",
+          "source": "Le périnée est situé entre l'anus et les organes génitaux."
+        },
+        {
+          "id": "a9-q6",
+          "type": "mc",
+          "prompt": "À quoi correspond la queue, selon le texte ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "La queue prolonge le crâne et correspond au début du rachis."
+            },
+            {
+              "id": "b",
+              "text": "La queue prolonge le sternum et correspond au carpe."
+            },
+            {
+              "id": "c",
+              "text": "La queue remplace le bassin et ne fait pas partie du rachis."
+            },
+            {
+              "id": "d",
+              "text": "La queue prolonge le bassin et correspond à la partie terminale du rachis."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "La queue prolonge le bassin et correspond à la partie terminale du rachis."
+        },
+        {
+          "id": "a9-q7",
+          "type": "mc",
+          "prompt": "Comment le texte nomme-t-il un chien sans queue ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Un chien avec une queue est dit anoure."
+            },
+            {
+              "id": "b",
+              "text": "Un chien sans queue est dit anoure."
+            },
+            {
+              "id": "c",
+              "text": "Un chien sans oreille est dit anoure."
+            },
+            {
+              "id": "d",
+              "text": "Un chien sans queue est dit moyen."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Un chien sans queue est dit anoure."
+        }
+      ]
+    },
+    {
+      "id": "a10",
+      "title": "8. Vocabulaire à retenir",
+      "questions": [
+        {
+          "id": "a10-q1",
+          "type": "mc",
+          "prompt": "Quelle équivalence le texte donne-t-il pour le carpe ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Carpe : genou du chien."
+            },
+            {
+              "id": "b",
+              "text": "Carpe : poignet."
+            },
+            {
+              "id": "c",
+              "text": "Carpe : omoplate."
+            },
+            {
+              "id": "d",
+              "text": "Carpe : colonne vertébrale."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Carpe : poignet."
+        },
+        {
+          "id": "a10-q2",
+          "type": "mc",
+          "prompt": "Quelle équivalence le texte donne-t-il pour le tarse ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tarse / jarret : région du pied antérieur."
+            },
+            {
+              "id": "b",
+              "text": "Tarse / jarret : région du pied postérieur."
+            },
+            {
+              "id": "c",
+              "text": "Tarse / jarret : os du bras."
+            },
+            {
+              "id": "d",
+              "text": "Tarse / jarret : pointe du coude."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Tarse / jarret : région du pied postérieur."
+        },
+        {
+          "id": "a10-q3",
+          "type": "mc",
+          "prompt": "Quelle équivalence le texte donne-t-il pour le grasset ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Grasset : poignet."
+            },
+            {
+              "id": "b",
+              "text": "Grasset : genou du chien."
+            },
+            {
+              "id": "c",
+              "text": "Grasset : omoplate."
+            },
+            {
+              "id": "d",
+              "text": "Grasset : colonne vertébrale."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Grasset : genou du chien."
+        },
+        {
+          "id": "a10-q4",
+          "type": "mc",
+          "prompt": "Quelle équivalence le texte donne-t-il pour le rachis ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Rachis : poignet."
+            },
+            {
+              "id": "b",
+              "text": "Rachis : colonne vertébrale."
+            },
+            {
+              "id": "c",
+              "text": "Rachis : genou du chien."
+            },
+            {
+              "id": "d",
+              "text": "Rachis : omoplate."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Rachis : colonne vertébrale."
+        },
+        {
+          "id": "a10-q5",
+          "type": "mc",
+          "prompt": "Quelle équivalence le texte donne-t-il pour la scapula ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Scapula : poignet."
+            },
+            {
+              "id": "b",
+              "text": "Scapula : omoplate."
+            },
+            {
+              "id": "c",
+              "text": "Scapula : genou du chien."
+            },
+            {
+              "id": "d",
+              "text": "Scapula : colonne vertébrale."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Scapula : omoplate."
+        },
+        {
+          "id": "a10-q6",
+          "type": "mc",
+          "prompt": "Quelle équivalence le texte donne-t-il pour l’olécrâne ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Olécrâne : pointe du jarret."
+            },
+            {
+              "id": "b",
+              "text": "Olécrâne : pointe du coude."
+            },
+            {
+              "id": "c",
+              "text": "Olécrâne : poignet."
+            },
+            {
+              "id": "d",
+              "text": "Olécrâne : omoplate."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Olécrâne : pointe du coude."
+        },
+        {
+          "id": "a10-q7",
+          "type": "mc",
+          "prompt": "Où le texte place-t-il le métacarpe ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Métacarpe : entre le tarse et les doigts."
+            },
+            {
+              "id": "b",
+              "text": "Métacarpe : entre le carpe et les doigts."
+            },
+            {
+              "id": "c",
+              "text": "Métacarpe : entre le crâne et le cou."
+            },
+            {
+              "id": "d",
+              "text": "Métacarpe : entre le bassin et la queue."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Métacarpe : entre le carpe et les doigts."
+        },
+        {
+          "id": "a10-q8",
+          "type": "mc",
+          "prompt": "Où le texte place-t-il le métatarse ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Métatarse : entre le carpe et les doigts."
+            },
+            {
+              "id": "b",
+              "text": "Métatarse : entre le tarse et les doigts."
+            },
+            {
+              "id": "c",
+              "text": "Métatarse : entre le crâne et le cou."
+            },
+            {
+              "id": "d",
+              "text": "Métatarse : entre le bassin et la queue."
+            }
+          ],
+          "correctChoiceId": "b",
+          "source": "Métatarse : entre le tarse et les doigts."
+        },
+        {
+          "id": "a10-q9",
+          "type": "mc",
+          "prompt": "Dans quel ordre le conseil dit-il d’apprendre ?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Conseil : apprends d’abord les parties de l’os long, puis les repères du schéma."
+            },
+            {
+              "id": "b",
+              "text": "Conseil : apprends d’abord les races, puis la photo entière."
+            },
+            {
+              "id": "c",
+              "text": "Conseil : laisse les repères du schéma pour la fin."
+            },
+            {
+              "id": "d",
+              "text": "Conseil : apprends d'abord les repères du schéma, puis les régions des membres et enfin les parties de l'os long."
+            }
+          ],
+          "correctChoiceId": "d",
+          "source": "Conseil : apprends d'abord les repères du schéma, puis les régions des membres et enfin les parties de l'os long."
+        }
+      ]
+    }
+  ]
+}
